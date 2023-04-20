@@ -8,4 +8,13 @@ import { Component } from '@angular/core';
 export class HeaderComponent {
   grandeUrl = 'assets/Gym1.jpg'
   logoUrl = 'assets/LogoB.png';
+  newLogoUrl = 'assets/NewLogo.png'
+  fuenteGold = 'assets/LatinWide.ttf'
+  
+
+  constructor(
+    // private translate: TranslateService
+  ) {
+
+  }
 }

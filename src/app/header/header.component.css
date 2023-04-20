@@ -1,0 +1,121 @@
+
+.body{
+    position: relative;
+}
+.logopequeño{
+    width: 200px;
+    filter: invert(100%);
+}
+
+.contenedorbotonesbarra{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.contenedorimagengrande{
+    padding: 0;
+}
+.imagengrande{
+    filter: brightness(75%);
+}
+
+@font-face {
+    font-family: 'gold';
+    src: url("./../../assets/LatinWide.ttf");
+}
+
+.botonapuntate{
+    --border: 5px;   
+    --slant: 0.7em;   
+    --color: #f3ef0b; 
+    
+    font-size: 35px;
+    padding: 0.4em 1.2em;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    
+    color: var(--color);
+    background: 
+       linear-gradient(to bottom left,var(--color)  50%,#0000 50.1%) top right,
+       linear-gradient(to top   right,var(--color)  50%,#0000 50.1%) bottom left;
+    background-size: calc(var(--slant) + 1.3*var(--border)) calc(var(--slant) + 1.3*var(--border));
+    background-repeat: no-repeat;
+    box-shadow:
+      0 0 0 200px inset var(--s,#0000),
+      0 0 0 var(--border) inset var(--color);
+    clip-path: 
+        polygon(0 0, calc(100% - var(--slant)) 0, 100% var(--slant),
+                100% 100%, var(--slant) 100%,0 calc(100% - var(--slant))
+               );
+    transition: color var(--t,0.3s), background-size 0.3s;
+  }
+  .botonapuntate:focus-visible {
+    outline-offset: calc(-1*var(--border));
+    outline: var(--border) solid #000c;
+    clip-path: none;
+    background-size: 0 0;
+  }
+  .botonapuntate:hover,
+  .botonapuntate:active{
+    background-size: 100% 100%;
+    color: rgb(17, 17, 17);
+    --t: 0.2s 0.1s;
+  }
+  .botonapuntate:active {
+    --s: #0005;
+    transition: none;
+  }
+
+  .botonsocios{
+    --border: 5px;   
+    --slant: 0.7em;   
+    --color: #f7d92f;
+    font-size: 35px;
+    padding: 0.4em 1.2em;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    
+    color: var(--color);
+    background: 
+       linear-gradient(to bottom left,var(--color)  50%,#0000 50.1%) top right,
+       linear-gradient(to top   right,var(--color)  50%,#0000 50.1%) bottom left;
+    background-size: calc(var(--slant) + 1.3*var(--border)) calc(var(--slant) + 1.3*var(--border));
+    background-repeat: no-repeat;
+    box-shadow:
+      0 0 0 200px inset var(--s,#0000),
+      0 0 0 var(--border) inset var(--color);
+    clip-path: 
+        polygon(0 0, calc(100% - var(--slant)) 0, 100% var(--slant),
+                100% 100%, var(--slant) 100%,0 calc(100% - var(--slant))
+               );
+    transition: color var(--t,0.3s), background-size 0.3s;
+  }
+  .botonsocios:focus-visible {
+    outline-offset: calc(-1*var(--border));
+    outline: var(--border) solid #000c;
+    clip-path: none;
+    background-size: 0 0;
+  }
+  .botonsocios:hover,
+  .botonsocios:active{
+    background-size: 100% 100%;
+    color: rgb(0, 0, 0);
+    --t: 0.2s 0.1s;
+  }
+  .botonsocios:active {
+    --s: #0005;
+    transition: none;
+  }
+  .bannernombre{
+      position: absolute;
+      top: 275px;
+      border: white solid;
+      width: 475px;
+      height: 100px;
+
+  }
+  
