@@ -17,3 +17,36 @@
     font-family: airwaves;
     src: url("./../../assets/airwaves-rounded.ttf");
   }
+  @font-face {
+      font-family: ntr;
+      src: url("./../../assets/NTR-Regular.ttf");
+  }
+  .contenedorcartas{
+      display: flex;
+      justify-content: space-evenly;
+      align-items: center;
+      height: 54vh;
+      background-position: center;
+      /* background-image: url("./../../assets/fondotarjetas3.jpg"); */
+  }
+
+  .cartascuotas{
+      height: 40vh;
+  }
+
+  .cabeceracartas{
+      font-family: airwaves;
+      font-size: 28px;
+      background-color: white;
+  }
+
+  .titulocarta{
+    text-align: center;
+    font-family: ntr;
+    font-size: 30px;
+    font-weight: 1000;
+  }
+  .textocarta{
+      font-family: ntr;
+      font-size: 25px;
+    }
