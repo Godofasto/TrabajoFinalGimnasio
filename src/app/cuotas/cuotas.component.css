@@ -1,0 +1,19 @@
+.cabeceracuotas{
+    height: 34vh;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   font-family: airwaves;
+   font-size: 110px;
+   background-image: url("./../../assets/banner1.jpg");
+   filter: contrast(110%);
+   background-position:bottom;
+   background-size: cover;
+   background-repeat: no-repeat;
+   color: #ffffff;
+}
+@font-face {
+    font-family: airwaves;
+    src: url("./../../assets/airwaves-rounded.ttf");
+  }

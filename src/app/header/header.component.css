@@ -36,7 +36,7 @@
     font-family: airwaves;
     --border: 5px;   
     --slant: 0.7em;   
-    --color: #f3ef0b; 
+    --color: #f32929; 
     width: 18vw;
     height: 9vh;
     font-size: 35px;
@@ -69,7 +69,7 @@
   .botonapuntate:hover,
   .botonapuntate:active{
     background-size: 100% 100%;
-    color: rgb(17, 17, 17);
+    color: white;
     --t: 0.2s 0.1s;
   }
   .botonapuntate:active {
@@ -154,7 +154,7 @@
     width: 100%;
     height: 4px;
     border-radius: 4px;
-    background-color: #f3ef0b;
+    background-color: white;
     bottom: 0;
     left: 0;
     transform-origin: right;
