@@ -3,10 +3,10 @@
         <div class="col-12 contenedorperfil">
             <div class="row">
                 <div class="col-3 selectorperfil">
-                    <div class="botonesraros" (click)="activarprimero()"><span></span>Mis Datos</div>
-                    <div class="botonesraros" (click)="activarsegundo()"><span></span>Mis Citas</div>
-                    <div class="botonesraros" (click)="activartercero()"><span></span>Mis Tablas</div>
-                    <div class="botonesraros" (click)="activarcuarto()"><span></span>Cerrar sesion</div>
+                    <div [ngStyle]="{'background-color': primero ? 'red' : 'black'}" class="botonesraros" (click)="activarprimero()"><span></span>Mis Datos</div>
+                    <div [ngStyle]="{'background-color': segundo ? 'red' : 'black'}" class="botonesraros" (click)="activarsegundo()"><span></span>Mis Citas</div>
+                    <div [ngStyle]="{'background-color': tercero ? 'red' : 'black'}" class="botonesraros" (click)="activartercero()"><span></span>Mis Tablas</div>
+                    <div [ngStyle]="{'background-color': cuarto ? 'red' : 'black'}" class="botonesraros" (click)="activarcuarto()"><span></span>Cerrar sesion</div>
                 </div>
                 <div class="col-9 contenidoperfil">
                     <app-frag-mis-datos *ngIf="primero"></app-frag-mis-datos>
