@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
+import { CommonModule } from '@angular/common';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { BodyComponent} from './body/body.component';
@@ -36,7 +36,8 @@ const appRoutes:Routes=[
   ],
   imports: [
     BrowserModule,
-    RouterModule.forRoot(appRoutes)
+    RouterModule.forRoot(appRoutes),
+    CommonModule
   ],
   providers: [],
   bootstrap: [AppComponent]
