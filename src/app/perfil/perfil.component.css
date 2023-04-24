@@ -1,0 +1,12 @@
+.contenedorperfil{
+    height: 88.6vh;
+    border: 7px solid #2b2e32;
+}
+.selectorperfil{
+    height: 88vh;
+    border: 1px solid black;
+}
+.contenidoperfil{
+    height: 88vh;
+    border: 1px solid black;
+}

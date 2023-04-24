@@ -1,0 +1,94 @@
+.piepagina{
+    height: 24vh;
+}
+ul {
+    position: relative;
+    display: flex;
+    top: 3vh;
+}
+ul li {
+    position: relative;
+    list-style: none;
+    margin: 0 22px;
+    cursor: pointer;
+    padding-top: 32px;
+}
+ul li a {
+    text-decoration: none;
+}
+ul li a .fa-brands {
+    font-size: 8em;
+    color: rgb(117, 115, 115);
+}
+ul li a::before {
+    font-family: "FontAwesome";
+    position: absolute;
+    top: -0px;
+    left: 0;
+    font-size: 8em;
+    height: 0;
+    overflow: hidden;
+    transition: 0.5s ease-in-out;
+}
+
+ul li:nth-child(1) a::before {
+    content: "\f16d";
+    background-image: linear-gradient(45deg, 
+      #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,
+      #bc1888 100%);
+    -webkit-background-clip: text;
+     -webkit-text-fill-color: transparent;
+    border-bottom: 4px solid #dc2743;
+}
+ul li:nth-child(2) a::before {
+    content: "\f232";
+    color: #25D366;
+    border-bottom: 4px solid #25D366;
+}
+ul li:nth-child(3) a::before {
+    content: "\f099";
+    color: #1DA1F2;
+    border-bottom: 4px solid #1DA1F2;
+}
+ul li:hover a::before {
+    height: 100%;
+}
+.cuadrohorario{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+.textohorario{
+    color: white;
+    font-size: 28px;
+    font-family: ntr;
+    padding-bottom: 0;
+}
+.cuadrodireccion{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+.textodireccion{
+    color: white;
+    font-size: 28px;
+    font-family: ntr;
+    padding-bottom: 0;
+}
+#titulohorario{
+    font-weight:bold;
+}
+#titulodireccion{
+    font-weight:bold;
+}
+@font-face {
+    font-family: airwaves;
+    src: url("./../../assets/airwaves-rounded.ttf");
+  }
+  @font-face {
+      font-family: ntr;
+      src: url("./../../assets/NTR-Regular.ttf");
+  }
+.contenedormapa{
+    padding-top: 10px;
+}
