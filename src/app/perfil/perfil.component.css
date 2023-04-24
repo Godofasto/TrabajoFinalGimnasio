@@ -1,12 +1,84 @@
 .contenedorperfil{
     height: 88.6vh;
-    border: 7px solid #2b2e32;
+    
 }
 .selectorperfil{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content:center;
+    row-gap: 80px;
+    padding-top: 7vh;
     height: 88vh;
-    border: 1px solid black;
 }
 .contenidoperfil{
     height: 88vh;
-    border: 1px solid black;
+}
+
+.botonesraros
+{
+    position: relative;
+    cursor: pointer;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 450px;
+    height: 75px;
+    background: #232323;
+    text-decoration: none;
+    text-transform: uppercase;
+    text-align: center;
+    line-height: 73px;
+    color: white;
+    font-size: 12px;
+    font-family: verdana;
+    letter-spacing: 4px;
+    transition: 1s;
+/*    border-radius: 20px; */
+}
+.botonesraros:active{
+    background-color: red;
+}
+
+.botonesraros:before,
+.botonesraros:after,
+span:before,
+span:after
+{
+    content: '';
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    background: red;
+    transition: 1s;
+    mix-blend-mode: hue;
+}
+
+.botonesraros:before
+{
+    top: -2px;
+    left: -2px
+}
+.botonesraros:after
+{
+    top: -2px;
+    right: -2px;
+}
+span:before
+{
+    bottom: -2px;
+    left: -2px
+}
+span:after
+{
+    bottom: -2px;
+    right: -2px
+}
+
+.botonesraros:hover:before,
+.botonesraros:hover:after,
+.botonesraros:hover span:before,
+.botonesraros:hover span:after
+{
+    width: calc( 455px/2 );
+    height: calc( 80px/2 )
 }
