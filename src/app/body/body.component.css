@@ -23,12 +23,22 @@
     font-size: 50px;
     padding-left: 15px;
 }
+@media (max-width: 1620px) {
+  #BannerImagenGrande{
+    width: 30vw;
+  }
+}
+@media (max-width: 1375px) {
+  #BannerImagenGrande{
+    width: 50vw;
+  }
+}
 .cuadradoover{
     display: flex;
     justify-content: center;
     align-items: center;
     z-index: 15;
-    left: 41vw;
+    left: 39vw;
     top: 36vw;
     position: absolute;
     width: 23vw;
@@ -37,7 +47,12 @@
 }
 .cuadradogrande2{
     border-top: 2px solid white;
-    height: 30vh;
+    height: 85vh;
+}
+@media (max-width: 1200px){
+  .cuadradogrande2{
+    height: 200vh;
+  }
 }
 .textocuadradoover{
     display: flex;
@@ -96,4 +111,39 @@
   }
   .textoabajocuadradoover{
       padding-top: 14px;
+  }
+  .tituloPromo{
+    display: flex;
+    justify-content: center;
+    color: white;
+    font-family: airwaves;
+    padding-top: 160px;
+    font-size: 60px;
+    
+  }
+  .contenedorVirtudes{
+    display: flex;
+    justify-content: center;
+    row-gap: 200px;
+    color: white;
+  }
+  .virtudes{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+  }
+  @font-face {
+    font-family: ntr;
+    src: url("./../../assets/NTR-Regular.ttf");
+}
+@font-face {
+  font-family: logam;
+  src: url("./../../assets/BrandenRegular-2O80e.otf");
+}
+  .textoVirtudes{
+    text-align: center;
+    font-size: 20px;
+    color: white;
+    font-family: logam;
   }

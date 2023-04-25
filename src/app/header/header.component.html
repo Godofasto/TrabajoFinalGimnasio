@@ -1,20 +1,21 @@
 <div class="container-fluid">
     <div class="row" style="height: 110px">
-        <div class="col-12 bg-dark bg-gradient h-100 text-left"> <!--bg-dark bg-gradient -->
-            <div class="row barra">
-                <div class="col-3" style="z-index: 1;">
-                    <a routerLink="/home"><img [src]="newLogoUrl" alt="logo" class="logopequeño"></a>
-                </div>
-                <div class="col-9 d-flex justify-content-end contenedorbotonesbarra">
-                    <div class="enlacesbarra">
-                        <a href="" class="enlaces">Tienda</a>
-                        <a href="" class="enlaces">Entrenadores</a>
-                    </div>
-                    <button routerLink="/cuotas" class="mx-3 botonapuntate" style="z-index: 15;">Apuntate</button>
-                    <button routerLink="/perfil" class="mx-3 botonsocios" style="z-index: 15;">Tu Perfil</button>
-                </div>
+      <div class="col-12 bg-dark bg-gradient h-100 text-left">
+        <div class="row align-items-center">
+          <div class="col-md-3 col-6">
+            <a routerLink="/home"><img [src]="newLogoUrl" alt="logo" class="logopequeño"></a>
+          </div>
+          <div class="col-md-9 col-6 text-end">
+            <div class="d-flex justify-content-md-end justify-content-center align-items-center">
+              <div class="enlacesbarra me-md-5 me-3">
+                <a href="" class="enlaces">Tienda</a>
+                <a href="" class="enlaces">Entrenadores</a>
+              </div>
+              <button routerLink="/cuotas" class="mx-3 botonapuntate">Apuntate</button>
+              <button routerLink="/perfil" class="mx-3 botonsocios">Tu Perfil</button>
             </div>
+          </div>
         </div>
+      </div>
     </div>
-</div>
-
+  </div>
