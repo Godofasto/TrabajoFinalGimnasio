@@ -12,13 +12,19 @@ import { FragMisDatosComponent } from './frag-mis-datos/frag-mis-datos.component
 import { FragMisCitasComponent } from './frag-mis-citas/frag-mis-citas.component';
 import { FragMisTablasComponent } from './frag-mis-tablas/frag-mis-tablas.component';
 import { FragCerrarSesionComponent } from './frag-cerrar-sesion/frag-cerrar-sesion.component';
+import { GuardaPerfilGuard } from './guarda-perfil.guard';
+import { RegistroComponent } from './registro/registro.component';
+import { IniciosesionComponent } from './iniciosesion/iniciosesion.component';
+
 
 
 const appRoutes:Routes=[
 
-  {path:'home', component: BodyComponent},
+  {path:'', component: BodyComponent},
   {path:'cuotas', component:CuotasComponent},
-  {path:'perfil', component:PerfilComponent}
+  {path:'perfil', component:PerfilComponent, canActivate: [GuardaPerfilGuard]},
+  {path:'registro', component:RegistroComponent},
+  {path:'iniciosesion', component:IniciosesionComponent}
 ];
 
 @NgModule({
@@ -32,7 +38,9 @@ const appRoutes:Routes=[
     FragMisDatosComponent,
     FragMisCitasComponent,
     FragMisTablasComponent,
-    FragCerrarSesionComponent
+    FragCerrarSesionComponent,
+    RegistroComponent,
+    IniciosesionComponent
   ],
   imports: [
     BrowserModule,
