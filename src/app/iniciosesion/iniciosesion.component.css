@@ -18,7 +18,7 @@ body {
   animation-name: left;
   animation-duration: 1s;
   animation-fill-mode: both;
-  animation-delay: 1s;
+  animation-delay: 0.8s;
 }
 
 .right {
@@ -82,31 +82,31 @@ body {
   animation-name: move;
   animation-duration: .4s;
   animation-fill-mode: both;
-  animation-delay: 2s;
+  animation-delay: 1.8s;
 }
 
 .a1 {
-  animation-delay: 2s;
+  animation-delay: 1.8s;
 }
 
 .a2 {
-  animation-delay: 2.1s;
+  animation-delay: 1.9s;
 }
 
 .a3 {
-  animation-delay: 2.2s;
+  animation-delay: 2s;
 }
 
 .a4 {
-  animation-delay: 2.3s;
+  animation-delay: 2.1s;
 }
 
 .a5 {
-  animation-delay: 2.4s;
+  animation-delay: 2.2s;
 }
 
 .a6 {
-  animation-delay: 2.5s;
+  animation-delay: 2.3s;
 }
 
 @keyframes move {
