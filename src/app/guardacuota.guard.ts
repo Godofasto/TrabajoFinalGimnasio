@@ -5,12 +5,11 @@ import { Observable } from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
-export class GuardaPerfilGuard implements CanActivate {
+export class GuardacuotaGuard implements CanActivate {
   canActivate(
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
-      //Aqui es donde tengo que hacer el metodoq ue determina si se devuelve true o false para ver si se entra al perfil o no
-      
+      //Tiene que ser true mientras no este la sesion iniciada, si tienes la sesion iniciada deberia salir un modal que te diga que ya tienes una cuota contratada
     return true;
   }
   

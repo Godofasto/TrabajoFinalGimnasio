@@ -24,7 +24,7 @@ const appRoutes:Routes=[
   {path:'cuotas', component:CuotasComponent},
   {path:'perfil', component:PerfilComponent, canActivate: [GuardaPerfilGuard]},
   {path:'registro', component:RegistroComponent},
-  {path:'iniciosesion', component:IniciosesionComponent}
+  {path:'iniciosesion', component:IniciosesionComponent} //Cuando se vaya a acceder 
 ];
 
 @NgModule({
