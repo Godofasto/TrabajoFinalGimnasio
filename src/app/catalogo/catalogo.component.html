@@ -1,0 +1,11 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="cuadropruebabbdd col-12">
+            <li *ngFor="let cosa of cosas">
+                {{cosa.nombre|json}}
+                {{cosa.descripcion|json}}
+                {{cosa.precio|json}}
+            </li>
+        </div>        
+    </div>
+</div>

@@ -15,12 +15,15 @@ import { FragCerrarSesionComponent } from './frag-cerrar-sesion/frag-cerrar-sesi
 import { GuardaPerfilGuard } from './guarda-perfil.guard';
 import { RegistroComponent } from './registro/registro.component';
 import { IniciosesionComponent } from './iniciosesion/iniciosesion.component';
+import { CatalogoComponent } from './catalogo/catalogo.component';
+import { HttpClientModule } from '@angular/common/http'; // Importar HttpClientModule
 
 
 
 const appRoutes:Routes=[
 
   {path:'', component: BodyComponent},
+  {path:'catalogo', component: CatalogoComponent},
   {path:'cuotas', component:CuotasComponent},
   {path:'perfil', component:PerfilComponent, canActivate: [GuardaPerfilGuard]},
   {path:'registro', component:RegistroComponent},
@@ -40,12 +43,14 @@ const appRoutes:Routes=[
     FragMisTablasComponent,
     FragCerrarSesionComponent,
     RegistroComponent,
-    IniciosesionComponent
+    IniciosesionComponent,
+    CatalogoComponent
   ],
   imports: [
     BrowserModule,
     RouterModule.forRoot(appRoutes),
-    CommonModule
+    CommonModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
