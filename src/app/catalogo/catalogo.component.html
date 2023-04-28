@@ -1,11 +1,23 @@
 <div class="container-fluid">
     <div class="row">
         <div class="cuadropruebabbdd col-12">
-            <li *ngFor="let cosa of cosas">
-                {{cosa.nombre|json}}
-                {{cosa.descripcion|json}}
-                {{cosa.precio|json}}
-            </li>
+            <!-- {{cosa.nombre|json}}
+            {{cosa.descripcion|json}}
+            {{cosa.precio|json}} -->
+            <div *ngFor="let cosa of cosas" class="card mb-3" style="max-width: 540px;">
+                <div class="row g-0">
+                    <div class="col-md-4">
+                    <img src='./../../assets/{{cosa.urlImagen|json}}' class="img-fluid rounded-start" alt="..."> 
+                    </div>
+                    <div class="col-md-8">
+                    <div class="card-body">
+                        <h5 class="card-title">{{cosa.nombre|json}}</h5>
+                        <p class="card-text">{{cosa.descripcion|json}}</p>
+                        <p class="card-text">{{cosa.precio|json}} euros</p>
+                    </div>
+                    </div>
+                </div>
+            </div>
         </div>        
     </div>
 </div>

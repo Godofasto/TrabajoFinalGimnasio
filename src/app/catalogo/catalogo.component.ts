@@ -8,6 +8,7 @@ import { HttpClient } from '@angular/common/http';
 })
 export class CatalogoComponent implements OnInit {
   cosas:any;
+  prueba:any;
   constructor(private http: HttpClient) {}
 
   ngOnInit(): void {
@@ -15,6 +16,7 @@ export class CatalogoComponent implements OnInit {
       console.log(response);
       this.cosas = response;
     });
+    //Ver como se supone que tengo que quitar las comillas
   }
 
 }
