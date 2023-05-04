@@ -9,6 +9,7 @@ import { HttpClient } from '@angular/common/http';
 export class CatalogoComponent implements OnInit {
   cosas:any;
   prueba:any;
+  modalOpen = false;
   constructor(private http: HttpClient) {}
 
   ngOnInit(): void {
@@ -16,7 +17,15 @@ export class CatalogoComponent implements OnInit {
       console.log(response);
       this.cosas = response;
     });
-    //Ver como se supone que tengo que quitar las comillas
+    
+    //Ver como se supone que tengo que quitar las comillas -> Se quitan quitando el |JSON
   }
-
+  openModal(){
+    if(this.modalOpen == false){
+      this.modalOpen = true;
+    }else{
+      this.modalOpen = false
+    }
+      
+  }
 }

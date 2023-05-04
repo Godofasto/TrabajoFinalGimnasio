@@ -16,7 +16,8 @@ import { GuardaPerfilGuard } from './guarda-perfil.guard';
 import { RegistroComponent } from './registro/registro.component';
 import { IniciosesionComponent } from './iniciosesion/iniciosesion.component';
 import { CatalogoComponent } from './catalogo/catalogo.component';
-import { HttpClientModule } from '@angular/common/http'; // Importar HttpClientModule
+import { HttpClientModule } from '@angular/common/http';
+import { InsertarProductosComponent } from './insertar-productos/insertar-productos.component'; // Importar HttpClientModule
 
 
 
@@ -44,7 +45,8 @@ const appRoutes:Routes=[
     FragCerrarSesionComponent,
     RegistroComponent,
     IniciosesionComponent,
-    CatalogoComponent
+    CatalogoComponent,
+    InsertarProductosComponent
   ],
   imports: [
     BrowserModule,

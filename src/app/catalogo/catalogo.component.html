@@ -7,17 +7,24 @@
             <div *ngFor="let cosa of cosas" class="card mb-3" style="max-width: 540px;">
                 <div class="row g-0">
                     <div class="col-md-4">
-                    <img src='./../../assets/{{cosa.urlImagen|json}}' class="img-fluid rounded-start" alt="..."> 
+                    <img src="{{cosa.urlImagen}}" class="img-fluid rounded-start" alt="..."> 
                     </div>
                     <div class="col-md-8">
                     <div class="card-body">
-                        <h5 class="card-title">{{cosa.nombre|json}}</h5>
-                        <p class="card-text">{{cosa.descripcion|json}}</p>
-                        <p class="card-text">{{cosa.precio|json}} euros</p>
+                        <h5 class="card-title">{{cosa.nombre}}</h5>
+                        <p class="card-text">{{cosa.descripcion}}</p>
+                        <p class="card-text">{{cosa.precio}} euros</p>
                     </div>
                     </div>
                 </div>
             </div>
         </div>        
     </div>
+    <div class="subirProducto" style="text-align: center;">
+        <button class="icon-btn add-btn" (click)="openModal()">
+          <div class="add-icon"></div>
+          <div class="btn-txt">Add</div>
+        </button>
+      </div>
+    <app-insertar-productos *ngIf="modalOpen"></app-insertar-productos> <!--Esto solo tendra que ser visible para el admin, el resto no deberia poder verlo-->
 </div>
