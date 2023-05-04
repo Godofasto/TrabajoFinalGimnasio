@@ -2,6 +2,7 @@ import { Component, ViewChild } from '@angular/core';
 import { SubirProductosService } from '../subir-productos.service';
 
 
+
 @Component({
   selector: 'app-insertar-productos',
   templateUrl: './insertar-productos.component.html',

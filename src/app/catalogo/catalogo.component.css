@@ -2,16 +2,18 @@
     border: 1px solid black;
     height: 100%;
     display: flex;
-    justify-content: space-evenly;
+    justify-content: center;
+    flex-wrap: wrap;
     
 }
+
 .barraGeneros{
   display: flex;
   justify-content: space-evenly;
 }
 .textoCat{
   text-align: center;
-  font-size: x-large;
+  font-size: 45px;
   font-family: airwaves; 
   cursor: pointer;
 }
