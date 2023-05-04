@@ -1,6 +1,31 @@
 .cuadropruebabbdd{
     border: 1px solid black;
     height: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    
+}
+.barraGeneros{
+  display: flex;
+  justify-content: space-evenly;
+}
+.textoCat{
+  text-align: center;
+  font-size: x-large;
+  font-family: airwaves; 
+  cursor: pointer;
+}
+.textoCat:hover{
+  transition: 0.5s ease-in-out;
+  color: red;
+}
+@font-face {
+  font-family: airwaves;
+  src: url("./../../assets/airwaves-rounded.ttf");
+}
+@font-face {
+    font-family: 'gold';
+    src: url("./../../assets/LatinWide.ttf");
 }
 .main-hr {
     width: 30%;
