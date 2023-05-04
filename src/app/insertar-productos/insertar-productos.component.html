@@ -1,18 +1,27 @@
-<form >
+<form #miFormulario = "ngForm" name="miFormulario" (ngSubmit)="onSubmit()">
     <div class="mb-3">
         <label for="nombre" class="form-label">Nombre del producto: </label>
-        <input type="text" id="nombre" name="nombre" class="form-control">
+        <input type="text" id="nombre" name="nombre" class="form-control" [(ngModel)] = "miModelo.nombre">
     </div>
     <div class="mb-3">
         <label for="descripcion" class="form-label">Descripcion del producto: </label>
-        <input type="text" id="descripcion" name="descripcion" class="form-control">
+        <input type="text" id="descripcion" name="descripcion" class="form-control" [(ngModel)] = "miModelo.descripcion">
     </div>    
     <div class="mb-3">
         <label for="precio" class="form-label">Precio del producto: </label>
-        <input type="number" id="precio" name="precio" class="form-control">
+        <input type="number" id="precio" name="precio" class="form-control" [(ngModel)] = "miModelo.precio">
+    </div>
+    <div class="mb-3">
+        <label for="tipo" class="form-label">Tipo del producto: </label>
+        <select type="tipo" id="tipo" name="tipo" class="form-control" [(ngModel)] = "miModelo.tipo">
+            <option>Equipamiento</option>
+            <option>Suplementos</option>
+            <option>Moda</option>
+        </select>
     </div>
     <div class="mb-3">
         <label for="imagen" class="form-label">Imagen del producto: </label>
-        <input type="file" id="imagen" name="imagen" class="form-control">
-    </div>
+        <input type="file" id="imagen" name="imagen" class="form-control"  (change)="convertirImagen($event)"> <!--[(ngModel)] = "miModelo.urlImagen"-->
+     </div>
+    <button class="btn btn-primary">Subir Producto</button>
 </form>

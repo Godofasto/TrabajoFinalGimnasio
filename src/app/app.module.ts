@@ -18,6 +18,7 @@ import { IniciosesionComponent } from './iniciosesion/iniciosesion.component';
 import { CatalogoComponent } from './catalogo/catalogo.component';
 import { HttpClientModule } from '@angular/common/http';
 import { InsertarProductosComponent } from './insertar-productos/insertar-productos.component'; // Importar HttpClientModule
+import {FormsModule} from '@angular/forms';
 
 
 
@@ -52,7 +53,8 @@ const appRoutes:Routes=[
     BrowserModule,
     RouterModule.forRoot(appRoutes),
     CommonModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
