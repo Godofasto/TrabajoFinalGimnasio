@@ -1,18 +1,26 @@
 <div class="container-fluid">
-    <div class="row barraGeneros">
-        <p class="col-2 textoCat" (click)="mostrarSuplementacion()">Suplementación</p>
-        <p class="col-2 textoCat" (click)="mostrarModa()">Moda</p>
-        <p class="col-2 textoCat" (click)="mostrarEquipamiento()">Equipamiento</p>
-        <p class="col-2 textoCat" (click)="mostrarTodo()">Todo</p>
-    </div>
     <div class="row">
-        <div class="cuadropruebabbdd col-12">
+        <div class="col-12 cabeceraCatalogo">
+            Catalogo
+        </div>
+        <div class="col-12 subcabeceraCatalogo">
+            Nada de esto se puede comprar, por el momento es meramente informativo
+        </div>
+    </div>
+    <div class="row barraGeneros">
+        <div class="colocar col-2">
+            <p class="col-2 textoCat" (click)="mostrarSuplementacion()" (click)="toggleClickedA()" [ngClass]="{'clicked':isClickedA}">Suplementación</p>
+            <p class="col-2 textoCat" (click)="mostrarModa()" (click)="toggleClickedB()" [ngClass]="{'clicked':isClickedB}">Moda</p>
+            <p class="col-2 textoCat" (click)="mostrarEquipamiento()" (click)="toggleClickedC()" [ngClass]="{'clicked':isClickedC}">Equipamiento</p>
+            <p class="col-2 textoCat" (click)="mostrarTodo()" (click)="toggleClickedD()" [ngClass]="{'clicked':isClickedD}">Todo</p>
+        </div>
+        <div class="cuadropruebabbdd col-10">
             <!-- {{cosa.nombre|json}}
             {{cosa.descripcion|json}}
             {{cosa.precio|json}} -->
-            <div *ngFor="let cosa of cosas" class="card mb-3 col-4 cartasss" style="max-width: 540px;">
+            <!-- <div *ngFor="let cosa of cosas" class="card mb-3 col-6 cartasss" style="max-width: 540px;">
                 <div class="row g-0">
-                    <div class="col-md-4">
+                    <div class="col-md-4 imagencatalogo">
                     <img src="{{cosa.urlImagen}}" class="img-fluid rounded-start" alt="..."> 
                     </div>
                     <div class="col-md-8">
@@ -23,14 +31,26 @@
                     </div>
                     </div>
                 </div>
+            </div> -->
+            <div class="flip animate__animated animate__fadeInLeft" *ngFor="let cosa of cosas">
+                <div class="front" style="background-image:url({{cosa.urlImagen}}); background-repeat: no-repeat;">
+                    <!-- <img src="{{cosa.urlImagen}}" class="img-fluid"> -->
+                   <h1 class="text-shadow">{{cosa.nombre}}</h1>
+                </div>
+                <div class="back">
+                   <h2>≈{{cosa.precio}} €</h2>
+                   <p style="font-size: 20px;">{{cosa.descripcion}}</p>
+                </div>
+                <button class="noselect" (click)="borrarProducto()"><span class='text'></span><span class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M24 20.188l-8.315-8.209 8.2-8.282-3.697-3.697-8.212 8.318-8.31-8.203-3.666 3.666 8.321 8.24-8.206 8.313 3.666 3.666 8.237-8.318 8.285 8.203z"/></svg></span></button>
             </div>
         </div>        
     </div>
     <div class="subirProducto" style="text-align: center;">
-        <button class="icon-btn add-btn" (click)="openModal()">
+        <button class="icon-btn add-btn" style="background-color: rgba(33,37,41,255);" (click)="openModal()">
           <div class="add-icon"></div>
-          <div class="btn-txt">Añadir</div>
+          <div class="btn-txt" style="color: white">Añadir</div>
         </button>
       </div>
     <app-insertar-productos *ngIf="modalOpen"></app-insertar-productos> <!--Esto solo tendra que ser visible para el admin, el resto no deberia poder verlo-->
 </div>
+

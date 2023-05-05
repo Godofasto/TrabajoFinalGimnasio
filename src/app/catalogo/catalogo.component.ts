@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import Swal from 'sweetalert2';
 
+
 @Component({
   selector: 'app-catalogo',
   templateUrl: './catalogo.component.html',
@@ -11,6 +12,10 @@ export class CatalogoComponent { //implements OnInit
   cosas:any;
   prueba:any;
   modalOpen = false;
+  isClickedA = false;
+  isClickedB = false;
+  isClickedC = false;
+  isClickedD = false;
   constructor(private http: HttpClient) {}
 
   // ngOnInit(): void {
@@ -52,5 +57,32 @@ export class CatalogoComponent { //implements OnInit
       console.log(response);
       this.cosas = response;
     });
+  }
+  toggleClickedA(){
+    this.isClickedA = !this.isClickedA;
+    this.isClickedB = false;
+    this.isClickedC = false;
+    this.isClickedD = false;
+  }
+  toggleClickedB(){
+    this.isClickedB = !this.isClickedB;
+    this.isClickedA = false;
+    this.isClickedC = false;
+    this.isClickedD = false;
+  }
+  toggleClickedC(){
+    this.isClickedC = !this.isClickedC;
+    this.isClickedA = false;
+    this.isClickedB = false;
+    this.isClickedD = false;
+  }
+  toggleClickedD(){
+    this.isClickedD = !this.isClickedD;
+    this.isClickedA = false;
+    this.isClickedB = false;
+    this.isClickedC = false;
+  }
+  borrarProducto(){
+    console.log("a")
   }
 }

@@ -1,15 +1,44 @@
 .cuadropruebabbdd{
-    border: 1px solid black;
+    
     height: 100%;
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    
+    column-gap: 30px;
+    padding-top: 5vh;
 }
-
+.cabeceraCatalogo{
+  text-align: center;
+  font-family: airwaves;
+  font-size: 50px;
+  letter-spacing: 4px;
+}
+.subcabeceraCatalogo{
+  text-align: center;
+  font-size: 16px;
+  font-family:Verdana, Geneva, Tahoma, sans-serif;
+  font-style: italic;
+}
+.imagencatalogo{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 8vw;
+}
+.colocar{
+  display: flex;
+  flex-direction: column;
+  row-gap: 80px;
+  padding-top: 10vh;
+  padding-left: 2vh;
+}
+.clicked{
+  color: red;
+}
 .barraGeneros{
   display: flex;
-  justify-content: space-evenly;
+  flex-direction: row;
+  justify-content: right;
 }
 .textoCat{
   text-align: center;
@@ -17,6 +46,7 @@
   font-family: airwaves; 
   cursor: pointer;
 }
+
 .textoCat:hover{
   transition: 0.5s ease-in-out;
   color: red;
@@ -113,4 +143,182 @@
     right: 15px;
     height: 4px;
     top: calc(50% - 2px);
+  }
+
+
+
+  * {
+    box-sizing: border-box;
+    font-weight: normal;
+  }
+  
+  body {
+    color: #555;
+    background: #222;
+    text-align: center;
+    font-family: 'Roboto Mono';
+    padding: 1em;
+  }
+  
+  h1 {
+    font-size: 2.2em;
+  }
+  
+  .flip {
+    position: relative;
+    border: 1px solid black;
+    border-radius: 5px;
+  }
+  
+  .flip > .front,
+  .flip > .back {
+    display: block;
+    transition-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    transition-duration: 0.5s;
+    transition-property: transform, opacity;
+  }
+  
+  .flip > .front {
+    transform: rotateY(0deg);
+  }
+  
+  .flip > .back {
+    position: absolute;
+    opacity: 0;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    transform: rotateY(-180deg);
+  }
+  
+  .flip:hover > .front {
+    transform: rotateY(180deg);
+  }
+  
+  .flip:hover > .back {
+    opacity: 1;
+    transform: rotateY(0deg);
+  }
+  
+  .flip.flip-vertical > .back {
+    transform: rotateX(-180deg);
+  }
+  
+  .flip.flip-vertical:hover > .front {
+    transform: rotateX(180deg);
+  }
+  
+  .flip.flip-vertical:hover > .back {
+    transform: rotateX(0deg);
+  }
+  
+  .flip {
+    display: inline-block;
+    margin-right: 2px;
+    margin-bottom: 1em;
+    width: 400px;
+  }
+  
+  .flip > .front,
+  .flip > .back {
+    display: block;
+    color: black;
+    font-family: airwaves;
+    width: inherit - 20px;
+    background-size:contain !important;
+    background-position: center !important;
+    -webkit-text-stroke: 0.2px white;
+    height: 220px;
+    padding: 1em 2em;
+    background: white;
+    border-radius: 10px;
+  }
+  
+  .flip > .front > p {
+    font-size: 1.2rem;
+    line-height: 160%;
+    color: #999;
+  }
+
+
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #ffffff;
+    background-image: linear-gradient(315deg, #ffffff 0%, #d7e1ec 74%);
+  }
+  
+  .noselect {
+    -webkit-touch-callout: none;
+      -webkit-user-select: none;
+       -khtml-user-select: none;
+         -moz-user-select: none;
+          -ms-user-select: none;
+              user-select: none;
+      -webkit-tap-highlight-color: transparent;
+  }
+  
+  .noselect {
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    background: red;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 1px 1px 3px rgba(0,0,0,0.15);
+    background: #e62222;
+  }
+  
+  .noselect, .noselect span {
+    transition: 200ms;
+  }
+  
+  .noselect .text {
+    transform: translateX(7px);
+    color: white;
+    font-weight: bold;
+  }
+  
+  .noselect .icon {
+    position: absolute;
+    
+    transform: translateX(5px);
+    height: 30px;
+    width: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .noselect svg {
+    width: 15px;
+    fill: #eee;
+  }
+  
+  .noselect:hover {
+    background: #ff3636;
+  }
+  
+  .noselect:hover .text {
+    color: transparent;
+  }
+  
+  .noselect:hover .icon {
+    border-left: none;
+  }
+  
+  .noselect:focus {
+    outline: none;
   }
