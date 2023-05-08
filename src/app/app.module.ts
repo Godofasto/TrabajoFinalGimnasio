@@ -19,6 +19,7 @@ import { CatalogoComponent } from './catalogo/catalogo.component';
 import { HttpClientModule } from '@angular/common/http';
 import { InsertarProductosComponent } from './insertar-productos/insertar-productos.component'; // Importar HttpClientModule
 import {FormsModule} from '@angular/forms';
+import { EntrenadoresComponent } from './entrenadores/entrenadores.component';
 
 
 
@@ -29,6 +30,7 @@ const appRoutes:Routes=[
   {path:'cuotas', component:CuotasComponent},
   {path:'perfil', component:PerfilComponent, canActivate: [GuardaPerfilGuard]},
   {path:'registro', component:RegistroComponent},
+  {path:'entrenadores', component:EntrenadoresComponent},
   {path:'iniciosesion', component:IniciosesionComponent} //Cuando se vaya a acceder 
 ];
 
@@ -47,7 +49,8 @@ const appRoutes:Routes=[
     RegistroComponent,
     IniciosesionComponent,
     CatalogoComponent,
-    InsertarProductosComponent
+    InsertarProductosComponent,
+    EntrenadoresComponent
   ],
   imports: [
     BrowserModule,

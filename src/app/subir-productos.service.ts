@@ -9,6 +9,12 @@ export class SubirProductosService {
   constructor(private http:HttpClient) { }
 
   subirProducto(datos : any){
-    return this.http.post('https://localhost:7104/api/productos/añadir', datos)
+    return this.http.post('https://localhost:7104/api/productos/añadir', datos);
+  }
+  recogerProductos(dato: any){
+    var req ={
+      Dato : dato
+    }
+    return this.http.post('https://localhost:7104/api/productos/RetornarTodo', req);
   }
 }

@@ -1,22 +1,24 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import {Location} from '@angular/common';
 import Swal from 'sweetalert2';
-
+import { SubirProductosService } from '../subir-productos.service';
 
 @Component({
   selector: 'app-catalogo',
   templateUrl: './catalogo.component.html',
   styleUrls: ['./catalogo.component.css']
 })
-export class CatalogoComponent { //implements OnInit 
+export class CatalogoComponent implements OnInit{ //implements OnInit 
+  miModelo={nombre: '', descripcion:'', precio:0, urlImagen:'', tipo:''}
   cosas:any;
   prueba:any;
   modalOpen = false;
   isClickedA = false;
   isClickedB = false;
   isClickedC = false;
-  isClickedD = false;
-  constructor(private http: HttpClient) {}
+  isClickedD = true;
+  constructor(private http: HttpClient, private location:Location,private subirproductoService : SubirProductosService) {}
 
   // ngOnInit(): void {
   //   this.http.get('https://localhost:7104/api/productos/listado').subscribe((response)=>{
@@ -52,11 +54,21 @@ export class CatalogoComponent { //implements OnInit
       this.cosas = response;
     });
   }
-  mostrarTodo(){
-    this.http.get('https://localhost:7104/api/productos/listado').subscribe((response)=>{
-      console.log(response);
+  // mostrarTodo(){
+  //   this.http.get('https://localhost:7104/api/productos/listado').subscribe((response)=>{
+  //     console.log(response);
+  //     this.cosas = response;
+  //   });
+  // }
+  mostrarRedux(dat){
+
+    this.subirproductoService.recogerProductos(dat).subscribe((response)=>{
+      console.log(this.cosas)
       this.cosas = response;
-    });
+    })
+  }
+  ngOnInit(){
+    this.mostrarRedux('');
   }
   toggleClickedA(){
     this.isClickedA = !this.isClickedA;
@@ -82,7 +94,26 @@ export class CatalogoComponent { //implements OnInit
     this.isClickedB = false;
     this.isClickedC = false;
   }
-  borrarProducto(){
-    console.log("a")
+  borrarProducto(Id : Number){ //Podria intentar ocultarlos en vez de eliminarlos directamente
+    console.log(this.cosas)
+    Swal.fire({
+      title: '¿Estas seguro?',
+      text: "No podrás recuperar este producto",
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      cancelButtonText: 'Cancelar',
+      confirmButtonText: 'Eliminar'
+    }).then((result) => {
+      if (result.isConfirmed) {
+        this.http.delete(`https://localhost:7104/api/productos/${Id}`).subscribe(()=>{
+        const indice = this.cosas.findIndex(p => p.id === Id);
+        this.cosas.splice(indice, 1); //Esto es para que se vea en local el cambio porque recargar la pagina es cutre
+    })
+        
+      }
+    })
+    
   }
 }

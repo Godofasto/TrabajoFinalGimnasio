@@ -1,3 +1,5 @@
+
+
 <div class="container-fluid">
     <div class="row">
         <div class="col-12 cabeceraCatalogo">
@@ -9,10 +11,10 @@
     </div>
     <div class="row barraGeneros">
         <div class="colocar col-2">
-            <p class="col-2 textoCat" (click)="mostrarSuplementacion()" (click)="toggleClickedA()" [ngClass]="{'clicked':isClickedA}">Suplementación</p>
-            <p class="col-2 textoCat" (click)="mostrarModa()" (click)="toggleClickedB()" [ngClass]="{'clicked':isClickedB}">Moda</p>
-            <p class="col-2 textoCat" (click)="mostrarEquipamiento()" (click)="toggleClickedC()" [ngClass]="{'clicked':isClickedC}">Equipamiento</p>
-            <p class="col-2 textoCat" (click)="mostrarTodo()" (click)="toggleClickedD()" [ngClass]="{'clicked':isClickedD}">Todo</p>
+            <p class="col-2 textoCat" (click)="mostrarRedux('Suplementos')" (click)="toggleClickedA()" [ngClass]="{'clicked':isClickedA}">Suplementación</p>
+            <p class="col-2 textoCat" (click)="mostrarRedux('Moda')" (click)="toggleClickedB()" [ngClass]="{'clicked':isClickedB}">Moda</p>
+            <p class="col-2 textoCat" (click)="mostrarRedux('Equipamiento')" (click)="toggleClickedC()" [ngClass]="{'clicked':isClickedC}">Equipamiento</p>
+            <p class="col-2 textoCat" (click)="mostrarRedux('Todo')" (click)="toggleClickedD()" [ngClass]="{'clicked':isClickedD}">Todo</p>
         </div>
         <div class="cuadropruebabbdd col-10">
             <!-- {{cosa.nombre|json}}
@@ -41,7 +43,8 @@
                    <h2>≈{{cosa.precio}} €</h2>
                    <p style="font-size: 20px;">{{cosa.descripcion}}</p>
                 </div>
-                <button class="noselect" (click)="borrarProducto()"><span class='text'></span><span class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M24 20.188l-8.315-8.209 8.2-8.282-3.697-3.697-8.212 8.318-8.31-8.203-3.666 3.666 8.321 8.24-8.206 8.313 3.666 3.666 8.237-8.318 8.285 8.203z"/></svg></span></button>
+                <i (click)="borrarProducto(cosa.id)"class="fa fa-trash iconopapelera"></i>
+                <!-- <button class="noselect" ><span class='text'></span><span class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M24 20.188l-8.315-8.209 8.2-8.282-3.697-3.697-8.212 8.318-8.31-8.203-3.666 3.666 8.321 8.24-8.206 8.313 3.666 3.666 8.237-8.318 8.285 8.203z"/></svg></span></button> -->
             </div>
         </div>        
     </div>

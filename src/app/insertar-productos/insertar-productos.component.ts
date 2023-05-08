@@ -1,6 +1,6 @@
 import { Component, ViewChild } from '@angular/core';
 import { SubirProductosService } from '../subir-productos.service';
-
+import {Location} from '@angular/common';
 
 
 @Component({
@@ -25,6 +25,7 @@ export class InsertarProductosComponent {
        (respuesta) =>{
          console.log("Los datos se guardaron correctamente");
          this.miFormularioRef.reset();
+         window.location.reload();
        },
        (error) => {
          console.log("No ha funcionado la subida del producto")

@@ -1,3 +1,8 @@
+/* .aaa{
+  background-image: url("./../../assets/fondotarjetas1.jpg");
+  background-position: center;
+  background-size: contain;
+} */
 .cuadropruebabbdd{
     
     height: 100%;
@@ -15,7 +20,7 @@
 }
 .subcabeceraCatalogo{
   text-align: center;
-  font-size: 16px;
+  font-size: 20px;
   font-family:Verdana, Geneva, Tahoma, sans-serif;
   font-style: italic;
 }
@@ -321,4 +326,15 @@
   
   .noselect:focus {
     outline: none;
+  }
+
+  .iconopapelera{
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    font-size: 30px;
+    position: absolute;
+  }
+  .iconopapelera:hover{
+    color: red;
   }
