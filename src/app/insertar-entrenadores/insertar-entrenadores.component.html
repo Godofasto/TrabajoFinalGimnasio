@@ -1,0 +1,31 @@
+<form #miFormulario = "ngForm" name="miFormulario" (ngSubmit)="onSubmit()">
+    <div class="mb-3">
+        <label for="nombre" class="form-label">Nombre del entrenador: </label>
+        <input type="text" id="nombre" name="nombre" class="form-control" [(ngModel)] = "miModelo.Nombre">
+    </div>
+    <div class="mb-3">
+        <label for="descripcion" class="form-label">Descripcion del entrenador: </label>
+        <input type="text" id="descripcion" name="descripcion" class="form-control" [(ngModel)] = "miModelo.Descripcion">
+    </div>    
+    <div class="mb-3">
+        <label for="precio" class="form-label">Precio mensual del entrenador </label>
+        <input type="text" id="precio" name="precio" class="form-control" [(ngModel)] = "miModelo.precioMensual">
+    </div>
+    <div class="mb-3">
+        <label for="tipo" class="form-label">Dias activos del entrenador: </label>
+        <input type="text" id="dias" name="dias" class="form-control" [(ngModel)] = "miModelo.horarioDias">
+    </div>
+    <div class="mb-3">
+        <label for="tipo" class="form-label">Horas activas del entrenador: </label>
+        <input type="text" id="horas" name="horas" class="form-control" [(ngModel)] = "miModelo.horarioHoras">
+    </div>
+    <div class="mb-3">
+        <label for="tipo" class="form-label">Telefono del entrenador: </label>
+        <input type="number" id="horas" name="Telef" class="form-control" [(ngModel)] = "miModelo.numeroTelefono">
+    </div>
+    <div class="mb-3">
+        <label for="imagen" class="form-label">Imagen del producto: </label>
+        <input type="file" id="imagen" name="imagen" class="form-control"  (change)="convertirImagen($event)"> <!--[(ngModel)] = "miModelo.urlImagen"-->
+     </div>
+    <button class="btn btn-primary">Subir Producto</button>
+</form>

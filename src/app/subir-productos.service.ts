@@ -12,8 +12,8 @@ export class SubirProductosService {
     return this.http.post('https://localhost:7104/api/productos/añadir', datos);
   }
   recogerProductos(dato: any){
-    var req ={
-      Dato : dato
+    var req ={ //Muy importante que el atributo se llame igual aqui que en el .NET, antes no eran TipoDato los dos y fallaba
+      TipoDato : dato
     }
     return this.http.post('https://localhost:7104/api/productos/RetornarTodo', req);
   }

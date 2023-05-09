@@ -36,24 +36,24 @@ export class CatalogoComponent implements OnInit{ //implements OnInit
     }
       
   }
-  mostrarSuplementacion(){
-    this.http.get('https://localhost:7104/api/productos/listadoSuplementacion').subscribe((response)=>{
-      console.log(response);
-      this.cosas = response;
-    });
-  }
-  mostrarModa(){
-    this.http.get('https://localhost:7104/api/productos/listadoModa').subscribe((response)=>{
-      console.log(response);
-      this.cosas = response;
-    });
-  }
-  mostrarEquipamiento(){
-    this.http.get('https://localhost:7104/api/productos/listadoEquipamiento').subscribe((response)=>{
-      console.log(response);
-      this.cosas = response;
-    });
-  }
+  // mostrarSuplementacion(){
+  //   this.http.get('https://localhost:7104/api/productos/listadoSuplementacion').subscribe((response)=>{
+  //     console.log(response);
+  //     this.cosas = response;
+  //   });
+  // }
+  // mostrarModa(){
+  //   this.http.get('https://localhost:7104/api/productos/listadoModa').subscribe((response)=>{
+  //     console.log(response);
+  //     this.cosas = response;
+  //   });
+  // }
+  // mostrarEquipamiento(){
+  //   this.http.get('https://localhost:7104/api/productos/listadoEquipamiento').subscribe((response)=>{
+  //     console.log(response);
+  //     this.cosas = response;
+  //   });
+  // }
   // mostrarTodo(){
   //   this.http.get('https://localhost:7104/api/productos/listado').subscribe((response)=>{
   //     console.log(response);
@@ -61,10 +61,11 @@ export class CatalogoComponent implements OnInit{ //implements OnInit
   //   });
   // }
   mostrarRedux(dat){
-
     this.subirproductoService.recogerProductos(dat).subscribe((response)=>{
-      console.log(this.cosas)
+      console.log(response);
       this.cosas = response;
+    }, (error) => {
+      console.error(error);
     })
   }
   ngOnInit(){

@@ -20,6 +20,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { InsertarProductosComponent } from './insertar-productos/insertar-productos.component'; // Importar HttpClientModule
 import {FormsModule} from '@angular/forms';
 import { EntrenadoresComponent } from './entrenadores/entrenadores.component';
+import { InsertarEntrenadoresComponent } from './insertar-entrenadores/insertar-entrenadores.component';
 
 
 
@@ -50,7 +51,8 @@ const appRoutes:Routes=[
     IniciosesionComponent,
     CatalogoComponent,
     InsertarProductosComponent,
-    EntrenadoresComponent
+    EntrenadoresComponent,
+    InsertarEntrenadoresComponent
   ],
   imports: [
     BrowserModule,
@@ -59,7 +61,7 @@ const appRoutes:Routes=[
     HttpClientModule,
     FormsModule
   ],
-  providers: [],
+  providers: [Location],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

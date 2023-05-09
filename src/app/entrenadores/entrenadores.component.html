@@ -2,7 +2,44 @@
     <div class="row">
         <div class="col-12 text-center tituloentrenadores">Entrenadores</div>
         <div class="col-12 subcabeceraEntrenadores">
-            Información acerca de nuestros expertos 
+            Información acerca de nuestros expertos en fitness
         </div>
     </div>
 </div>
+<div class="container-fluid grupotarjetasentrenador">
+    <div class="row">
+        <div class="col-10 mx-auto"> <!--NGFOR-->
+            <div id="home" class="first_page mx-auto" *ngFor="let cosa of cosas">
+                <div class="wrapper">
+                  <div class="content-splitter">
+                    <div class="nav">
+                      <ul class="navbar">
+                        <li><i class="fa-regular fa-calendar-check"></i> Lunes-Jueves</li>
+                        <li><i class="fa-regular fa-clock"></i> 9:00-18:00</li>
+                        <li><i class="fa fa-money-bill-wave" style="font-size: 16px;"></i> 70€/Mes</li>
+                        <li><i class="fa fa-phone"></i> 609154981</li>
+                      </ul>
+                    </div>
+                    <div class="left">
+                      <div class="block">
+                        <div class="header">David Rodríguez Jiménez</div>
+                        <div class="content">I am a Freelance Designer and Photographer, each experience is for me a unique mean of growing as a person and delivering great content. (And this is some dummy text to fill more space.)</div>
+                      </div>
+                      <div class="c2a">Contáctame!</div>
+                    </div>
+                  </div>
+                  <div class="right">
+                      <img src="https://images.unsplash.com/photo-1580707578919-892eb22db615?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTV8fG1hbiUyMHBvcnRyYWl0fGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=60" alt="">
+                    </div>
+                </div>
+              </div>
+              </div>
+        </div>
+    </div>
+    <div class="subirProducto" style="text-align: center;">
+        <button class="icon-btn add-btn" style="background-color: rgba(33,37,41,255);" (click)="openModal()">
+          <div class="add-icon"></div>
+          <div class="btn-txt" style="color: white">Añadir</div>
+        </button>
+      </div>
+    <app-insertar-entrenadores *ngIf="modalOpen"></app-insertar-entrenadores>

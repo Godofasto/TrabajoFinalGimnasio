@@ -14,3 +14,240 @@
     font-family:Verdana, Geneva, Tahoma, sans-serif;
     font-style: italic;
   }
+  .grupotarjetasentrenador{
+    /* background-image: url("./../../assets/posiblefondo.jpg"); */
+  }
+
+  @import url('https://fonts.googleapis.com/css2?family=Staatliches&display=swap');
+
+
+html {
+  height: 100%;
+  overflow: hidden;
+  background: hsl(0,0%,95%);
+}
+body {
+  font-family: 'Staatliches', cursive;
+  margin: 0;  
+  padding: 0;
+  box-sizing: border-box;
+}
+a {
+  color: black;
+  text-decoration: none;
+}
+
+#home {
+  width: 80vw; 
+  height: 65vh;
+  display: grid;
+  place-items: center;
+}
+.wrapper {
+  
+  display: grid;
+  grid-template-columns: 6fr 4fr;
+  width: 50vw;
+  height: 52vh;
+  
+  background: hsl(0,0%,95%);
+  box-shadow: 1px 1px 25px 3px rgba(0,0,0,.3); 
+}
+
+/*************/
+.nav {
+  position: relative;
+  left: 2%;
+  height: 10%;
+  width: max-content;
+  padding-bottom: 1em;
+}
+.navbar {
+  padding-top: 2%;
+}
+.navbar li {
+  position: relative;
+  list-style: none;
+  display:inline;
+  margin-right: 1vw;
+  
+  font-size: 1.225rem;
+}
+.navbar li::after {
+  content:"";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  
+  width: 100%;
+  height: 2px;
+  
+  background: black;
+  
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 250ms ease;
+}
+.navbar li:hover::after {
+  transform: scaleX(1);
+  transform-origin: left;
+  
+  box-shadow: 0px 4px 5px 2px rgba(0,0,0,.1);
+}
+
+
+/*************/
+.header{
+  width: max-content;
+  font-size: 2.875rem;
+
+  white-space: nowrap;
+  color: transparent;
+  -webkit-text-stroke: 1px #222222;
+  
+}
+
+
+
+/*************/
+.content-splitter {
+  display: flex;
+  flex-direction: column;
+  gap: 2em;
+}
+.left {
+  display: flex;
+  flex-direction: column;
+  gap: 4em;
+  padding: 0 3em;
+  width: minmax(80px, 80%);
+}
+.block { 
+  display: flex;
+  flex-direction: column;
+  gap: .75em;
+}
+.content {
+  font-size: 1.5em;
+  color: #404040;
+}
+
+.c2a {
+  font-size: 1.6em;
+  color: white;
+  padding: .4em .8em;
+  width: max-content;
+  background: #222222;
+  border-radius: 4px;
+  transition: all 250 ease-in-out;
+  cursor: pointer;
+  transition: all 0.5s;
+}
+.c2a:hover{
+  background: red;
+}
+
+.right {
+  overflow: hidden;
+  clip-path: polygon(35% 0%, 100% 0, 100% 100%, 8% 100%); 
+  object-fit: cover;
+}
+
+/*  */
+@media screen and (max-width: 768px) {
+  .wrapper {
+    grid-template-columns: 1fr;
+    width: 90vw;
+    height: auto;
+  }
+  .content-splitter {
+    gap: 1em;
+  }
+  .left {
+    gap: 2em;
+    padding: 0 2em;
+  }
+  .right {
+    display: none;
+  }
+}
+.icon-btn {
+  width: 50px;
+  height: 50px;
+  border: 1px solid #cdcdcd;
+  background: white;
+  border-radius: 25px;
+  overflow: hidden;
+  position: relative;
+  transition: width 0.2s ease-in-out;
+}
+.add-btn:hover {
+  width: 120px;
+}
+.add-btn::before,
+.add-btn::after {
+  transition: width 0.2s ease-in-out, border-radius 0.2s ease-in-out;
+  content: "";
+  position: absolute;
+  height: 4px;
+  width: 10px;
+  top: calc(50% - 2px);
+  background: red;
+}
+.add-btn::after {
+  right: 14px;
+  overflow: hidden;
+  border-top-right-radius: 2px;
+  border-bottom-right-radius: 2px;
+}
+.add-btn::before {
+  left: 14px;
+  border-top-left-radius: 2px;
+  border-bottom-left-radius: 2px;
+}
+.icon-btn:focus {
+  outline: none;
+}
+.btn-txt {
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+.add-btn:hover::before,
+.add-btn:hover::after {
+  width: 4px;
+  border-radius: 2px;
+}
+.add-btn:hover .btn-txt {
+  opacity: 1;
+}
+.add-icon::after,
+.add-icon::before {
+  transition: all 0.2s ease-in-out;
+  content: "";
+  position: absolute;
+  height: 20px;
+  width: 2px;
+  top: calc(50% - 10px);
+  background: red;
+  overflow: hidden;
+}
+.add-icon::before {
+  left: 22px;
+  border-top-left-radius: 2px;
+  border-bottom-left-radius: 2px;
+}
+.add-icon::after {
+  right: 22px;
+  border-top-right-radius: 2px;
+  border-bottom-right-radius: 2px;
+}
+.add-btn:hover .add-icon::before {
+  left: 15px;
+  height: 4px;
+  top: calc(50% - 2px);
+}
+.add-btn:hover .add-icon::after {
+  right: 15px;
+  height: 4px;
+  top: calc(50% - 2px);
+}
