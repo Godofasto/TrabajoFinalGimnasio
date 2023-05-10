@@ -4,5 +4,15 @@
     align-items: center;
     border: black solid 1px;
     width: 60vw;
-    height: 20vh;
+    height: 30vh;
 }
+
+.videoWrapper {
+    height: 610px;
+    overflow: hidden;
+  }
+  
+  iframe {
+      margin-top: -73px;
+      
+  }
