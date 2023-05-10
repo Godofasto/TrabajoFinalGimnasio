@@ -2,6 +2,22 @@
     font-family: airwaves;
     src: url("./../../assets/airwaves-rounded.ttf");
   }
+  @font-face {
+    font-family: caviar1;
+    src: url("./../../assets/CaviarDreams.ttf");
+  }
+  @font-face {
+    font-family: caviar2;
+    src: url("./../../assets/CaviarDreams_Bold.ttf");
+  }
+  @font-face {
+    font-family: caviar3;
+    src: url("./../../assets/CaviarDreams_BoldItalic.ttf");
+  }
+  @font-face {
+    font-family: caviar4;
+    src: url("./../../assets/CaviarDreams_Italic.ttf");
+  }
   .tituloentrenadores{
     text-align: center;
     font-family: airwaves;
@@ -48,7 +64,7 @@ a {
   display: grid;
   grid-template-columns: 6fr 4fr;
   width: 50vw;
-  height: 52vh;
+  height: 54vh;
   
   background: hsl(0,0%,95%);
   box-shadow: 1px 1px 25px 3px rgba(0,0,0,.3); 
@@ -70,8 +86,8 @@ a {
   list-style: none;
   display:inline;
   margin-right: 1vw;
-  
-  font-size: 1.225rem;
+  font-family: caviar3;
+  font-size: 1.1rem;
 }
 .navbar li::after {
   content:"";
@@ -99,11 +115,11 @@ a {
 /*************/
 .header{
   width: max-content;
-  font-size: 2.875rem;
-
+  font-size: 3rem;
+  font-family: airwaves;
   white-space: nowrap;
-  color: transparent;
-  -webkit-text-stroke: 1px #222222;
+  color: black;
+  /* -webkit-text-stroke: 1px black; */
   
 }
 
@@ -128,13 +144,15 @@ a {
   gap: .75em;
 }
 .content {
-  font-size: 1.5em;
+  font-size: 1.15em;
   color: #404040;
+  font-family: caviar2;
 }
 
 .c2a {
-  font-size: 1.6em;
+  font-size: 1.7em;
   color: white;
+  font-family: airwaves;
   padding: .4em .8em;
   width: max-content;
   background: #222222;
@@ -250,4 +268,15 @@ a {
   right: 15px;
   height: 4px;
   top: calc(50% - 2px);
+}
+
+.iconopapelera{
+  top: 10px;
+  right: 280px;
+  cursor: pointer;
+  font-size: 30px;
+  position: absolute;
+}
+.iconopapelera:hover{
+  color: red;
 }

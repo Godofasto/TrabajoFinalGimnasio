@@ -45,10 +45,12 @@
     font-family: ntr;
     font-size: 30px;
     font-weight: 1000;
+    
   }
   .textocarta{
       font-family: ntr;
       font-size: 25px;
+      padding-left: 10px;
     }
 
     .botoncuota {
