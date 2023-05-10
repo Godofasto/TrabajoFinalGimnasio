@@ -21,7 +21,10 @@ import { InsertarProductosComponent } from './insertar-productos/insertar-produc
 import {FormsModule} from '@angular/forms';
 import { EntrenadoresComponent } from './entrenadores/entrenadores.component';
 import { InsertarEntrenadoresComponent } from './insertar-entrenadores/insertar-entrenadores.component';
-
+import { PechoTricepsComponent } from './pecho-triceps/pecho-triceps.component';
+import { EspaldaBicepsComponent } from './espalda-biceps/espalda-biceps.component';
+import { PiernaHombroComponent } from './pierna-hombro/pierna-hombro.component';
+// import { EmbedVideoModule } from 'ngx-embed-video';
 
 
 const appRoutes:Routes=[
@@ -52,10 +55,14 @@ const appRoutes:Routes=[
     CatalogoComponent,
     InsertarProductosComponent,
     EntrenadoresComponent,
-    InsertarEntrenadoresComponent
+    InsertarEntrenadoresComponent,
+    PechoTricepsComponent,
+    EspaldaBicepsComponent,
+    PiernaHombroComponent
   ],
   imports: [
     BrowserModule,
+    // EmbedVideoModule,
     RouterModule.forRoot(appRoutes),
     CommonModule,
     HttpClientModule,

@@ -1,6 +1,157 @@
+@font-face {
+    font-family: airwaves;
+    src: url("./../../assets/airwaves-rounded.ttf");
+  }
 .contenedordatos{
     position: relative;
     top: 0.9vh;
-    height: 87vh;
-    border: 1px solid grey;
+    display: flex;
+    align-items: center;
+    flex-direction: column;    
 }
+.cabeceraTablas{
+    font-family: airwaves;
+    font-size: 50px;
+    letter-spacing: 4px;
+    text-decoration:wavy;
+}
+.subcabeceraTablas{
+    font-size: 20px;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    font-style: italic;
+  }
+  .filaBotonesTablas{
+      padding-top: 22px;
+      padding-bottom: 30px;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-evenly;
+      width: 65vw;
+  }
+  @import url(https://fonts.googleapis.com/css?family=Electrolize);
+
+
+
+  @import url(https://fonts.googleapis.com/css?family=Electrolize);
+
+  * {
+      box-sizing: border-box;
+  }
+  
+  body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      background-color: #111;
+  }
+  
+  .space-btn {
+      position: relative;
+      font-family: Airwaves;
+      font-size: 1.5em;
+      text-transform: uppercase;
+      letter-spacing: 0.125em;
+      line-height: 1;
+      color: black;
+      margin: 0;
+      padding: 1em;
+      background: none;
+      border: none;
+      cursor: pointer;
+  }
+  
+  .space-btn:hover {
+      color: lighten(red, 20%);
+  }
+  
+  .space-btn:focus {
+      color: lighten(red, 10%);
+      outline: none;
+  }
+  
+  .space-btn:active {
+      color: red;
+  }
+  
+  .space-btn:before,
+  .space-btn:after {
+      content: "";
+      display: block;
+      position: absolute;
+      width: 100%;
+      height: 1px;
+  }
+  
+  .space-btn:before {
+      top: 0;
+      left: 0;
+      box-shadow: inset 1px 1px 0 0 red;
+  }
+  
+  .space-btn:after {
+      right: 0;
+      bottom: 0;
+      box-shadow: inset -1px -1px 0 0 red;
+  }
+  
+  .space-btn:hover:before {
+      animation: hoverShadowBefore 1s forwards;
+  }
+  
+  .space-btn:hover:after {
+      animation: hoverShadowAfter 1s forwards;
+  }
+  
+  @keyframes hoverShadowBefore {
+      0% {
+          width: 100%;
+          height: 1px;
+          top: 0;
+          left: 0;
+      }
+      33% {
+          width: 1px;
+          height: 100%;
+          top: 0;
+          left: 0;
+      }
+      66% {
+          width: 1px;
+          height: 1px;
+          top: calc(100% - 1px);
+          left: 0;
+      }
+      100% {
+          width: 100%;
+          height: 1px;
+          top: calc(100% - 1px);
+          left: 0;
+      }	
+  }
+  
+  @keyframes hoverShadowAfter {
+      0% {
+          width: 100%;
+          height: 1px;
+      }
+      33% {
+          width: 1px;
+          height: 100%;
+          bottom: 0;
+          right: 0;
+      }
+      66% {
+          width: 1px;
+          height: 1px;
+          bottom: calc(100% - 1px);
+          right: 0;
+      }
+      100% {
+          width: 100%;
+          height: 1px;
+          bottom: calc(100% - 1px);
+          right: 0;
+      }
+  }
+  
