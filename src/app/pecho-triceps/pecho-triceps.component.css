@@ -2,17 +2,21 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    border: black solid 1px;
+    border: grey solid 1px;
     width: 60vw;
-    height: 30vh;
+    height: 26vh;
 }
 
 .videoWrapper {
-    height: 610px;
+    height: 250px;
+    overflow: hidden;
+    position: absolute;
+    left: 125px;
+  }
+  .videoWrapper2 {
+    height: 250px;
     overflow: hidden;
   }
-  
   iframe {
       margin-top: -73px;
-      
   }

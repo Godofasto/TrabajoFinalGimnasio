@@ -11,10 +11,12 @@
     </div> -->
     <div class="row">
         <div class="filaBotonesTablas">
-            <button class="space-btn">Pecho-Triceps</button>
-            <button class="space-btn">Espalda-Biceps</button>
-            <button class="space-btn">Pierna-Hombro</button>
+            <button class="space-btn" (click)="activarPrimero()">Pecho-Triceps</button>
+            <button class="space-btn" (click)="activarSegundo()">Espalda-Biceps</button>
+            <button class="space-btn" (click)="activarTercero()">Pierna-Hombro</button>
         </div>
     </div>
-    <app-pecho-triceps></app-pecho-triceps>
+    <app-pecho-triceps *ngIf = "primero"></app-pecho-triceps>
+    <app-espalda-biceps *ngIf = "segundo"></app-espalda-biceps>
+    <app-pierna-hombro *ngIf = "tercero"></app-pierna-hombro>
 </div>

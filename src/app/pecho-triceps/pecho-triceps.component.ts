@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component} from '@angular/core';
 
 @Component({
   selector: 'app-pecho-triceps',
@@ -8,6 +8,7 @@ import { Component } from '@angular/core';
 export class PechoTricepsComponent {
   apiLoaded = false;
 
+  
   ngOnInit(){
     if (!this.apiLoaded) {
       const tag = document.createElement('script');
@@ -16,4 +17,5 @@ export class PechoTricepsComponent {
       this.apiLoaded = true;
     }
   }
+  
 }
