@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { RecogerEjerciciosService } from '../recoger-ejercicios.service';
+import { DomSanitizer } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-espalda-biceps',
@@ -10,11 +11,11 @@ import { RecogerEjerciciosService } from '../recoger-ejercicios.service';
 export class EspaldaBicepsComponent {
   apiLoaded = false;
   cosas:any;
-  constructor(private http: HttpClient,private RecogerEjercicioService : RecogerEjerciciosService){}
+  constructor(private http: HttpClient,private RecogerEjercicioService : RecogerEjerciciosService, public sanitizer : DomSanitizer){}
   ngOnInit(){
-    this.RecogerEjercicioService.recogerEspaldaBiceps({}).subscribe((response)=>{
+    this.RecogerEjercicioService.recogerEspaldaBiceps({}).subscribe((response: any)=>{
       console.log(response);
-      this.cosas = response;
+      this.cosas = response
     }, (error) => {
       console.error(error);
     })

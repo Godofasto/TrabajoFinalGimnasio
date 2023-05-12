@@ -24,8 +24,7 @@ import { InsertarEntrenadoresComponent } from './insertar-entrenadores/insertar-
 import { PechoTricepsComponent } from './pecho-triceps/pecho-triceps.component';
 import { EspaldaBicepsComponent } from './espalda-biceps/espalda-biceps.component';
 import { PiernaHombroComponent } from './pierna-hombro/pierna-hombro.component';
-import { interval, Subscription } from 'rxjs';
-import { switchMap } from 'rxjs/operators';
+import { DomSanitizer } from '@angular/platform-browser';
 // import {YouTubePlayerModule} from '@angular/youtube-player'
 // import { EmbedVideoModule } from 'ngx-embed-video';
 
