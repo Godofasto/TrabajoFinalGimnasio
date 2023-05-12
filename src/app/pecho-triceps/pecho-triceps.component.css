@@ -1,22 +1,68 @@
 .cuadroEjercicio{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border: grey solid 1px;
-    width: 60vw;
-    height: 26vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: grey solid 2px;
+  width: 60vw;
+  height: 26vh;
+  position: relative;
+  
 }
-
+.subtituloEjercicio{
+font-family: airwaves;
+font-size: 20px;
+letter-spacing: 1px;
+position: absolute;
+top: 80px;
+left: 503px;
+}
+.filaEjercicios{
+display: flex;
+justify-content: center;
+}
 .videoWrapper {
-    height: 250px;
-    overflow: hidden;
+  height: 250px;
+  overflow: hidden;
+  position: absolute;
+  left: 0px;
+}
+.videoWrapper2 {
+  height: 250px;
+  overflow: hidden;
+}
+iframe {
+    margin-top: -73px;
+    border-right: 3PX solid grey;
+}
+@font-face {
+  font-family: airwaves;
+  src: url("./../../assets/airwaves-rounded.ttf");
+}
+.nombreEjercicio{
+    font-family: airwaves;
     position: absolute;
-    left: 125px;
-  }
-  .videoWrapper2 {
-    height: 250px;
-    overflow: hidden;
-  }
-  iframe {
-      margin-top: -73px;
-  }
+    top: 4px;
+    font-size: 50px;
+    
+    left: 500px;
+    
+}
+.repeticionesEjercicio{
+  font-family: airwaves;
+  position: absolute;
+  top: 135px;
+  font-size: 45px;
+  letter-spacing: 5px;
+  left: 500px;
+  
+}
+.imagenMusculos{
+    width: 240px;
+    height: 240px;
+    background-image: url("./../../assets/Deadlift-muscles-worked.jpg");
+    background-position: center;
+    background-size: cover;
+    right: 3px;
+    position: absolute;
+    cursor: zoom-in;
+}

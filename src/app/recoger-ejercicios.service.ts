@@ -13,4 +13,19 @@ export class RecogerEjerciciosService {
     // }
     return this.http.post('https://localhost:7104/api/Ejercicios/EspaldaBiceps/RetornarEspaldaBiceps', {});
   }
+  recogerPechoTriceps(dato: any){
+    // var req ={ //Muy importante que el atributo se llame igual aqui que en el .NET, antes no eran TipoDato los dos y fallaba
+    //   TipoDato : dato
+    // }
+    return this.http.post('https://localhost:7104/api/Ejercicios/PechoTriceps/RetornarPechoTriceps', {});
+  }
+  recogerPiernaHombro(dato: any){
+    // var req ={ //Muy importante que el atributo se llame igual aqui que en el .NET, antes no eran TipoDato los dos y fallaba
+    //   TipoDato : dato
+    // }
+    return this.http.post('https://localhost:7104/api/Ejercicios/PiernaHombro/RetornarPiernaHombro', {});
+  }
+  subirEspaldaBiceps(){}
+  subirPechoTriceps(){}
+  subirPiernaHombro(){}
 }

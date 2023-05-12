@@ -11,6 +11,7 @@ import { DomSanitizer } from '@angular/platform-browser';
 export class EspaldaBicepsComponent {
   apiLoaded = false;
   cosas:any;
+  modalOpen = false;
   constructor(private http: HttpClient,private RecogerEjercicioService : RecogerEjerciciosService, public sanitizer : DomSanitizer){}
   ngOnInit(){
     this.RecogerEjercicioService.recogerEspaldaBiceps({}).subscribe((response: any)=>{
@@ -26,5 +27,8 @@ export class EspaldaBicepsComponent {
       document.body.appendChild(tag);
       this.apiLoaded = true;
     }
+  }
+  openModal(){
+    
   }
 }
