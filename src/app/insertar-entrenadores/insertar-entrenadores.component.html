@@ -1,31 +1,31 @@
-<form #miFormulario = "ngForm" name="miFormulario" (ngSubmit)="onSubmit()">
+<form [formGroup]="miFormulario" name="miFormulario" (ngSubmit)="onSubmit()">
     <div class="mb-3">
         <label for="nombre" class="form-label">Nombre del entrenador: </label>
-        <input type="text" id="nombre" name="nombre" class="form-control" [(ngModel)] = "miModelo.Nombre">
+        <input type="text" id="nombre" name="nombre" class="form-control" formControlName="nombre" required>
     </div>
     <div class="mb-3">
         <label for="descripcion" class="form-label">Descripcion del entrenador: </label>
-        <input type="text" id="descripcion" name="descripcion" class="form-control" [(ngModel)] = "miModelo.Descripcion">
+        <input type="text" id="descripcion" name="descripcion" class="form-control" formControlName="descripcion" required>
     </div>    
     <div class="mb-3">
         <label for="precio" class="form-label">Precio mensual del entrenador </label>
-        <input type="text" id="precio" name="precio" class="form-control" [(ngModel)] = "miModelo.precioMensual">
+        <input type="text" id="precio" name="precio" class="form-control" formControlName="precio" required>
     </div>
     <div class="mb-3">
         <label for="tipo" class="form-label">Dias activos del entrenador: </label>
-        <input type="text" id="dias" name="dias" class="form-control" [(ngModel)] = "miModelo.horarioDias">
+        <input type="text" id="dias" name="dias" class="form-control" formControlName="horarioDias" required>
     </div>
     <div class="mb-3">
         <label for="tipo" class="form-label">Horas activas del entrenador: </label>
-        <input type="text" id="horas" name="horas" class="form-control" [(ngModel)] = "miModelo.horarioHoras">
+        <input type="text" id="horas" name="horas" class="form-control" formControlName="horarioHoras" required>
     </div>
     <div class="mb-3">
         <label for="tipo" class="form-label">Telefono del entrenador: </label>
-        <input type="number" id="horas" name="Telef" class="form-control" [(ngModel)] = "miModelo.numeroTelefono">
+        <input type="text" id="horas" name="Telef" class="form-control" formControlName="telefono" required>
     </div>
     <div class="mb-3">
         <label for="imagen" class="form-label">Imagen del entrenador: </label>
-        <input type="file" id="imagen" name="imagen" class="form-control"  (change)="convertirImagen($event)"> <!--[(ngModel)] = "miModelo.urlImagen"-->
+        <input type="file" id="imagen" name="imagen" class="form-control" formControlName="imagen" (change)="convertirImagen($event)" required> <!--[(ngModel)] = "miModelo.urlImagen"-->
      </div>
     <button class="btn btn-primary">Subir Entrenador</button>
 </form>
