@@ -18,7 +18,7 @@ import { IniciosesionComponent } from './iniciosesion/iniciosesion.component';
 import { CatalogoComponent } from './catalogo/catalogo.component';
 import { HttpClientModule } from '@angular/common/http';
 import { InsertarProductosComponent } from './insertar-productos/insertar-productos.component'; // Importar HttpClientModule
-import {FormsModule} from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { EntrenadoresComponent } from './entrenadores/entrenadores.component';
 import { InsertarEntrenadoresComponent } from './insertar-entrenadores/insertar-entrenadores.component';
 import { PechoTricepsComponent } from './pecho-triceps/pecho-triceps.component';
@@ -71,7 +71,8 @@ const appRoutes:Routes=[
     RouterModule.forRoot(appRoutes),
     CommonModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [Location],
   bootstrap: [AppComponent]

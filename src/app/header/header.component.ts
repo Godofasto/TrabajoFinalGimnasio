@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import {Router} from '@angular/router';
+import { LocalStorageService } from '../local-storage.service';
 
 @Component({
   selector: 'app-header',
@@ -13,10 +14,13 @@ export class HeaderComponent {
   fuenteGold = 'assets/LatinWide.ttf'
   
 
-  constructor(private router: Router
+  constructor(private router: Router, private localStoragesService : LocalStorageService
     // private translate: TranslateService
   ) {
 
   }
-  
+  ngOnInit(){
+    const username = this.localStoragesService.username;
+    const password = this.localStoragesService.password;
+  }
 }

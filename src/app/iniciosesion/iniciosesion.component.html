@@ -4,13 +4,15 @@
         <h2 class="animation a1">Bienvenido de vuelta</h2>
         
       </div>
+      <form #miFormulario = "ngForm" name="miFormulario" (ngSubmit)="onSubmit(miFormulario)">
       <div class="form">
-        <input type="email" class="form-field animation a3" placeholder="Correo Electrónico">
-        <input type="password" class="form-field animation a4" placeholder="Contraseña">
+        <input type="nombre" name="nombre" [(ngModel)]="miModelo.nombre" class="form-field animation a3" placeholder="Tu nombre...">
+        <input type="password" name="contrasena" [(ngModel)]="miModelo.contrasena" class="form-field animation a4" placeholder="Tu contraseña...">
         <br>
-        <button class="animation a6 bn1">INICIA SESION</button>
+        <button class="animation a6 bn1" type="submit">INICIA SESION</button>
         <button class="animation a6 bn1" routerLink="/perfil">IR AL PERFIL DE MOMENTO</button>
       </div>
+    </form>
     </div>
     <div class="right"></div>
   </div>
