@@ -25,14 +25,15 @@ export class InsertarProductosComponent implements OnInit{
 
   ngOnInit() {
     this.miFormulario = new FormGroup({
-      nombre: new FormControl('', [Validators.required, Validators.pattern('/^[a-zA-Z\s]*$/')]),
+      nombre: new FormControl('', [Validators.required, Validators.pattern(/^[\p{L}\s]*$/u)]),
       descripcion: new FormControl('', Validators.required),
-      precio: new FormControl('', [Validators.required, Validators.pattern('/^[0-9]+(\.[0-9]+)?$/')]),
+      precio: new FormControl('', [Validators.required, Validators.pattern(/^\d{2}$/)]),
       tipo: new FormControl('', Validators.required),
       imagen: new FormControl('', Validators.required)  //TENGO QUE DESCRUBIR POR QUE ESTAS VALIDACIONES VAN RARAS!!!!!!!!!!!!! 
     });                                                 //Y PONER MEJOR LOS PLACEHOLDERS DEL DE ARTICULOS PARA QUE EL USUARIO SEPA QUE PONER!!!!!!!!!!!!
   }
    onSubmit(){
+    if(this.miFormulario.valid){
     this.miModelo.nombre = this.miFormulario.get('nombre').value;
     this.miModelo.descripcion = this.miFormulario.get('descripcion').value;
     this.miModelo.precio = this.miFormulario.get('precio').value;
@@ -51,6 +52,7 @@ export class InsertarProductosComponent implements OnInit{
        }
      )
    }
+  }
    convertirImagen(event: any) { //Esto lo pasa a base 64
     const archivo = event.target.files[0];
     if (archivo) {

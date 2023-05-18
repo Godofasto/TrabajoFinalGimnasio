@@ -1,4 +1,4 @@
-<form [formGroup]="miFormulario" name="miFormulario" (ngSubmit)="onSubmit()">
+<form [formGroup]="miFormulario" name="miFormulario" >
     <div class="mb-3">
         <label for="nombre" class="form-label">Nombre del entrenador: </label>
         <input type="text" id="nombre" name="nombre" class="form-control" formControlName="nombre" required>
@@ -9,23 +9,23 @@
     </div>    
     <div class="mb-3">
         <label for="precio" class="form-label">Precio mensual del entrenador </label>
-        <input type="text" id="precio" name="precio" class="form-control" formControlName="precio" required>
+        <input type="text" id="precio" name="precio" class="form-control" formControlName="precio" required placeholder="Ejemplo: 80">
     </div>
     <div class="mb-3">
         <label for="tipo" class="form-label">Dias activos del entrenador: </label>
-        <input type="text" id="dias" name="dias" class="form-control" formControlName="horarioDias" required>
+        <input type="text" id="dias" name="horarioDias" class="form-control" formControlName="horarioDias" required placeholder="Ejemplo: Lunes-Viernes">
     </div>
     <div class="mb-3">
         <label for="tipo" class="form-label">Horas activas del entrenador: </label>
-        <input type="text" id="horas" name="horas" class="form-control" formControlName="horarioHoras" required>
+        <input type="text" id="horas" name="horarioHoras" class="form-control" formControlName="horarioHoras" required placeholder="Ejemplo: 10:00-15:00">
     </div>
     <div class="mb-3">
         <label for="tipo" class="form-label">Telefono del entrenador: </label>
-        <input type="text" id="horas" name="Telef" class="form-control" formControlName="telefono" required>
+        <input type="text" id="horas" name="telefono" class="form-control" formControlName="telefono" required placeholder="Ejemplo: 609154988">
     </div>
     <div class="mb-3">
         <label for="imagen" class="form-label">Imagen del entrenador: </label>
         <input type="file" id="imagen" name="imagen" class="form-control" formControlName="imagen" (change)="convertirImagen($event)" required> <!--[(ngModel)] = "miModelo.urlImagen"-->
      </div>
-    <button class="btn btn-primary">Subir Entrenador</button>
+    <button class="btn btn-primary" (click)="onSubmit()">Subir Entrenador</button>
 </form>

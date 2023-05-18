@@ -17,17 +17,19 @@ export class InsertarEntrenadoresComponent {
 
   ngOnInit() {
     this.miFormulario = new FormGroup({
-      nombre: new FormControl('', [Validators.required, Validators.pattern('/^[a-zA-Z\s]*$/')]),
+      nombre: new FormControl('', [Validators.required, Validators.pattern(/^[\p{L}\s]*$/u)]), ///^[a-zA-Z\s]*$/
       descripcion: new FormControl('', Validators.required),
-      precio: new FormControl('', [Validators.required, Validators.pattern('')]),
-      horarioDias: new FormControl('', [Validators.required, Validators.pattern('\b(Lunes|Martes|Miércoles|Jueves|Viernes|Sábado|Domingo)-(Lunes|Martes|Miércoles|Jueves|Viernes|Sábado|Domingo)\b')]),
-      horarioHoras: new FormControl('', Validators.required),
-      telefono: new FormControl('', Validators.required),
+      precio: new FormControl('', [Validators.required, Validators.pattern(/^(?!0)\d{2,3}$/)]),
+      horarioDias: new FormControl('', [Validators.required, Validators.pattern(/^(Lunes|Martes|Miércoles|Jueves|Viernes|Sábado|Domingo)-(Lunes|Martes|Miércoles|Jueves|Viernes|Sábado|Domingo)$/)]),
+      horarioHoras: new FormControl('', [Validators.required, Validators.pattern(/^(0[0-9]|1[0-9]|2[0-3]):[0-5][0-9]-(0[0-9]|1[0-9]|2[0-3]):[0-5][0-9]$/)]),
+      telefono: new FormControl('', [Validators.required, Validators.pattern(/^\d{9}$/)]),
       imagen: new FormControl('', Validators.required)
     });
   }
+  
 
   onSubmit(){
+    if(this.miFormulario.valid){
     this.miModelo.Nombre = this.miFormulario.get('nombre').value;
     this.miModelo.Descripcion = this.miFormulario.get('descripcion').value;
     this.miModelo.precioMensual = this.miFormulario.get('precio').value;
@@ -40,9 +42,12 @@ export class InsertarEntrenadoresComponent {
         Swal.fire({
           icon: 'success',
           title: 'El entrenador se ha subido correctamente',
-        })
-        this.miFormularioRef.reset();
+        }).then((result) =>{
+          if(result.isConfirmed){
+            this.miFormulario.reset();
         window.location.reload();
+          }
+        })
       },
       (error) => {
         Swal.fire({
@@ -51,7 +56,12 @@ export class InsertarEntrenadoresComponent {
         })
       }
     )
-  }
+  }else{
+    Swal.fire({
+      icon: 'error',
+      title: 'Hay algun error en el formulario, revisa bien',
+    })
+  }}
   convertirImagen(event: any) { //Esto lo pasa a base 64
     const archivo = event.target.files[0];
   
