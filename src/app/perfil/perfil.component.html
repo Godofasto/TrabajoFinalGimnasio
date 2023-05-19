@@ -7,6 +7,7 @@
                     <div [ngStyle]="{'background-color': segundo ? 'red' : 'black'}" class="botonesraros" (click)="activarsegundo()"><span class="tuneoafter"></span>Mis Citas</div>
                     <div [ngStyle]="{'background-color': tercero ? 'red' : 'black'}" class="botonesraros" (click)="activartercero()"><span class="tuneoafter"></span>Mis Tablas</div>
                     <div [ngStyle]="{'background-color': cuarto ? 'red' : 'black'}" class="botonesraros" (click)="activarcuarto()"><span class="tuneoafter"></span>Cerrar sesion</div>
+                    
                 </div>
                 <div class="col-9 contenidoperfil">
                     <app-frag-mis-datos *ngIf="primero"></app-frag-mis-datos>

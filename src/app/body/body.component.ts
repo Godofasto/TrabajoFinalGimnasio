@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-
+import { LocalStorageService } from '../local-storage.service';
 @Component({
   selector: 'app-body',
   templateUrl: './body.component.html',
@@ -8,4 +8,8 @@ import { Component } from '@angular/core';
 export class BodyComponent {
   grandeUrl = 'assets/Gym1.jpg'
   logoUrl = 'assets/LogoB.png';
+  constructor(private localStoragesService : LocalStorageService){}
+  ngOnInit(){
+    console.log(this.localStoragesService.isLoggedIn());
+  }
 }

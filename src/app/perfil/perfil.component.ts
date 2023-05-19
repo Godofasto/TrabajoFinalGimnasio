@@ -1,15 +1,19 @@
-import { Component } from '@angular/core';
-
+import { Component, ElementRef, ViewChild } from '@angular/core';
+import { OnInit } from '@angular/core';
+import { LocalStorageService } from '../local-storage.service';
 @Component({
   selector: 'app-perfil',
   templateUrl: './perfil.component.html',
   styleUrls: ['./perfil.component.css']
 })
 export class PerfilComponent {
+  @ViewChild('cositas', {static: true}) myElement: ElementRef;
+  
   primero:boolean = false;
   segundo:boolean = false;
   tercero:boolean = false;
   cuarto:boolean = false;
+  constructor(private localStoragesService : LocalStorageService){}
   activarprimero(){
     if(this.primero === false){
       this.primero = true;
@@ -41,5 +45,8 @@ export class PerfilComponent {
       this.segundo = false;
       this.tercero= false;
     }
+  }
+  ngOnInit(){
+    
   }
 }

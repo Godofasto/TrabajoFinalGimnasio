@@ -14,8 +14,9 @@ export class LocalStorageService {
   set username(value: string | null){
     if(value){
       localStorage.setItem(this.USERNAME_KEY, value);
+      localStorage.setItem('isLoggedIn', 'true');
     }else{
-      localStorage.removeItem(this.USERNAME_KEY); //eSTO POR QUE?
+      localStorage.removeItem(this.USERNAME_KEY); //Esto por que?
     }
   }
   get password(): string | null {
@@ -28,5 +29,12 @@ export class LocalStorageService {
     } else {
       localStorage.removeItem(this.PASSWORD_KEY);
     }
+  }
+  isLoggedIn() : boolean{
+    return localStorage.getItem('isLoggedIn') === 'true';
+  }
+  logout(){
+    localStorage.removeItem(this.USERNAME_KEY);
+    localStorage.removeItem('isLoggedIn');
   }
 }

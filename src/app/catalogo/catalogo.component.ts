@@ -3,6 +3,8 @@ import { HttpClient } from '@angular/common/http';
 import {Location} from '@angular/common';
 import Swal from 'sweetalert2';
 import { SubirProductosService } from '../subir-productos.service';
+import { LocalStorageService } from '../local-storage.service';
+import { SubirUsuarioService } from '../subir-usuario.service';
 
 @Component({
   selector: 'app-catalogo',
@@ -11,14 +13,16 @@ import { SubirProductosService } from '../subir-productos.service';
 })
 export class CatalogoComponent implements OnInit{ //implements OnInit 
   miModelo={nombre: '', descripcion:'', precio:0, urlImagen:'', tipo:''}
+  permisoAdmin = false;
   cosas:any;
+  cosasU:any;
   prueba:any;
   modalOpen = false;
   isClickedA = false;
   isClickedB = false;
   isClickedC = false;
   isClickedD = true;
-  constructor(private http: HttpClient, private location:Location,private subirproductoService : SubirProductosService) {}
+  constructor(private http: HttpClient, private location:Location,private subirproductoService : SubirProductosService, private localStoragesService: LocalStorageService, private subirUsuarioService : SubirUsuarioService) {}
 
   // ngOnInit(): void {
   //   this.http.get('https://localhost:7104/api/productos/listado').subscribe((response)=>{
@@ -70,6 +74,25 @@ export class CatalogoComponent implements OnInit{ //implements OnInit
   }
   ngOnInit(){
     this.mostrarRedux('');
+    console.log(this.permisoAdmin)
+    if(this.localStoragesService.isLoggedIn()){
+      this.subirUsuarioService.retornarUsuarios({}).subscribe((response)=>{
+        console.log(response);
+        this.cosasU = response;
+        console.log(this.cosasU);
+        for(let i = 0; i < this.cosasU.length; i++){
+          console.log(this.cosasU[i]);
+          if(this.cosasU[i].nombre == this.localStoragesService.username){
+            if(this.cosasU[i].perfilId == 1){
+              this.permisoAdmin = true;
+            }else if(this.cosasU[i].perfilId == 4){
+              this.permisoAdmin = false;
+            }
+          }
+       }
+      })
+      // this.permisoAdmin = true;
+    }
   }
   toggleClickedA(){
     this.isClickedA = !this.isClickedA;

@@ -11,7 +11,7 @@ import { IfStmt } from '@angular/compiler';
   styleUrls: ['./registro.component.css']
 })
 export class RegistroComponent {
-  miModelo={nombre:'', email:'', tlf:0, contrasena:'', sexo:''}
+  miModelo={nombre:'', email:'', tlf:0, contrasena:'', sexo:'', perfilId : '4'}
   secContrasena : string = '';
   // nombre:string = "";
   // descripcion:string = "";
