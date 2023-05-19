@@ -42,7 +42,7 @@ export class InsertarProductosComponent implements OnInit{
        (respuesta) =>{
          console.log("Los datos se guardaron correctamente");
          this.miFormulario.reset();
-         window.location.reload();
+        //  window.location.reload();
        },
        (error) => {
         Swal.fire({

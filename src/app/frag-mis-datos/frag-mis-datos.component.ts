@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./frag-mis-datos.component.css']
 })
 export class FragMisDatosComponent {
-
+  
 }

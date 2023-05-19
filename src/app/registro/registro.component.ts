@@ -1,9 +1,10 @@
 import { Component, ViewChild } from '@angular/core';
-import { NgForm } from '@angular/forms';
+import { FormControl, FormGroup, NgForm, Validators } from '@angular/forms';
 import { SubirUsuarioService } from '../subir-usuario.service';
 import Swal from 'sweetalert2';
 import { HttpErrorResponse } from '@angular/common/http';
-import { IfStmt } from '@angular/compiler';
+import { IfStmt, ThisReceiver } from '@angular/compiler';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-registro',
@@ -11,17 +12,34 @@ import { IfStmt } from '@angular/compiler';
   styleUrls: ['./registro.component.css']
 })
 export class RegistroComponent {
-  miModelo={nombre:'', email:'', tlf:0, contrasena:'', sexo:'', perfilId : '4'}
+  miModelo={nombre:'', email:'', tlf:NaN, contrasena:'', sexo:'', perfilId : '4'}
+  miFormulario : FormGroup;
+  @ViewChild('miFormulario') miFormularioRef: any;
   secContrasena : string = '';
   // nombre:string = "";
   // descripcion:string = "";
   // precio:number = 0;
   // urlImagen:string = "";
 
-  @ViewChild('miFormulario') miFormularioRef: any;
-  constructor(private subirUsuariosService : SubirUsuarioService){}
-  onSubmit(form : NgForm){
-    if(form.valid){
+  constructor(private subirUsuariosService : SubirUsuarioService, private router : Router){}
+  ngOnInit(){
+    this.miFormulario = new FormGroup({
+      nombre: new FormControl('', [Validators.required, Validators.pattern(/^[\p{L}\s]*$/u)]), ///^[a-zA-Z\s]*$/
+      email: new FormControl('', [Validators.required, Validators.pattern(/^[\w.-]+@[a-zA-Z_-]+?(?:\.[a-zA-Z]{2,})+$/)]),
+      contrasena: new FormControl('', Validators.required),
+      secContrasena: new FormControl('', Validators.required),
+      sexo: new FormControl('', Validators.required),
+      tlf: new FormControl('', [Validators.required, Validators.pattern(/^(6|7|8|9)\d{8}$/)])
+    });
+  }
+  onSubmit(){
+    if(this.miFormulario.valid){
+      this.miModelo.nombre = this.miFormulario.get('nombre').value;
+      this.miModelo.email = this.miFormulario.get('email').value;
+      this.miModelo.tlf = this.miFormulario.get('tlf').value;
+      this.miModelo.contrasena = this.miFormulario.get('contrasena').value;
+      this.miModelo.sexo = this.miFormulario.get('sexo').value;
+      this.secContrasena = this.miFormulario.get('secContrasena').value;
       if(this.miModelo.contrasena == this.secContrasena){
         console.log(this.miModelo);
         this.subirUsuariosService.subirUsuario(this.miModelo).subscribe(
@@ -29,8 +47,12 @@ export class RegistroComponent {
             Swal.fire({
               icon: 'success',
               title: 'Registro completado!!',
+            }).then((result)=>{
+              if(result.isConfirmed){
+                this.router.navigate(['/'])
+              }
             })
-            form.reset();
+            this.miFormulario.reset();
           },(error : HttpErrorResponse)=>{
             if(error.status === 409){
               Swal.fire({
@@ -41,6 +63,11 @@ export class RegistroComponent {
               Swal.fire({
                 icon: 'error',
                 title: 'El formato del correo electronico no es valido'
+              })
+            }else if(error.status === 406){
+              Swal.fire({
+                icon: 'error',
+                title: 'El número de teléfono no es válido'
               })
             }else{
               Swal.fire({

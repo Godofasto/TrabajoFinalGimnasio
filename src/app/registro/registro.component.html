@@ -9,33 +9,33 @@
             <div class="container">
                 <div class="title">Registro</div>
                 <div class="content">
-                  <form #miFormulario = "ngForm" name="miFormulario" (ngSubmit)="onSubmit(miFormulario)">
+                  <form [formGroup]="miFormulario" name="miFormulario" >
                     <div class="user-details">
                       <div class="input-box">
                         <span class="details">Nombre</span>
-                        <input type="text"  class="form-control" id="nombre" name="nombre" [(ngModel)] = "miModelo.nombre" placeholder="Introduce tu nombre"  required>
+                        <input type="text"  class="form-control" id="nombre" name="nombre" formControlName="nombre" placeholder="Introduce tu nombre"  required>
                       </div>
                       
                       <div class="input-box">
                         <span class="details">Email</span>
-                        <input type="text" class="form-control" name="email" [(ngModel)] = "miModelo.email" placeholder="Introduce tu correo" required>
+                        <input type="text" class="form-control" name="email" formControlName="email" placeholder="Introduce tu correo" required>
                       </div>
                       <div class="input-box">
                         <span class="details">Numero de telefono</span>
-                        <input type="number" class="form-control" name="tlf" [(ngModel)] = "miModelo.tlf" placeholder="Introduce tu numero de telefono" required>
+                        <input type="number" class="form-control" name="tlf" formControlName="tlf" placeholder="Introduce tu numero de telefono" required>
                       </div>
                       <div class="input-box">
                         <span class="details">Contraseña</span>
-                        <input type="text" class="form-control" name="contrasena" [(ngModel)] = "miModelo.contrasena" placeholder="Introduce tu contraseña" required>
+                        <input type="text" class="form-control" name="contrasena" formControlName="contrasena" placeholder="Introduce tu contraseña" required>
                       </div>
                       <div class="input-box">
                         <span class="details">Confirmar contraseña</span>
-                        <input type="text" class="form-control" name="secContrasena" [(ngModel)] = "secContrasena" placeholder="Confirma tu contraseña" required>
+                        <input type="text" class="form-control" name="secContrasena" formControlName="secContrasena" placeholder="Confirma tu contraseña" required>
                       </div>
                     </div>
                     <div class="gender-details">
-                      <input type="radio" name="gender" value="hombre" [(ngModel)] = "miModelo.sexo" id="dot-1" required>
-                      <input type="radio" name="gender" value="mujer" [(ngModel)] = "miModelo.sexo" id="dot-2" required>
+                      <input type="radio" name="sexo" value="hombre" formControlName="sexo" id="dot-1" required>
+                      <input type="radio" name="sexo" value="mujer" formControlName = "sexo" id="dot-2" required>
                       <span class="gender-title">Sexo</span>
                       <div class="category">
                         <label for="dot-1">
@@ -48,8 +48,8 @@
                       </label>
                       </div>
                     </div>
-                    <div class="button">
-                      <input type="submit" value="Registrarte">
+                    <div class="organizadorBoton">
+                      <button class="btn-25" (click)="onSubmit()"><span>Registrarse</span></button>
                     </div>
                   </form>
                 </div>

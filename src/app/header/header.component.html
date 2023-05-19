@@ -8,10 +8,10 @@
           <div class="col-md-9 col-6 text-end">
             <div class="d-flex justify-content-md-end justify-content-center align-items-center">
               <div class="enlacesbarra me-md-5 me-3">
-                <a href="/catalogo" class="enlaces">Catalogo</a>
-                <a href="/entrenadores" class="enlaces">Entrenadores</a>
+                <a routerLink="/catalogo" class="enlaces">Catalogo</a>
+                <a routerLink="/entrenadores" class="enlaces">Entrenadores</a>
               </div>
-              <button routerLink="/cuotas" class="mx-3 botonapuntate" >Apuntate</button>
+              <button id="botonCuotas" [disabled]="localStoragesService.apunta" routerLink="/cuotas" class="mx-3 botonapuntate" >Apuntate</button>
               <button routerLink="/iniciosesion" class="mx-3 botonsocios">Tu Perfil</button>
             </div>
           </div>

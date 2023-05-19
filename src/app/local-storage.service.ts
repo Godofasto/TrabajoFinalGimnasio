@@ -30,6 +30,17 @@ export class LocalStorageService {
       localStorage.removeItem(this.PASSWORD_KEY);
     }
   }
+  get apunta(): boolean | null {
+    return localStorage.getItem("isLoggedIn") == "true";
+  }
+
+  set apunta(value: boolean | null){
+    if(value){
+      localStorage.setItem('isLoggedIn', 'true');
+    }else{
+      localStorage.setItem('isLoggedIn', 'false'); //Esto por que?
+    }
+  }
   isLoggedIn() : boolean{
     return localStorage.getItem('isLoggedIn') === 'true';
   }
