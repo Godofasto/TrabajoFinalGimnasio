@@ -26,6 +26,8 @@ import { EspaldaBicepsComponent } from './espalda-biceps/espalda-biceps.componen
 import { PiernaHombroComponent } from './pierna-hombro/pierna-hombro.component';
 import { DomSanitizer } from '@angular/platform-browser';
 
+
+
 // import {YouTubePlayerModule} from '@angular/youtube-player'
 // import { EmbedVideoModule } from 'ngx-embed-video';
 
@@ -73,6 +75,7 @@ const appRoutes:Routes=[
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule
+
   ],
   providers: [Location],
   bootstrap: [AppComponent]

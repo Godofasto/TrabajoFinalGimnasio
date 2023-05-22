@@ -138,3 +138,8 @@ p {
     padding-bottom: 3vh;
     
 }
+.botonCambiarContrasena{
+    position: absolute;
+    bottom: 30px;
+    right: 150px;
+}

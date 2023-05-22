@@ -25,6 +25,7 @@ export class IniciosesionComponent {
           }).then((result)=>{
             this.localStoragesService.username = this.miModelo.nombre;
             this.localStoragesService.password = this.miModelo.contrasena;
+            console.log(this.miModelo);
             this.localStoragesService.apunta = true;
             if(result.isConfirmed){
               console.log(this.localStoragesService.username);
