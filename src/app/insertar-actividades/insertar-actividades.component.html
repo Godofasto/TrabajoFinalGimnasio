@@ -1,0 +1,11 @@
+<form [formGroup]="miFormulario" name="miFormulario" >
+    <div class="mb-3">
+        <label for="nombre" class="form-label">Nombre de la actividad: </label>
+        <input type="text" id="nombre" name="nombre" class="form-control" formControlName="nombre" required>
+    </div>
+    <div class="mb-3">
+        <label for="descripcion" class="form-label">Descripcion de la actividad: </label>
+        <input type="text" id="descripcion" name="descripcion" class="form-control" formControlName="descripcion" required>
+    </div>    
+    <button class="btn btn-primary" (click)="onSubmit()">Subir Actividad</button>
+</form>

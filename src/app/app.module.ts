@@ -25,6 +25,7 @@ import { PechoTricepsComponent } from './pecho-triceps/pecho-triceps.component';
 import { EspaldaBicepsComponent } from './espalda-biceps/espalda-biceps.component';
 import { PiernaHombroComponent } from './pierna-hombro/pierna-hombro.component';
 import { DomSanitizer } from '@angular/platform-browser';
+import { InsertarActividadesComponent } from './insertar-actividades/insertar-actividades.component';
 
 
 
@@ -64,7 +65,8 @@ const appRoutes:Routes=[
     InsertarEntrenadoresComponent,
     PechoTricepsComponent,
     EspaldaBicepsComponent,
-    PiernaHombroComponent
+    PiernaHombroComponent,
+    InsertarActividadesComponent
 
   ],
   imports: [
