@@ -15,6 +15,6 @@ export class SubirCitasService {
     // var req ={ //Muy importante que el atributo se llame igual aqui que en el .NET, antes no eran TipoDato los dos y fallaba
     //   TipoDato : dato
     // }
-    return this.http.post('https://localhost:7104/api/entrenadores/RetornarTodasCitas', {});
+    return this.http.post('https://localhost:7104/api/citas/RetornarTodasCitas', {});
   }
 }

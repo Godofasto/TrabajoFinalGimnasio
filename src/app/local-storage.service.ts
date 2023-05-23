@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { SubirUsuarioService } from './subir-usuario.service';
 
 @Injectable({
   providedIn: 'root'
@@ -9,7 +10,7 @@ export class LocalStorageService {
   private EMAIL_KEY = 'email';
   private TLF_KEY = 'tlf';
   private SEXO_KEY = 'sexo';
-
+  constructor(private subirUsuarioService : SubirUsuarioService){}
   get username(): string | null {
     return localStorage.getItem(this.USERNAME_KEY);
   }
@@ -88,4 +89,7 @@ export class LocalStorageService {
     localStorage.removeItem(this.USERNAME_KEY);
     localStorage.removeItem('isLoggedIn');
   }
-}
+  // pillarIdUsuario(){
+  //   this.subirUsuarioService.retornarUsuarios
+  // }
+  }

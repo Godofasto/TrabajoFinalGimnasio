@@ -20,20 +20,20 @@
   </tbody>
 </table>
 <!-- Prev/next Navigation -->
-<button id="previous" (click)="previous()">Anterior</button>
-<button id="next" (click)="next()">Siguiente</button>
+<button id="previous" class="anterior" (click)="previous()">Anterior</button>
+<button id="next" class="siguiente" (click)="next()">Siguiente</button>
 <!-- Jump to -->
-<label for="month">Ir a: </label>
-<select name="month" id="month" [(ngModel)]="selectMonth" (change)="jump()">
+<label for="month" class="irALabel">Ir a: </label>
+<select name="month" id="month" class="selectMeses" [(ngModel)]="selectMonth" (change)="jump()">
   <option *ngFor="let month of months; let i = index" [value]="i">{{ month }}</option>
 </select>
-<label for="year">Año:</label>
-<select name="year" id="year" [(ngModel)]="selectYear" (change)="jump()">
+<label for="year" class="AnoLabel">Año:</label>
+<select name="year" id="year" class="selectAnos" [(ngModel)]="selectYear" (change)="jump()">
   <option *ngFor="let year of years" [value]="year">{{ year }}</option>
 </select>
-<ol class="listaCitas">
-  <li *ngFor="let cita of citas">{{cita}}</li>
-</ol>
+<ul class="listaCitas">
+  <li *ngFor="let cita of citas">{{cita.nombre}}  {{cita.fecha}}</li>
+</ul>
 <div class="subirProducto col-12" style="text-align: center;">
   <button class="icon-btn add-btn" *ngIf="permisoAdmin" style="background-color: rgba(33,37,41,255);" (click)="openModal()">
     <div class="add-icon"></div>
