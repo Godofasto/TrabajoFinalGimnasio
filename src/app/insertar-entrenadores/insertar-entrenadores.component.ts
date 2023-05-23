@@ -45,7 +45,7 @@ export class InsertarEntrenadoresComponent {
         }).then((result) =>{
           if(result.isConfirmed){
             this.miFormulario.reset();
-        // window.location.reload();
+            window.location.reload();
           }
         })
       },

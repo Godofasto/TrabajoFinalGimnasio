@@ -31,9 +31,20 @@
 <select name="year" id="year" class="selectAnos" [(ngModel)]="selectYear" (change)="jump()">
   <option *ngFor="let year of years" [value]="year">{{ year }}</option>
 </select>
+
+
+<!-- <div class="contenedorListaDerecha"><ul class="listaDerecha">
+  <li class="casillaDerecha" *ngFor="let actividad of actividades"><p class="nombreActividad">{{actividad.nombre}}</p><br><p class="nombreActividad">{{actividad.descripcion}}</p></li>
+</ul></div> -->
+<div class="contenedorTotal">
+<div class="contenedorDatosActividades">
+<div *ngFor="let actividad of actividades">
+  <p style="text-decoration: underline;">{{actividad.nombre}}</p>
+  <p>{{actividad.descripcion}}</p>
+</div></div>
 <ul class="listaCitas">
-  <li *ngFor="let cita of citas">{{cita.nombre}}  {{cita.fecha}}</li>
-</ul>
+  <li *ngFor="let cita of citas" class="casillaCitas">{{cita.nombre}}  {{cita.fecha}}<i style="cursor: pointer;" (click)="borrarProducto(cita.id)"class="fa fa-trash iconopapelera"></i></li>
+</ul></div>
 <div class="subirProducto col-12" style="text-align: center;">
   <button class="icon-btn add-btn" *ngIf="permisoAdmin" style="background-color: rgba(33,37,41,255);" (click)="openModal()">
     <div class="add-icon"></div>

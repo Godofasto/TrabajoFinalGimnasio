@@ -7,6 +7,7 @@ import { SubirActividadesService } from '../subir-actividades.service';
 import { SubirCitasService } from '../subir-citas.service';
 import { SubirUsuarioService } from '../subir-usuario.service';
 
+
 @Component({
   selector: 'app-frag-mis-citas',
   templateUrl: './frag-mis-citas.component.html',
@@ -28,7 +29,7 @@ export class FragMisCitasComponent {
   citas:any;
   cita:string;
   idActiElegido:string;
-  idUsuarioActivo:string;
+  idUsuarioActivo:any;
   modalOpen = false;
   permisoAdmin = false;
   opciones = [];
@@ -47,12 +48,14 @@ export class FragMisCitasComponent {
         console.log(this.cosasU);
         for(let i = 0; i < this.cosasU.length; i++){
           console.log(this.cosasU[i]);
+          debugger;
           if(this.cosasU[i].nombre == this.localStoragesService.username){
             if(this.cosasU[i].perfilId == 1){
               this.permisoAdmin = true;
               this.idUsuarioActivo = this.cosasU[i].id;
             }else if(this.cosasU[i].perfilId == 4){
               this.permisoAdmin = false;
+              this.idUsuarioActivo = this.cosasU[i].id;
             }
           }
        }
@@ -73,9 +76,12 @@ export class FragMisCitasComponent {
     this.calendar = [];
     this.showCalendar(this.currentMonth, this.currentYear);
 
-    this.subirCitasService.recogerCitas({}).subscribe((response)=>{
+    this.subirCitasService.recogerCitas(this.idUsuarioActivo).subscribe((response)=>{
       console.log(response);
       this.citas=response
+    })
+    this.SubirActividadesService.recogerActividades({}).subscribe((response)=>{
+      this.actividades = response;
     })
   }
 
@@ -210,6 +216,7 @@ export class FragMisCitasComponent {
                 }
               }
               this.miModelo.ActividadesId = this.idActiElegido;
+              debugger;
               this.miModelo.UsuariosId = this.idUsuarioActivo;
               console.log(this.miModelo)
               this.subirCitasService.subirCitas(this.miModelo).subscribe((response)=>{
@@ -217,7 +224,7 @@ export class FragMisCitasComponent {
                   icon: 'success',
                   title :'Su cita se ha guardado correctamente'
                 }).then((result)=>{
-                  this.subirCitasService.recogerCitas({}).subscribe((response)=>{
+                  this.subirCitasService.recogerCitas(this.idUsuarioActivo).subscribe((response)=>{
                     console.log(response);
                     this.citas=response;
                   })
@@ -256,4 +263,26 @@ export class FragMisCitasComponent {
       console.log(inputOptions);
       return inputOptions;
     };
+    borrarProducto(Id : Number){ //Podria intentar ocultarlos en vez de eliminarlos directamente
+      console.log(this.citas)
+      Swal.fire({
+        title: '¿Estas seguro?',
+        text: "No podrás recuperar esta cita",
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        cancelButtonText: 'Cancelar',
+        confirmButtonText: 'Eliminar'
+      }).then((result) => {
+        if (result.isConfirmed) {
+          this.http.delete(`https://localhost:7104/api/citas/${Id}`).subscribe(()=>{
+          const indice = this.citas.findIndex(p => p.id === Id);
+          this.citas.splice(indice, 1); //Esto es para que se vea en local el cambio porque recargar la pagina es cutre
+      })
+          
+        }
+      })
+      
+    }
 }

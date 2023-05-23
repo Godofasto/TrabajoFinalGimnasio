@@ -99,27 +99,29 @@
 }
 
 /* List */
-ul {
+.listaCitas {
   counter-reset: index;  
   padding: 0;
-  max-width: 300px;
+  max-width: 450px;
+  padding-top: 40px;
 }
 
 /* List element */
-li {
+.casillaCitas {
   counter-increment: index; 
   display: flex;
   font-family: airwaves;
   align-items: center;
-  letter-spacing: 3px;
-  font-size: 22px;
+  flex-direction: row;
+  letter-spacing: 4px;
+  font-size: 27px;
   padding: 12px 0;
   box-sizing: border-box;
 }
 
 
 /* Element counter */
-li::before {
+.casillaCitas::before {
   content: counters(index, ".", decimal-leading-zero);
   font-size: 1.5rem;
   text-align: right;
@@ -212,4 +214,49 @@ li + li {
 }
 .selectAnos{
 
+}
+/* List */
+.listaDerecha {
+  counter-reset: index;  
+  padding: 0;
+  right: 450px;
+  max-width: 400px;
+  position: absolute;
+  top: 610px;
+}
+
+/* List element */
+.casillaDerecha {
+  counter-increment: index; 
+  cursor: pointer;
+  display: flex;
+  font-family: airwaves;
+  align-items: center;
+  flex-direction: row;
+  letter-spacing: 3px;
+  font-size: 28px;
+  padding: 12px 0;
+  box-sizing: border-box;
+}
+.tituloActividades{
+  position: absolute;
+  top: 580px;
+  font-size: 30px;
+  right: 230px;
+  font-family: airwaves;
+  text-decoration: underline;
+}
+.contenedorListaDerecha{
+  text-align: center;
+}
+.contenedorDatosActividades{
+  font-family: airwaves;
+  padding-top: 10px;
+  font-size: 20px;
+  width: 50%;
+  padding-right: 20px;
+}
+.contenedorTotal{
+  display: flex;
+  flex-direction: row;
 }
