@@ -339,6 +339,17 @@
     color: red;
   }
 
+  .iconolapiz{
+    top: 50px;
+    right: 10px;
+    cursor: pointer;
+    font-size: 30px;
+    position: absolute;
+  }
+  .iconolapiz:hover{
+    color: blue;
+  }
+
   .or-spacer {
     margin-top: 100px;
     margin-left: 100px;
@@ -421,4 +432,3 @@
     border-radius: 12px / 125px;
     box-shadow: 0 0 8px black;
   }
-  

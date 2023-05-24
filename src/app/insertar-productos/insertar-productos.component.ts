@@ -42,7 +42,7 @@ export class InsertarProductosComponent implements OnInit{
        (respuesta) =>{
          console.log("Los datos se guardaron correctamente");
          this.miFormulario.reset();
-        //  window.location.reload();
+         window.location.reload();
        },
        (error) => {
         Swal.fire({
@@ -54,6 +54,8 @@ export class InsertarProductosComponent implements OnInit{
    }
   }
    convertirImagen(event: any) { //Esto lo pasa a base 64
+    debugger;
+    console.log(event);
     const archivo = event.target.files[0];
     if (archivo) {
       const lector = new FileReader();

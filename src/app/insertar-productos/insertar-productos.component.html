@@ -1,43 +1,45 @@
+<div class="formularioCulero">
 <form [formGroup]="miFormulario" name="miFormulario" (ngSubmit)="onSubmit()">
     <div class="mb-3">
         <label for="nombre" class="form-label">Nombre del producto: </label>
-        <input type="text" id="nombre" formControlName="nombre" class="form-control" required>
+        <input type="text" id="nombre" formControlName="nombre" class="form-control" required style="border: solid black 1px;">
         <div *ngIf="miFormulario.get('nombre').invalid && miFormulario.get('nombre').touched">
             El nombre del producto es requerido.
         </div>
     </div>
     <div class="mb-3">
         <label for="descripcion" class="form-label">Descripcion del producto: </label>
-        <input type="text" id="descripcion" formControlName="descripcion" class="form-control" required>
+        <input type="text" id="descripcion" formControlName="descripcion" class="form-control" required style="border: solid black 1px;">
         <div *ngIf="miFormulario.get('descripcion').invalid && miFormulario.get('descripcion').touched">
             La descripción del producto es requerida.
         </div>
     </div>    
     <div class="mb-3">
         <label for="precio" class="form-label">Precio del producto: </label>
-        <input type="text" id="precio" formControlName="precio" class="form-control" required>
+        <input type="text" id="precio" formControlName="precio" class="form-control" required style="border: solid black 1px;">
         <div *ngIf="miFormulario.get('precio').invalid && miFormulario.get('precio').touched">
             El precio del producto es requerido.
         </div>
     </div>
     <div class="mb-3">
         <label for="tipo" class="form-label">Tipo del producto: </label>
-        <select id="tipo" formControlName="tipo" class="form-control" required>
+        <select id="tipo" formControlName="tipo" class="form-control" required style="border: solid black 1px;">
             <option value="">Seleccione un tipo</option>
             <option value="Equipamiento">Equipamiento</option>
             <option value="Suplementos">Suplementos</option>
             <option value="Moda">Moda</option>
         </select>
-        <div *ngIf="miFormulario.get('tipo').invalid && miFormulario.get('tipo').touched">
+        <div *ngIf="miFormulario.get('tipo').invalid && miFormulario.get('tipo').touched" >
             El tipo de producto es requerido.
         </div>
     </div>
     <div class="mb-3">
         <label for="imagen" class="form-label">Imagen del producto: </label>
-        <input type="file" id="imagen" formControlName="imagen" class="form-control" (change)="convertirImagen($event)" required>
+        <input type="file" id="imagen" formControlName="imagen" class="form-control" (change)="convertirImagen($event)" required style="border: solid black 1px;">
         <div *ngIf="miFormulario.get('imagen').invalid && miFormulario.get('imagen').touched">
             La imagen del producto es requerida.
         </div>
     </div>
     <button class="btn btn-primary">Subir Producto</button>
 </form>
+</div>

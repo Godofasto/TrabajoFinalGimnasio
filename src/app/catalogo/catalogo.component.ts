@@ -13,6 +13,7 @@ import { SubirUsuarioService } from '../subir-usuario.service';
 })
 export class CatalogoComponent implements OnInit{ //implements OnInit 
   miModelo={nombre: '', descripcion:'', precio:0, urlImagen:'', tipo:''}
+  productoActualizado = {nombre: '', descripcion:'', precio:0, urlImagen:'', tipo:''};
   permisoAdmin = false;
   cosas:any;
   cosasU:any;
@@ -140,4 +141,80 @@ export class CatalogoComponent implements OnInit{ //implements OnInit
     })
     
   }
+  public editarProducto(id: number, productoActualizado: any) {
+    const url = `https://localhost:7104/api/productos/editar/${id}`;
+  
+    this.http.put(url, productoActualizado).subscribe(
+      () => {
+        
+        console.log('Producto actualizado correctamente');
+        window.location.reload();
+      },
+      error => {
+        console.error('Error al actualizar el producto', error);
+        // Maneja el error adecuadamente
+      }
+    );
+  }
+  public onEditarClick(cosa: any) {
+    //Meter aqui un sweet alert con el formulario para editarlo
+    //buscar dialog
+    Swal.fire({
+      title: 'Editar Producto',
+      html:
+        '<input id="input1" class="swal2-input" placeholder="Nombre" value="' + cosa.nombre + '">' +
+        '<input id="input2" class="swal2-input" placeholder="Descripción" value="' + cosa.descripcion + '">' +
+        '<input id="input3" class="swal2-input" placeholder="Precio" value="' + cosa.precio + '">' +
+        '<select id="select1" class="swal2-select">' +
+        '  <option value="Suplementos">Suplementos</option>' +
+        '  <option value="Moda">Moda</option>' +
+        '  <option value="Equipamiento">Equipamiento</option>' +
+        '</select>' +
+        '<input type="file" id="input4" class="swal2-input" (change)="convertirImagen($event)">', //No entra por algun motivo
+      showCancelButton: true,
+      confirmButtonText: 'Enviar',
+      preConfirm: () => {
+        const input1Value = (document.getElementById('input1') as HTMLInputElement).value;
+        const input2Value = (document.getElementById('input2') as HTMLInputElement).value;
+        const input3Value = (document.getElementById('input3') as HTMLInputElement).value;  
+        const select1Value = (document.getElementById('select1') as HTMLSelectElement).value;
+        // Aquí puedes hacer algo con los valores de los inputs
+        const ulrImagenValue = this.productoActualizado.urlImagen;
+        const productoActualizado: any = {
+          Id: 1,
+          Nombre: input1Value,
+          Precio: input3Value,
+          Descripcion: input2Value,
+          Tipo: select1Value,
+          urlImagen: ulrImagenValue
+        };
+        
+        this.editarProducto(cosa.id, productoActualizado);
+      },
+    });
+  
+    
+  }
+
+
+  convertirImagen(event) {
+    debugger; //Por que este debugger no funciona??
+    console.log(event);
+    const archivo = event.target.files[0];
+    
+    if (archivo) {
+      const lector = new FileReader();
+      lector.readAsDataURL(archivo);
+      lector.onload = () => {
+        const base64String = lector.result as string;
+        console.log(base64String);
+        // const base64Value = base64String.split(',')[1]; // Extract the base64 value from the data URL
+        
+        this.productoActualizado.urlImagen = base64String;
+        
+      };
+    }
+  }
+  
+  
 }

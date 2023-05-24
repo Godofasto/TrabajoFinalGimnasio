@@ -48,20 +48,27 @@ export class FragMisCitasComponent {
         console.log(this.cosasU);
         for(let i = 0; i < this.cosasU.length; i++){
           console.log(this.cosasU[i]);
-          debugger;
           if(this.cosasU[i].nombre == this.localStoragesService.username){
             if(this.cosasU[i].perfilId == 1){
               this.permisoAdmin = true;
               this.idUsuarioActivo = this.cosasU[i].id;
+              this.subirCitasService.recogerCitas(this.idUsuarioActivo).subscribe((response)=>{
+                this.citas=response
+              })
             }else if(this.cosasU[i].perfilId == 4){
               this.permisoAdmin = false;
               this.idUsuarioActivo = this.cosasU[i].id;
+              this.subirCitasService.recogerCitas(this.idUsuarioActivo).subscribe((response)=>{
+                this.citas=response
+              })
             }
           }
        }
       })
       // this.permisoAdmin = true;
     }
+    
+    
     this.today = new Date();
     this.currentMonth = this.today.getMonth();
     this.currentYear = this.today.getFullYear();
@@ -76,10 +83,7 @@ export class FragMisCitasComponent {
     this.calendar = [];
     this.showCalendar(this.currentMonth, this.currentYear);
 
-    this.subirCitasService.recogerCitas(this.idUsuarioActivo).subscribe((response)=>{
-      console.log(response);
-      this.citas=response
-    })
+    
     this.SubirActividadesService.recogerActividades({}).subscribe((response)=>{
       this.actividades = response;
     })
@@ -216,7 +220,6 @@ export class FragMisCitasComponent {
                 }
               }
               this.miModelo.ActividadesId = this.idActiElegido;
-              debugger;
               this.miModelo.UsuariosId = this.idUsuarioActivo;
               console.log(this.miModelo)
               this.subirCitasService.subirCitas(this.miModelo).subscribe((response)=>{
