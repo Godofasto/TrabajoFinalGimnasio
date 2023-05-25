@@ -148,7 +148,12 @@
     position: relative;
   }
 
- 
+ .botoncuotasDisabled{
+   box-shadow: grey;
+   color: grey;
+  cursor: not-allowed;
+  opacity: 0.7;
+ }
   .enlaces::before {
     content: '';
     position: absolute;
@@ -169,9 +174,4 @@
 }
 .enlaces:hover{
   color: #f7d92f;
-}
-.bloqueado{
-  color: grey;
-  cursor: not-allowed;
-  opacity: 0.5;
 }

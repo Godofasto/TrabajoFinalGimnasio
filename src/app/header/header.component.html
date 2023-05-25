@@ -11,7 +11,7 @@
                 <a routerLink="/catalogo" class="enlaces">Catalogo</a>
                 <a routerLink="/entrenadores" class="enlaces">Entrenadores</a>
               </div>
-              <button id="botonCuotas" [disabled]="localStoragesService.apunta" routerLink="/cuotas" class="mx-3 botonapuntate" >Apuntate</button>
+              <button id="botonCuotas"  [ngClass]="{'botoncuotasDisabled': localStoragesService.apunta}" [disabled]="localStoragesService.apunta" routerLink="/cuotas" class="mx-3 botonapuntate" >Apuntate</button>
               <button routerLink="/iniciosesion" class="mx-3 botonsocios">Tu Perfil</button>
             </div>
           </div>

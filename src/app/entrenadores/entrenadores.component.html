@@ -31,7 +31,7 @@
                   <div class="right" style="background-image: url({{cosa.urlImagen}}); background-repeat: no-repeat; background-position: center; background-size: cover;">
                       <!-- <img src="{{cosa.urlImagen}}" alt=""> -->
                     </div>
-                    <i (click)="borrarProducto(cosa.id)"class="fa fa-trash iconopapelera"></i>
+                    <i *ngIf="permisoAdmin" (click)="borrarProducto(cosa.id)"class="fa fa-trash iconopapelera"></i>
                     <i *ngIf="permisoAdmin" (click)="onEditarClick(cosa)"class="fa-solid fa-pen-to-square iconolapiz"></i>
                   </div>
                 
