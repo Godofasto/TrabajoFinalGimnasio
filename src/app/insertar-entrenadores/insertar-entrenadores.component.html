@@ -1,32 +1,33 @@
-
+<div class="cajaFormulario">
 <form [formGroup]="miFormulario" name="miFormulario" >
     <div class="mb-3">
         <label for="nombre" class="form-label">Nombre del entrenador: </label>
-        <input type="text" id="nombre" name="nombre" class="form-control" formControlName="nombre" required>
+        <input type="text" id="nombre" name="nombre" class="form-control" formControlName="nombre" required style="border: solid black 1px;">
     </div>
     <div class="mb-3">
         <label for="descripcion" class="form-label">Descripcion del entrenador: </label>
-        <input type="text" id="descripcion" name="descripcion" class="form-control" formControlName="descripcion" required>
+        <input type="text" id="descripcion" name="descripcion" class="form-control" formControlName="descripcion" required style="border: solid black 1px;">
     </div>    
     <div class="mb-3">
         <label for="precio" class="form-label">Precio mensual del entrenador </label>
-        <input type="text" id="precio" name="precio" class="form-control" formControlName="precio" required placeholder="Ejemplo: 80">
+        <input type="text" id="precio" name="precio" class="form-control" formControlName="precio" required placeholder="Ejemplo: 80" style="border: solid black 1px;">
     </div>
     <div class="mb-3">
         <label for="tipo" class="form-label">Dias activos del entrenador: </label>
-        <input type="text" id="dias" name="horarioDias" class="form-control" formControlName="horarioDias" required placeholder="Ejemplo: Lunes-Viernes">
+        <input type="text" id="dias" name="horarioDias" class="form-control" formControlName="horarioDias" required placeholder="Ejemplo: Lunes-Viernes" style="border: solid black 1px;">
     </div>
     <div class="mb-3">
         <label for="tipo" class="form-label">Horas activas del entrenador: </label>
-        <input type="text" id="horas" name="horarioHoras" class="form-control" formControlName="horarioHoras" required placeholder="Ejemplo: 10:00-15:00">
+        <input type="text" id="horas" name="horarioHoras" class="form-control" formControlName="horarioHoras" required placeholder="Ejemplo: 10:00-15:00" style="border: solid black 1px;">
     </div>
     <div class="mb-3">
         <label for="tipo" class="form-label">Telefono del entrenador: </label>
-        <input type="text" id="horas" name="telefono" class="form-control" formControlName="telefono" required placeholder="Ejemplo: 609154988">
+        <input type="text" id="horas" name="telefono" class="form-control" formControlName="telefono" required placeholder="Ejemplo: 609154988" style="border: solid black 1px;">
     </div>
     <div class="mb-3">
         <label for="imagen" class="form-label">Imagen del entrenador: </label>
-        <input type="file" id="imagen" name="imagen" class="form-control" formControlName="imagen" (change)="convertirImagen($event)" required> <!--[(ngModel)] = "miModelo.urlImagen"-->
+        <input type="file" id="imagen" name="imagen" class="form-control" formControlName="imagen" (change)="convertirImagen($event)" required style="border: solid black 1px;"> <!--[(ngModel)] = "miModelo.urlImagen"-->
      </div>
     <button class="btn btn-primary" (click)="onSubmit()">Subir Entrenador</button>
 </form>
+</div>

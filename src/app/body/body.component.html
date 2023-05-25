@@ -9,7 +9,7 @@
 <div class="row cuadradoover bg-dark bg-gradient">
     <div class="textocuadradoover col-xs-12">
         <p>DURANTE TODO 2023</p>
-        <button routerLink="/cuotas" class="botoncuadradoover">No lo dejes pasar</button>
+        <button routerLink="/cuotas" [disabled]="localStoragesService.apunta" class="botoncuadradoover">No lo dejes pasar</button>
         <p class="textoabajocuadradoover">MATRÍCULA GRATIS</p>
     </div>
 </div>

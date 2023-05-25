@@ -29,7 +29,7 @@ export class InsertarProductosComponent implements OnInit{
       descripcion: new FormControl('', Validators.required),
       precio: new FormControl('', [Validators.required, Validators.pattern(/^\d{2}$/)]),
       tipo: new FormControl('', Validators.required),
-      imagen: new FormControl('', Validators.required)  //TENGO QUE DESCRUBIR POR QUE ESTAS VALIDACIONES VAN RARAS!!!!!!!!!!!!! 
+      imagen: new FormControl('', [Validators.required, Validators.pattern(/^.*\.(jpg|jpeg|png|gif|bmp)$/)])  //TENGO QUE DESCRUBIR POR QUE ESTAS VALIDACIONES VAN RARAS!!!!!!!!!!!!! 
     });                                                 //Y PONER MEJOR LOS PLACEHOLDERS DEL DE ARTICULOS PARA QUE EL USUARIO SEPA QUE PONER!!!!!!!!!!!!
   }
    onSubmit(){

@@ -8,7 +8,7 @@ import { LocalStorageService } from '../local-storage.service';
 export class BodyComponent {
   grandeUrl = 'assets/Gym1.jpg'
   logoUrl = 'assets/LogoB.png';
-  constructor(private localStoragesService : LocalStorageService){}
+  constructor(public localStoragesService : LocalStorageService){}
   ngOnInit(){
     console.log(this.localStoragesService.isLoggedIn());
   }

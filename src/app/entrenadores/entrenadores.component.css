@@ -280,3 +280,13 @@ a {
 .iconopapelera:hover{
   color: red;
 }
+.iconolapiz{
+  top: 10px;
+  right: 325px;
+  cursor: pointer;
+  font-size: 30px;
+  position: absolute;
+}
+.iconolapiz:hover{
+  color: blue;
+}

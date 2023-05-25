@@ -25,13 +25,14 @@
                         <div class="header">{{cosa.nombre}}</div>
                         <div class="content">{{cosa.descripcion}}</div>
                       </div>
-                      <div class="c2a">Contáctame!</div>
+                      <div class="c2a" (click)="contratarEntrenador()">Contáctame!</div>
                     </div>
                   </div>
                   <div class="right" style="background-image: url({{cosa.urlImagen}}); background-repeat: no-repeat; background-position: center; background-size: cover;">
                       <!-- <img src="{{cosa.urlImagen}}" alt=""> -->
                     </div>
                     <i (click)="borrarProducto(cosa.id)"class="fa fa-trash iconopapelera"></i>
+                    <i *ngIf="permisoAdmin" (click)="onEditarClick(cosa)"class="fa-solid fa-pen-to-square iconolapiz"></i>
                   </div>
                 
               </div>

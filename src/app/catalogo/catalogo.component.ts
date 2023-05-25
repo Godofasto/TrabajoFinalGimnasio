@@ -169,28 +169,68 @@ export class CatalogoComponent implements OnInit{ //implements OnInit
         '  <option value="Suplementos">Suplementos</option>' +
         '  <option value="Moda">Moda</option>' +
         '  <option value="Equipamiento">Equipamiento</option>' +
-        '</select>' +
-        '<input type="file" id="input4" class="swal2-input" (change)="convertirImagen($event)">', //No entra por algun motivo
+        '</select>',
+      input: 'file',
+      inputAttributes: {
+        accept: 'image/*',
+        'aria-label': 'Seleccionar imagen'
+      },
       showCancelButton: true,
       confirmButtonText: 'Enviar',
-      preConfirm: () => {
+      preConfirm: (file) => {
+        if(file){
+          return new Promise((resolve, reject) => {
+            const reader = new FileReader();
+            reader.onload = (event) => {
+              const base64 = event.target.result;
+              resolve(base64);
+            };
+            reader.onerror = (error) => {
+              reject(error);
+            };
+            reader.readAsDataURL(file);
+          });
+        }else{
+          console.log(cosa);
+          return cosa.urlImagen;
+        }
+        
+      }
+    }).then((result) => {
+      if (result.value) {
         const input1Value = (document.getElementById('input1') as HTMLInputElement).value;
         const input2Value = (document.getElementById('input2') as HTMLInputElement).value;
-        const input3Value = (document.getElementById('input3') as HTMLInputElement).value;  
+        const input3Value = (document.getElementById('input3') as HTMLInputElement).value;
         const select1Value = (document.getElementById('select1') as HTMLSelectElement).value;
-        // Aquí puedes hacer algo con los valores de los inputs
-        const ulrImagenValue = this.productoActualizado.urlImagen;
+        const base64Image = result.value;
         const productoActualizado: any = {
           Id: 1,
           Nombre: input1Value,
           Precio: input3Value,
           Descripcion: input2Value,
           Tipo: select1Value,
-          urlImagen: ulrImagenValue
+          urlImagen: base64Image
         };
-        
+    
         this.editarProducto(cosa.id, productoActualizado);
-      },
+      }else{
+        const input1Value = (document.getElementById('input1') as HTMLInputElement).value;
+        const input2Value = (document.getElementById('input2') as HTMLInputElement).value;
+        const input3Value = (document.getElementById('input3') as HTMLInputElement).value;
+        const select1Value = (document.getElementById('select1') as HTMLSelectElement).value;
+        // const base64Image = result.value;
+        var imagenAnterior = this.miModelo.urlImagen;
+        const productoActualizado: any = {
+          Id: 1,
+          Nombre: input1Value,
+          Precio: input3Value,
+          Descripcion: input2Value,
+          Tipo: select1Value,
+          urlImagen: imagenAnterior
+        };
+    
+        this.editarProducto(cosa.id, productoActualizado);
+      }
     });
   
     

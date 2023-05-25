@@ -15,6 +15,7 @@ export class EntrenadoresComponent implements OnInit{
   permisoAdmin = false;
   cosas:any;
   cosasU:any;
+  productoActualizado = {Nombre: '', Descripcion:'', precioMensual:0, urlImagen:'', horarioHoras:'', horarioDias:'', numeroTelefono:''};
   constructor(private http: HttpClient,private SubirEntrenadoresService : SubirEntrenadorService, private localStoragesService: LocalStorageService, private subirUsuarioService : SubirUsuarioService) {}
   openModal(){
     if(this.modalOpen == false){
@@ -72,5 +73,112 @@ export class EntrenadoresComponent implements OnInit{
       }
     })
     
+  }
+
+  public editarProducto(id: number, entrenadorActualizado: any) {
+    const url = `https://localhost:7104/api/entrenadores/editar/${id}`;
+  
+    this.http.put(url, entrenadorActualizado).subscribe(
+      () => {
+        
+        console.log('Entrenador actualizado correctamente');
+        window.location.reload();
+      },
+      error => {
+        console.error('Error al actualizar el entrenador', error);
+        // Maneja el error adecuadamente
+      }
+    );
+  }
+  public onEditarClick(cosa: any) {
+    //Meter aqui un sweet alert con el formulario para editarlo
+    //buscar dialog
+    Swal.fire({
+      title: 'Editar Entrenador',
+      html:
+        '<input id="input1" class="swal2-input" placeholder="Nombre" value="' + cosa.nombre + '">' +
+        '<input id="input2" class="swal2-input" placeholder="Descripción" value="' + cosa.descripcion + '">' +
+        '<input id="input3" class="swal2-input" placeholder="Precio mensual" value="' + cosa.precioMensual + '">' +
+        '<input id="input4" class="swal2-input" placeholder="horarioHoras" value="' + cosa.horarioHoras + '">' +
+        '<input id="input5" class="swal2-input" placeholder="horarioDias" value="' + cosa.horarioDias + '">' +
+        '<input id="input6" class="swal2-input" placeholder="numeroTelefono" value="' + cosa.numeroTelefono + '">' ,
+      input: 'file',
+      inputAttributes: {
+        accept: 'image/*',
+        'aria-label': 'Seleccionar imagen'
+      },
+      showCancelButton: true,
+      confirmButtonText: 'Enviar',
+      preConfirm: (file) => {
+        if(file){
+          return new Promise((resolve, reject) => {
+            const reader = new FileReader();
+            reader.onload = (event) => {
+              const base64 = event.target.result;
+              resolve(base64);
+            };
+            reader.onerror = (error) => {
+              reject(error);
+            };
+            reader.readAsDataURL(file);
+          });
+        }else{
+          console.log(cosa);
+          return cosa.urlImagen;
+        }
+        
+      }
+    }).then((result) => {
+      if (result.value) {
+        const input1Value = (document.getElementById('input1') as HTMLInputElement).value;
+        const input2Value = (document.getElementById('input2') as HTMLInputElement).value;
+        const input3Value = (document.getElementById('input3') as HTMLInputElement).value;
+        const input4Value = (document.getElementById('input4') as HTMLInputElement).value;
+        const input5Value = (document.getElementById('input5') as HTMLInputElement).value;
+        const input6Value = (document.getElementById('input6') as HTMLInputElement).value;
+        const base64Image = result.value;
+        const entrenadorActualizado: any = {
+          Id: 1,
+          Nombre: input1Value,
+          Descripcion: input2Value,
+          precioMensual: input3Value,
+          urlImagen:base64Image,
+          horarioHoras: input4Value,
+          horarioDias: input5Value,
+          numeroTelefono : input6Value
+        };
+    
+        this.editarProducto(cosa.id, entrenadorActualizado);
+      }else{
+        if (result.value) {
+          const input1Value = (document.getElementById('input1') as HTMLInputElement).value;
+          const input2Value = (document.getElementById('input2') as HTMLInputElement).value;
+          const input3Value = (document.getElementById('input3') as HTMLInputElement).value;
+          const input4Value = (document.getElementById('input4') as HTMLInputElement).value;
+          const input5Value = (document.getElementById('input5') as HTMLInputElement).value;
+          const input6Value = (document.getElementById('input6') as HTMLInputElement).value;
+          var imagenAnterior = this.cosas.urlImagen;
+          const entrenadorActualizado: any = {
+            Id: 1,
+            Nombre: input1Value,
+            Descripcion: input2Value,
+            precioMensual: input3Value,
+            urlImagen:imagenAnterior,
+            horarioHoras: input4Value,
+            horarioDias: input5Value,
+            numeroTelefono : input6Value
+          };
+      
+          this.editarProducto(cosa.id, entrenadorActualizado);
+      }
+    }});
+  
+  
+  }
+  contratarEntrenador(){
+    Swal.fire({
+      title: 'Si quieres contactar con uno de nuestros entrenadores tienes que llamarle',
+      icon:'info',
+    })
   }
 }
