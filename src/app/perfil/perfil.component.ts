@@ -1,5 +1,6 @@
 import { Component, ElementRef, ViewChild } from '@angular/core';
 import { OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { LocalStorageService } from '../local-storage.service';
 @Component({
   selector: 'app-perfil',
@@ -13,7 +14,8 @@ export class PerfilComponent {
   segundo:boolean = false;
   tercero:boolean = false;
   cuarto:boolean = false;
-  constructor(private localStoragesService : LocalStorageService){}
+  puertaAbierta:boolean = false;
+  constructor(private localStoragesService : LocalStorageService, private router : Router){}
   activarprimero(){
     if(this.primero === false){
       this.primero = true;
@@ -48,5 +50,13 @@ export class PerfilComponent {
   }
   ngOnInit(){
     
+  }
+  mouseEvHandler(status){
+    console.log(status);
+    this.puertaAbierta = status; 
+  }
+  logout() : void{
+    this.localStoragesService.logout();
+    this.router.navigate(['/'])
   }
 }

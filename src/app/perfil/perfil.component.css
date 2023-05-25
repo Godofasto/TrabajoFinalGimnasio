@@ -82,3 +82,9 @@ span:after
     width: calc( 455px/2 );
     height: calc( 80px/2 )
 }
+.puerta{
+    font-size: 80px;
+    padding-left: 2px;
+    padding-top: -30px;
+    color: black;
+}
