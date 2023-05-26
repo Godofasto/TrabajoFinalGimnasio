@@ -187,6 +187,7 @@ export class CatalogoComponent implements OnInit{ //implements OnInit
         'aria-label': 'Seleccionar imagen'
       },
       showCancelButton: true,
+      
       cancelButtonText: 'Cancelar',
       confirmButtonText: 'Enviar',
       preConfirm: (file) => {
