@@ -14,23 +14,38 @@
                       <div class="input-box">
                         <span class="details">Nombre de Usuario</span>
                         <input type="text"  class="form-control" id="nombre" name="nombre" formControlName="nombre" placeholder="Introduce tu nombre"  required>
+                        <div *ngIf="miFormulario.get('nombre').invalid && miFormulario.get('nombre').touched" style="color: red;">
+                          El nombre es requerido
+                      </div>
                       </div>
                       
                       <div class="input-box">
                         <span class="details">Email</span>
                         <input type="text" class="form-control" name="email" formControlName="email" placeholder="Introduce tu correo" required>
+                        <div *ngIf="miFormulario.get('email').invalid && miFormulario.get('email').touched" style="color: red;">
+                          El email es requerido
+                      </div>
                       </div>
                       <div class="input-box">
                         <span class="details">Numero de telefono</span>
-                        <input type="number" class="form-control" name="tlf" formControlName="tlf" placeholder="Introduce tu numero de telefono" required>
+                        <input type="number" class="form-control numeroTelefono" min="0" name="tlf" formControlName="tlf" (input)="validarNumero()" placeholder="Introduce tu numero de telefono" required>
+                        <div *ngIf="miFormulario.get('tlf').invalid && miFormulario.get('tlf').touched" style="color: red;">
+                          El numero de teléfono es requerido
+                      </div>
                       </div>
                       <div class="input-box">
                         <span class="details">Contraseña</span>
-                        <input type="text" class="form-control" name="contrasena" formControlName="contrasena" placeholder="Introduce tu contraseña" required>
+                        <input type="password" class="form-control" name="contrasena" formControlName="contrasena" placeholder="Introduce tu contraseña" required>
+                        <div *ngIf="miFormulario.get('contrasena').invalid && miFormulario.get('contrasena').touched" style="color: red;">
+                          La contraseña es requerida
+                      </div>
                       </div>
                       <div class="input-box">
                         <span class="details">Confirmar contraseña</span>
-                        <input type="text" class="form-control" name="secContrasena" formControlName="secContrasena" placeholder="Confirma tu contraseña" required>
+                        <input type="password" class="form-control" name="secContrasena" formControlName="secContrasena" placeholder="Confirma tu contraseña" required>
+                        <div *ngIf="miFormulario.get('secContrasena').invalid && miFormulario.get('secContrasena').touched" style="color: red;">
+                          La confirmación de la contraseña es requerida
+                      </div>
                       </div>
                     </div>
                     <div class="gender-details">
@@ -50,6 +65,9 @@
                     </div>
                     <div class="organizadorBoton">
                       <button class="btn-25" (click)="onSubmit()"><span>Registrarse</span></button>
+                    </div>
+                    <div class="organizadorBoton2">
+                      <button class="btn-25 botonSecundario" routerLink="/iniciosesion"><span>Ya estás registrado?</span></button>
                     </div>
                   </form>
                 </div>

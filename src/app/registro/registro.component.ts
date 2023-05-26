@@ -94,4 +94,9 @@ export class RegistroComponent {
     
 
   }
+  validarNumero(){
+    if(this.miFormulario.get('tlf').value<0){
+      this.miFormulario.get('tlf').patchValue('');
+    }
+  }
 }

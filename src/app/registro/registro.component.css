@@ -90,7 +90,7 @@
   }
   .user-details .input-box input:focus,
   .user-details .input-box input:valid{
-    border-color: red;
+    border-color: black;
   }
    form .gender-details .gender-title{
     font-size: 20px;
@@ -285,4 +285,7 @@
       var(--tilt) 100%
     );
     
+  }
+  .numeroTelefono::-webkit-inner-spin-button {
+    -webkit-appearance: none;
   }

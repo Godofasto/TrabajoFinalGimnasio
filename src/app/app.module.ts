@@ -26,6 +26,8 @@ import { EspaldaBicepsComponent } from './espalda-biceps/espalda-biceps.componen
 import { PiernaHombroComponent } from './pierna-hombro/pierna-hombro.component';
 import { DomSanitizer } from '@angular/platform-browser';
 import { InsertarActividadesComponent } from './insertar-actividades/insertar-actividades.component';
+import { RoscoCargaComponent } from './rosco-carga/rosco-carga.component';
+import { RoscoCarga2Component } from './rosco-carga2/rosco-carga2.component';
 
 
 
@@ -67,7 +69,9 @@ const appRoutes:Routes=[
     PechoTricepsComponent,
     EspaldaBicepsComponent,
     PiernaHombroComponent,
-    InsertarActividadesComponent
+    InsertarActividadesComponent,
+    RoscoCargaComponent,
+    RoscoCarga2Component
 
   ],
   imports: [

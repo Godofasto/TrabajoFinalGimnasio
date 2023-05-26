@@ -15,6 +15,7 @@ export class EntrenadoresComponent implements OnInit{
   permisoAdmin = false;
   cosas:any;
   cosasU:any;
+  isLoading:boolean = true
   productoActualizado = {Nombre: '', Descripcion:'', precioMensual:0, urlImagen:'', horarioHoras:'', horarioDias:'', numeroTelefono:''};
   constructor(private http: HttpClient,private SubirEntrenadoresService : SubirEntrenadorService, private localStoragesService: LocalStorageService, private subirUsuarioService : SubirUsuarioService) {}
   openModal(){
@@ -28,6 +29,7 @@ export class EntrenadoresComponent implements OnInit{
   ngOnInit(){
     this.SubirEntrenadoresService.recogerEntrenadores({}).subscribe((response)=>{
       console.log(response);
+      this.isLoading = false;
       this.cosas = response;
     }, (error) => {
       console.error(error);

@@ -5,6 +5,7 @@ import Swal from 'sweetalert2';
 import { SubirProductosService } from '../subir-productos.service';
 import { LocalStorageService } from '../local-storage.service';
 import { SubirUsuarioService } from '../subir-usuario.service';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-catalogo',
@@ -18,6 +19,7 @@ export class CatalogoComponent implements OnInit{ //implements OnInit
   cosas:any;
   cosasU:any;
   prueba:any;
+  isLoading:boolean = true;
   modalOpen = false;
   isClickedA = false;
   isClickedB = false;
@@ -67,6 +69,7 @@ export class CatalogoComponent implements OnInit{ //implements OnInit
   // }
   mostrarRedux(dat){
     this.subirproductoService.recogerProductos(dat).subscribe((response)=>{
+      this.isLoading = false;
       console.log(response);
       this.cosas = response;
     }, (error) => {
@@ -157,27 +160,49 @@ export class CatalogoComponent implements OnInit{ //implements OnInit
     );
   }
   public onEditarClick(cosa: any) {
+    // const miFormulario = new FormGroup({
+    //   nombre: new FormControl('', Validators.pattern(/^[\p{L}\s]*$/u)),
+    //   precio: new FormControl('', Validators.pattern(/^\d{2}$/)),
+      
+    //   imagen: new FormControl('', Validators.pattern(/^.*\.(jpg|jpeg|png|gif|bmp)$/))
+    // });
     //Meter aqui un sweet alert con el formulario para editarlo
     //buscar dialog
     Swal.fire({
       title: 'Editar Producto',
       html:
-        '<input id="input1" class="swal2-input" placeholder="Nombre" value="' + cosa.nombre + '">' +
-        '<input id="input2" class="swal2-input" placeholder="Descripción" value="' + cosa.descripcion + '">' +
-        '<input id="input3" class="swal2-input" placeholder="Precio" value="' + cosa.precio + '">' +
+      '<form id="miFormulario" name="miFormulario">'+
+        '<input id="input1" class="swal2-input" formControlName="nombre" name="nombre" class="form-control" placeholder="Nombre" value="' + cosa.nombre + '">' +
+        '<input id="input2" class="swal2-input" name="descripcion" placeholder="Descripción" value="' + cosa.descripcion + '">' +
+        '<input id="input3" class="swal2-input" name="precio" placeholder="precio" formControlName="precio" class="form-control" value="' + cosa.precio + '">' +
         '<select id="select1" class="swal2-select">' +
         '  <option value="Suplementos">Suplementos</option>' +
         '  <option value="Moda">Moda</option>' +
         '  <option value="Equipamiento">Equipamiento</option>' +
-        '</select>',
+        '</select>'+
+        '</form>',
       input: 'file',
       inputAttributes: {
         accept: 'image/*',
         'aria-label': 'Seleccionar imagen'
       },
       showCancelButton: true,
+      cancelButtonText: 'Cancelar',
       confirmButtonText: 'Enviar',
       preConfirm: (file) => {
+        // const nombreControl = miFormulario.controls['nombre'];
+        // const precioControl = miFormulario.controls['precio'];
+
+        // debugger;
+        // console.log(nombreControl.valid) 
+        // console.log(precioControl.valid);
+        
+        // if(nombreControl.invalid){
+          
+        //   if (nombreControl.hasError('pattern') && nombreControl.touched) {
+        //     Swal.showValidationMessage('El nombre solo debe contener letras y espacios');
+        //   }
+        // }else{
         if(file){
           return new Promise((resolve, reject) => {
             const reader = new FileReader();
@@ -194,9 +219,29 @@ export class CatalogoComponent implements OnInit{ //implements OnInit
           console.log(cosa);
           return cosa.urlImagen;
         }
-        
+          
       }
     }).then((result) => {
+      
+      const form = document.getElementById('miFormulario') as HTMLFormElement;
+      const miFormulario = new FormGroup({
+        nombre: new FormControl(form['nombre'].value, Validators.pattern(/^[\p{L}\s]*$/u)),
+        precio: new FormControl(form['precio'].value, Validators.pattern(/^\d{2}$/)),
+        // imagen: new FormControl('', Validators.pattern(/^.*\.(jpg|jpeg|png|gif|bmp)$/))
+      });
+      const nombreControl = miFormulario.controls['nombre'];
+      const precioControl = miFormulario.controls['precio'];
+      console.log(nombreControl.invalid);
+      console.log(precioControl.invalid)
+      if(nombreControl.invalid || precioControl.invalid){
+          Swal.fire({
+            title:"Algun campo está mal rellenado",
+            icon:"warning",
+           
+        showConfirmButton: true,
+          })
+          }else{
+      // console.log(precioControl.valid);
       if (result.value) {
         const input1Value = (document.getElementById('input1') as HTMLInputElement).value;
         const input2Value = (document.getElementById('input2') as HTMLInputElement).value;
@@ -214,6 +259,7 @@ export class CatalogoComponent implements OnInit{ //implements OnInit
     
         this.editarProducto(cosa.id, productoActualizado);
       }else{
+        if(result.value){
         const input1Value = (document.getElementById('input1') as HTMLInputElement).value;
         const input2Value = (document.getElementById('input2') as HTMLInputElement).value;
         const input3Value = (document.getElementById('input3') as HTMLInputElement).value;
@@ -231,6 +277,8 @@ export class CatalogoComponent implements OnInit{ //implements OnInit
     
         this.editarProducto(cosa.id, productoActualizado);
       }
+    }
+  }
     });
   
     

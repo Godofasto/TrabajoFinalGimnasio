@@ -9,6 +9,9 @@
             Nada de esto se puede comprar, por el momento es meramente informativo
         </div>
     </div>
+    <div *ngIf="isLoading">
+        <app-rosco-carga></app-rosco-carga>
+      </div>
     <div class="row barraGeneros">
         <div class="colocar col-2">
             <p class="col-2 textoCat" (click)="mostrarRedux('Suplementos')" (click)="toggleClickedA()" [ngClass]="{'clicked':isClickedA}">Suplementación</p>
