@@ -6,7 +6,7 @@ import { LocalStorageService } from '../local-storage.service';
 import { SubirActividadesService } from '../subir-actividades.service';
 import { SubirCitasService } from '../subir-citas.service';
 import { SubirUsuarioService } from '../subir-usuario.service';
-
+import { SubirEntrenadorService } from '../subir-entrenador.service';
 
 @Component({
   selector: 'app-frag-mis-citas',
@@ -37,7 +37,7 @@ export class FragMisCitasComponent {
   fechaActualFormateada:Date;
   fechaElegida:string = ''
   miModelo = {Nombre : '', Fecha : '', UsuariosId : '', ActividadesId : ''}
-  constructor(private http: HttpClient,private SubirActividadesService : SubirActividadesService, private localStoragesService: LocalStorageService, private subirUsuarioService : SubirUsuarioService, private subirCitasService : SubirCitasService) {}
+  constructor(private SubirEntrenadoresService : SubirEntrenadorService,private http: HttpClient,private SubirActividadesService : SubirActividadesService, private localStoragesService: LocalStorageService, private subirUsuarioService : SubirUsuarioService, private subirCitasService : SubirCitasService) {}
 
 
   ngOnInit() {
@@ -84,8 +84,9 @@ export class FragMisCitasComponent {
     this.showCalendar(this.currentMonth, this.currentYear);
 
     
-    this.SubirActividadesService.recogerActividades({}).subscribe((response)=>{
+    this.SubirActividadesService.recogerActividadesConEntrenadores({}).subscribe((response)=>{ //Puedo intentar craftear la salida aqui 
       this.actividades = response;
+      console.log(this.actividades);
     })
   }
 
@@ -182,6 +183,7 @@ export class FragMisCitasComponent {
     console.log(fechaFormateadaa);
     this.opciones = [];
     this.SubirActividadesService.recogerActividades({}).subscribe((response)=>{
+
       this.actividades = response;
       console.log(this.actividades);
       
@@ -231,6 +233,7 @@ export class FragMisCitasComponent {
                     console.log(response);
                     this.citas=response;
                   })
+                  // this.SubirEntrenadoresService.recogerEntrenadores
                 })
               }, 
               (error)=>{

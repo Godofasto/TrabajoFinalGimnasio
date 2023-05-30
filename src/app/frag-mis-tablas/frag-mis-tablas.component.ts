@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { DomSanitizer } from '@angular/platform-browser';
+import { RecogerejerciciosfixService} from '../recogerejerciciosfix.service';
 
 @Component({
   selector: 'app-frag-mis-tablas',
@@ -6,6 +8,8 @@ import { Component } from '@angular/core';
   styleUrls: ['./frag-mis-tablas.component.css']
 })
 export class FragMisTablasComponent {
+  cosas:any;
+  constructor(public sanitizer : DomSanitizer, private recogerejerciciosfix : RecogerejerciciosfixService){}
   primero:boolean = false;
   segundo:boolean = false;
   tercero:boolean = false;
@@ -30,6 +34,14 @@ export class FragMisTablasComponent {
       this.primero = false;
       this.segundo = false;
     }
+  }
+  mostrarRedux(dat){
+    this.recogerejerciciosfix.recogerEjercicios(dat).subscribe((response)=>{
+      console.log(response);
+      this.cosas = response;
+    }, (error) => {
+      console.error(error);
+    })
   }
 
 }

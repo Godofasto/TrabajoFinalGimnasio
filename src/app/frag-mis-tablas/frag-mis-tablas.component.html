@@ -11,12 +11,38 @@
     </div> -->
     <div class="row">
         <div class="filaBotonesTablas">
-            <button class="space-btn" (click)="activarPrimero()">Pecho-Triceps</button>
-            <button class="space-btn" (click)="activarSegundo()">Espalda-Biceps</button>
-            <button class="space-btn" (click)="activarTercero()">Pierna-Hombro</button>
+            <button class="space-btn" (click)="mostrarRedux('PechoTriceps')">Pecho-Triceps</button>
+            <button class="space-btn" (click)="mostrarRedux('EspaldaBiceps')">Espalda-Biceps</button>
+            <button class="space-btn" (click)="mostrarRedux('PiernaHombro')">Pierna-Hombro</button>
         </div>
     </div>
-    <app-pecho-triceps *ngIf = "primero"></app-pecho-triceps>
+    <div class="container-fluid">
+        <div class="row filaEjercicios">
+            <div class="col-12 cuadroEjercicio" *ngFor="let cosa of cosas">
+                <div class="videoWrapper">
+                    <div class="videoWrapper2">
+                        <iframe width="450" height="400" id="video-player"
+                [src]="sanitizer.bypassSecurityTrustResourceUrl(cosa.ulrVideo)"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen
+                loading="lazy"></iframe>
+                    </div>
+                </div>
+                <div class="nombreEjercicio">
+                    {{cosa.nombre}}
+                </div>
+                <div class="subtituloEjercicio">
+                    {{cosa.tipo}}
+                </div>
+                <div class="repeticionesEjercicio">
+                    {{cosa.repeticiones}}
+                </div>
+                <div class="imagenMusculos" style="background-image: url('{{cosa.urlImagen}}');"></div>
+            </div>
+        </div>
+    </div>
+    <!-- <app-pecho-triceps *ngIf = "primero"></app-pecho-triceps>
     <app-espalda-biceps *ngIf = "segundo"></app-espalda-biceps>
-    <app-pierna-hombro *ngIf = "tercero"></app-pierna-hombro>
+    <app-pierna-hombro *ngIf = "tercero"></app-pierna-hombro> -->
 </div>

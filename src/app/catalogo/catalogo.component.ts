@@ -183,7 +183,7 @@ export class CatalogoComponent implements OnInit{ //implements OnInit
         '</form>',
       input: 'file',
       inputAttributes: {
-        accept: 'image/*',
+        accept: ".jpg, .jpeg, .png",
         'aria-label': 'Seleccionar imagen'
       },
       showCancelButton: true,
@@ -205,6 +205,12 @@ export class CatalogoComponent implements OnInit{ //implements OnInit
         //   }
         // }else{
         if(file){
+          const allowedTypes = ['image/jpeg', 'image/png', 'image/gif'];
+      if (!allowedTypes.includes(file.type)) {
+        Swal.showValidationMessage('Solo se permiten archivos de imagen (JPEG, PNG, GIF).');
+        return false;
+      }
+
           return new Promise((resolve, reject) => {
             const reader = new FileReader();
             reader.onload = (event) => {

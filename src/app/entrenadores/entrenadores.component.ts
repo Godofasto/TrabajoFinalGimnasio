@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import Swal from 'sweetalert2';
 import { LocalStorageService } from '../local-storage.service';
 import { SubirEntrenadorService } from '../subir-entrenador.service';
@@ -98,12 +99,14 @@ export class EntrenadoresComponent implements OnInit{
     Swal.fire({
       title: 'Editar Entrenador',
       html:
-        '<input id="input1" class="swal2-input" placeholder="Nombre" value="' + cosa.nombre + '">' +
+      '<form id="miFormulario" name="miFormulario">'+
+        '<input id="input1" class="swal2-input" placeholder="Nombre" name="nombre" value="' + cosa.nombre + '">' +
         '<input id="input2" class="swal2-input" placeholder="Descripción" value="' + cosa.descripcion + '">' +
-        '<input id="input3" class="swal2-input" placeholder="Precio mensual" value="' + cosa.precioMensual + '">' +
+        '<input id="input3" class="swal2-input" placeholder="Precio mensual" name="precio" value="' + cosa.precioMensual + '">' +
         '<input id="input4" class="swal2-input" placeholder="horarioHoras" value="' + cosa.horarioHoras + '">' +
         '<input id="input5" class="swal2-input" placeholder="horarioDias" value="' + cosa.horarioDias + '">' +
-        '<input id="input6" class="swal2-input" placeholder="numeroTelefono" value="' + cosa.numeroTelefono + '">' ,
+        '<input id="input6" class="swal2-input" placeholder="numeroTelefono" value="' + cosa.numeroTelefono + '">' +
+        '</form>',
       input: 'file',
       inputAttributes: {
         accept: 'image/*',
@@ -112,7 +115,13 @@ export class EntrenadoresComponent implements OnInit{
       showCancelButton: true,
       confirmButtonText: 'Enviar',
       preConfirm: (file) => {
+        
         if(file){
+          const allowedTypes = ['image/jpeg', 'image/png', 'image/gif'];
+      if (!allowedTypes.includes(file.type)) {
+        Swal.showValidationMessage('Solo se permiten archivos de imagen (JPEG, PNG, GIF).');
+        return false;
+      }
           return new Promise((resolve, reject) => {
             const reader = new FileReader();
             reader.onload = (event) => {
@@ -131,6 +140,25 @@ export class EntrenadoresComponent implements OnInit{
         
       }
     }).then((result) => {
+      const form = document.getElementById('miFormulario') as HTMLFormElement;
+      const miFormulario = new FormGroup({
+        nombre: new FormControl(form['nombre'].value, Validators.pattern(/^[\p{L}\s]*$/u)),
+        precio: new FormControl(form['precio'].value, Validators.pattern(/^\d{2}$/)),
+        // imagen: new FormControl('', Validators.pattern(/^.*\.(jpg|jpeg|png|gif|bmp)$/))
+      });
+      const nombreControl = miFormulario.controls['nombre'];
+      const precioControl = miFormulario.controls['precio'];
+      console.log(nombreControl.invalid);
+      console.log(precioControl.invalid)
+      if(nombreControl.invalid || precioControl.invalid){
+          Swal.fire({
+            title:"Algun campo está mal rellenado",
+            icon:"warning",
+           
+        showConfirmButton: true,
+          })
+          }else{
+
       if (result.value) {
         const input1Value = (document.getElementById('input1') as HTMLInputElement).value;
         const input2Value = (document.getElementById('input2') as HTMLInputElement).value;
@@ -173,6 +201,7 @@ export class EntrenadoresComponent implements OnInit{
       
           this.editarProducto(cosa.id, entrenadorActualizado);
       }
+    }
     }});
   
   

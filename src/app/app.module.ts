@@ -28,6 +28,7 @@ import { DomSanitizer } from '@angular/platform-browser';
 import { InsertarActividadesComponent } from './insertar-actividades/insertar-actividades.component';
 import { RoscoCargaComponent } from './rosco-carga/rosco-carga.component';
 import { RoscoCarga2Component } from './rosco-carga2/rosco-carga2.component';
+import { EjerciciosFixComponent } from './ejercicios-fix/ejercicios-fix.component';
 
 
 
@@ -71,7 +72,8 @@ const appRoutes:Routes=[
     PiernaHombroComponent,
     InsertarActividadesComponent,
     RoscoCargaComponent,
-    RoscoCarga2Component
+    RoscoCarga2Component,
+    EjerciciosFixComponent
 
   ],
   imports: [

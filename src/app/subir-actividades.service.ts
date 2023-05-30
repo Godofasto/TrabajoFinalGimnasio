@@ -17,4 +17,7 @@ export class SubirActividadesService {
     // }
     return this.http.post('https://localhost:7104/api/actividades/RetornarTodasActividades', {});
   }
+  recogerActividadesConEntrenadores(dato:any){
+    return this.http.post('https://localhost:7104/api/actividadesEntrenador/RetornarTodo', {})
+  }
 }

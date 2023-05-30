@@ -156,4 +156,151 @@
           right: 0;
       }
   }
-  
+  .cuadroEjercicio{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: grey solid 2px;
+    width: 60vw;
+    height: 26vh;
+    position: relative;
+    
+}
+.subtituloEjercicio{
+  font-family: airwaves;
+  font-size: 20px;
+  letter-spacing: 1px;
+  position: absolute;
+  top: 80px;
+  left: 503px;
+}
+.filaEjercicios{
+  display: flex;
+  justify-content: center;
+}
+.videoWrapper {
+    height: 250px;
+    overflow: hidden;
+    position: absolute;
+    left: 0px;
+  }
+  .videoWrapper2 {
+    height: 250px;
+    overflow: hidden;
+  }
+  iframe {
+      margin-top: -73px;
+      border-right: 3PX solid grey;
+  }
+  @font-face {
+    font-family: airwaves;
+    src: url("./../../assets/airwaves-rounded.ttf");
+  }
+  .nombreEjercicio{
+      font-family: airwaves;
+      position: absolute;
+      top: 4px;
+      font-size: 51px;
+      
+      left: 500px;
+      
+  }
+  .repeticionesEjercicio{
+    font-family: airwaves;
+    position: absolute;
+    top: 135px;
+    font-size: 45px;
+    letter-spacing: 5px;
+    left: 500px;
+    
+  }
+  .imagenMusculos{
+      width: 240px;
+      height: 240px;
+      background-image: url("./../../assets/Deadlift-muscles-worked.jpg");
+      background-position: center;
+      background-size: cover;
+      right: 3px;
+      position: absolute;
+      cursor: zoom-in;
+  }
+  .icon-btn {
+    width: 50px;
+    height: 50px;
+    border: 1px solid #cdcdcd;
+    background: white;
+    border-radius: 25px;
+    overflow: hidden;
+    position: relative;
+    transition: width 0.2s ease-in-out;
+  }
+  .add-btn:hover {
+    width: 120px;
+  }
+  .add-btn::before,
+  .add-btn::after {
+    transition: width 0.2s ease-in-out, border-radius 0.2s ease-in-out;
+    content: "";
+    position: absolute;
+    height: 4px;
+    width: 10px;
+    top: calc(50% - 2px);
+    background: red;
+  }
+  .add-btn::after {
+    right: 14px;
+    overflow: hidden;
+    border-top-right-radius: 2px;
+    border-bottom-right-radius: 2px;
+  }
+  .add-btn::before {
+    left: 14px;
+    border-top-left-radius: 2px;
+    border-bottom-left-radius: 2px;
+  }
+  .icon-btn:focus {
+    outline: none;
+  }
+  .btn-txt {
+    opacity: 0;
+    transition: opacity 0.2s;
+  }
+  .add-btn:hover::before,
+  .add-btn:hover::after {
+    width: 4px;
+    border-radius: 2px;
+  }
+  .add-btn:hover .btn-txt {
+    opacity: 1;
+  }
+  .add-icon::after,
+  .add-icon::before {
+    transition: all 0.2s ease-in-out;
+    content: "";
+    position: absolute;
+    height: 20px;
+    width: 2px;
+    top: calc(50% - 10px);
+    background: red;
+    overflow: hidden;
+  }
+  .add-icon::before {
+    left: 22px;
+    border-top-left-radius: 2px;
+    border-bottom-left-radius: 2px;
+  }
+  .add-icon::after {
+    right: 22px;
+    border-top-right-radius: 2px;
+    border-bottom-right-radius: 2px;
+  }
+  .add-btn:hover .add-icon::before {
+    left: 15px;
+    height: 4px;
+    top: calc(50% - 2px);
+  }
+  .add-btn:hover .add-icon::after {
+    right: 15px;
+    height: 4px;
+    top: calc(50% - 2px);
+  }

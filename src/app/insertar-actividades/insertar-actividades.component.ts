@@ -10,7 +10,7 @@ import Swal from 'sweetalert2';
   styleUrls: ['./insertar-actividades.component.css']
 })
 export class InsertarActividadesComponent {
-  miModelo={Nombre:'', Descripcion:''}
+  miModelo={Nombre:'', Descripcion:'', idEntrenador:''}
   miFormulario:FormGroup;
   @ViewChild('miFormulario') miFormularioRef: any;
   constructor(private subirActividadesService : SubirActividadesService){}
@@ -18,7 +18,8 @@ export class InsertarActividadesComponent {
   ngOnInit() {
     this.miFormulario = new FormGroup({
       nombre: new FormControl('', [Validators.required, Validators.pattern(/^[\p{L}\s]*$/u)]), ///^[a-zA-Z\s]*$/
-      descripcion: new FormControl('', Validators.required)
+      descripcion: new FormControl('', Validators.required),
+      idEntrenador: new FormControl('', Validators.required)
     });
   }
   
@@ -27,6 +28,7 @@ export class InsertarActividadesComponent {
     if(this.miFormulario.valid){
     this.miModelo.Nombre = this.miFormulario.get('nombre').value;
     this.miModelo.Descripcion = this.miFormulario.get('descripcion').value;
+    this.miModelo.idEntrenador = this.miFormulario.get('idEntrenador').value;
     this.subirActividadesService.subirActividad(this.miModelo).subscribe(
       (respuesta) =>{
         console.log("Los datos se guardaron correctamente");
