@@ -232,6 +232,11 @@ export class FragMisCitasComponent {
                   this.subirCitasService.recogerCitas(this.idUsuarioActivo).subscribe((response)=>{
                     console.log(response);
                     this.citas=response;
+
+                  })
+                  this.SubirActividadesService.recogerActividadesConEntrenadores({}).subscribe((response)=>{ //Puedo intentar craftear la salida aqui 
+                    this.actividades = response;
+                    console.log(this.actividades);
                   })
                   // this.SubirEntrenadoresService.recogerEntrenadores
                 })

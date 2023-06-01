@@ -3,6 +3,7 @@ import { SubirActividadesService} from '../subir-actividades.service';
 import {Location} from '@angular/common';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import Swal from 'sweetalert2';
+import { SubirEntrenadorService } from '../subir-entrenador.service';
 
 @Component({
   selector: 'app-insertar-actividades',
@@ -11,9 +12,12 @@ import Swal from 'sweetalert2';
 })
 export class InsertarActividadesComponent {
   miModelo={Nombre:'', Descripcion:'', idEntrenador:''}
+  infoSelect:any;
+  algo:string;
+  infoSelectTotal:string[] = [];
   miFormulario:FormGroup;
   @ViewChild('miFormulario') miFormularioRef: any;
-  constructor(private subirActividadesService : SubirActividadesService){}
+  constructor(private subirActividadesService : SubirActividadesService, private subirEntrenador : SubirEntrenadorService){}
 
   ngOnInit() {
     this.miFormulario = new FormGroup({
@@ -21,6 +25,24 @@ export class InsertarActividadesComponent {
       descripcion: new FormControl('', Validators.required),
       idEntrenador: new FormControl('', Validators.required)
     });
+    this.subirEntrenador.recogerEntrenadores({}).subscribe((response)=>{
+      this.infoSelect = response
+      console.log(this.infoSelect)
+    for(let i = 0; i < this.infoSelect.length; i++){
+      this.algo = this.infoSelect[i].nombre;
+      console.log(this.algo);
+      this.infoSelectTotal.push(this.algo);
+    }
+    console.log(this.infoSelectTotal)
+    var selectElement = document.getElementById('idEntrenador');
+    console.log(selectElement)
+    // this.infoSelectTotal.forEach((opcion)=>{
+    //   // var optionElement = document.createElement("option");
+    //   let optionElement = new Option(opcion, opcion);
+    //   console.log(optionElement);
+    //   selectElement.add(optionElement);
+    // })
+    })
   }
   
 
