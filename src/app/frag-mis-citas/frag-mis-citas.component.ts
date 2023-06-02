@@ -212,12 +212,14 @@ export class FragMisCitasComponent {
             title: `Has seleccionado la opción: ${selectedOption}`
           }).then((result)=>{
             if(result.isConfirmed){
+              
               this.miModelo.Nombre = selectedOption;
               this.miModelo.Fecha = this.fechaElegida;
               //Iteramos sobre actividades, buscamos el que tenga el nomrbe que hemos elegido y de ahi sacamos el Id
               for(let x = 0; x < this.actividades.length ; x++){
-                if(this.actividades[x].nombre == selectedOption){
-                  this.idActiElegido = this.actividades[x].id;
+                if(this.actividades[x].actividad.nombre == selectedOption){
+                  
+                  this.idActiElegido = this.actividades[x].actividad.id;
                   console.log(this.idActiElegido);
                 }
               }
@@ -256,6 +258,10 @@ export class FragMisCitasComponent {
           });
         }
       });
+      this.SubirActividadesService.recogerActividadesConEntrenadores({}).subscribe((response)=>{ //Puedo intentar craftear la salida aqui 
+        this.actividades = response;
+        console.log(this.actividades);
+      })
     })
   }
   openModal(){
