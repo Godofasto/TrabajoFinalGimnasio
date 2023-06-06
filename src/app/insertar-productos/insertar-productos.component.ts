@@ -51,10 +51,14 @@ export class InsertarProductosComponent implements OnInit{
         })
        }
      )
+   }else{
+    Swal.fire({
+      icon: 'error',
+      title: 'Hay algun error en el formulario, revisa bien',
+    })
    }
   }
    convertirImagen(event: any) { //Esto lo pasa a base 64
-    debugger;
     console.log(event);
     const archivo = event.target.files[0];
     if (archivo) {
