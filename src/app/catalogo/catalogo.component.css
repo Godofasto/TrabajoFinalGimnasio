@@ -432,3 +432,20 @@
     border-radius: 12px / 125px;
     box-shadow: 0 0 8px black;
   }
+  @media (max-width:1025px) and (min-width:769px){
+    .textoCat{
+      text-align: center;
+      font-size: 30px;
+      font-family: airwaves; 
+      cursor: pointer;
+    }
+  }
+  @media (max-width:426px){
+    .colocar{
+
+      
+    }
+    .cuadropruebabbdd{
+      padding-top: 630px;
+    }
+  }

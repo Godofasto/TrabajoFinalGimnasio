@@ -2,6 +2,7 @@
     background-image: url("./../../assets/Gym1.jpg");
     height: 76vh;
     background-repeat: no-repeat;
+    background-clip:content-box; /*Para que no sobresalga respecto al html*/
     background-size: 100% 100%; /* o background-size: cover; */
 }
 @font-face {
@@ -23,7 +24,7 @@
     font-size: 50px;
     padding-left: 15px;
 }
-@media (max-width: 1620px) {
+/* @media (max-width: 1620px) {
   #BannerImagenGrande{
     width: 30vw;
   }
@@ -32,14 +33,15 @@
   #BannerImagenGrande{
     width: 50vw;
   }
-}
+} */
+
 .cuadradoover{
     display: flex;
     justify-content: center;
     align-items: center;
     z-index: 15;
     left: 39vw;
-    top: 36vw;
+    top: 74vh;
     position: absolute;
     width: 23vw;
     height: 15vw;
@@ -76,7 +78,7 @@
     padding: 0.4em 1.2em;
     border: none;
     cursor: pointer;
-    font-weight: bold;
+    font-weight: 500;
     
     color: var(--color);
     background: 
@@ -152,4 +154,276 @@
     color: grey;
    cursor: not-allowed;
    opacity: 0.7;
+  }
+  @media (max-width: 1660px){
+    .cuadradoover{
+      
+      height: 15vw;
+    }
+    .textoabajocuadradoover{
+      font-size: 35px;
+    }
+    .textoarribacuadradoover{
+      font-size: 35px;
+    }
+    .botoncuadradoover{
+      font-size:25px;
+    }
+  }
+  @media (max-width: 1300px){
+    .textoabajocuadradoover{
+      font-size: 28px;
+    }
+    .textoarribacuadradoover{
+      font-size: 28px;
+    }
+    .botoncuadradoover{
+      font-size:20px;
+    }
+    .cuadradoover{
+      top: 70vh;
+    }
+  }
+  @media (max-width: 1125px){
+    .textoabajocuadradoover{
+      font-size: 24px;
+    }
+    .textoarribacuadradoover{
+      font-size: 24px;
+    }
+    .botoncuadradoover{
+      font-size:16px;
+    }
+  }
+  @media (max-width: 1025px){
+    .textoabajocuadradoover{
+      font-size: 20px;
+    }
+    .textoarribacuadradoover{
+      font-size: 20px;
+    }
+    .botoncuadradoover{
+      font-size:14px;
+      height: 11vh;
+    }
+    #BannerImagenGrande{
+      width: 40vw;
+      font-size: 20px;
+    }
+  }
+  @media (max-width: 875px){
+    .textoabajocuadradoover{
+      font-size: 19px;
+    }
+    .textoarribacuadradoover{
+      font-size: 19px;
+    }
+    .botoncuadradoover{
+      font-size:14px;
+    }
+    .cuadradoover{
+      height: 16vw;
+    }
+  }
+  @media (max-width: 1550px){
+    #cuerpo{
+      height: 65vh;
+    }
+    .cuadradoover{
+      top: 70vh;
+    }
+  }
+  @media (max-width: 1160px){
+    .textoVirtudes{
+      font-size: 14px;
+    }
+    .cuadradogrande2{
+      height: 130vh;
+    }
+    .contenedorVirtudes{
+      row-gap: 80px;
+    }
+  }
+  @media (max-width: 1025px){
+    .textoabajocuadradoover{
+      font-size: 25px;
+    }
+    .textoarribacuadradoover{
+      font-size: 25px;
+    }
+    .botoncuadradoover{
+      font-size:18px;
+    }
+    .cuadradoover{
+      height: 16vw;
+      top: 65vh;
+    }
+    .textoVirtudes{
+      font-size: 18px;
+      width: 50vw !important;
+    }
+    .cuadradogrande2{
+      height: 130vh;
+    }
+    .contenedorVirtudes{
+      row-gap: 70px;
+      
+    }
+    #BannerImagenGrande{
+      width: 35vw !important;
+      font-size: 30px !important;
+    }
+  }
+  @media (min-width : 2000px){
+    .tituloPromo{
+      padding-top:300px
+    }
+    .virtudes{
+      font-size: 50px;
+    }
+  }
+  @media(max-width: 1441px){
+    #BannerImagenGrande{
+      width: 30vw;
+      font-size: 40px;
+    }
+    .cuadradoover{
+      top: 65vh;
+    }
+  }
+  @media(max-width : 769px){
+    #BannerImagenGrande{
+      width: 50vw !important;
+      font-size: 36px;
+      top: 150px;
+    }
+    .contenedorimagengrande{
+      height: 45vh !important;
+    }
+    .textoabajocuadradoover{
+      font-size: 21px;
+    }
+    .textoarribacuadradoover{
+      font-size: 21px;
+    }
+    .botoncuadradoover{
+      font-size:16px;
+      height: 6vh;
+    }
+    .cuadradoover{
+      height: 20vw;
+      width: 30vw;
+      top: 45vh;
+      left: 37vw;
+    }
+    .textoVirtudes{
+      font-size: 15px;
+      
+    }
+    .cuadradogrande2{
+      height: 130vh;
+    }
+    .contenedorVirtudes{
+      row-gap: 70px;
+      
+    }
+    .tituloPromo{
+      padding-top: 100px;
+    }
+  }
+  @media (max-width:426px){
+    #BannerImagenGrande{
+      width: 54vw !important;
+      font-size: 20px !important;
+      height: 5vh;
+    }
+    .contenedorimagengrande{
+      height: 37vh !important;
+    }
+    .textoabajocuadradoover{
+      font-size: 17px;
+      width: 35vw;
+    }
+    .textoarribacuadradoover{
+      font-size: 18px;
+    }
+    .botoncuadradoover{
+      font-size:15px;
+      height: 6vh;
+      width: 30vw;
+    }
+    .cuadradoover{
+      height: 28vw;
+      width: 45vw;
+      left: 30vw;
+      top: 47vh;
+      text-align: center;
+    }
+    .tituloPromo{
+      padding-top: 80px;
+    }
+  }
+  @media (max-width:376px){
+    #BannerImagenGrande{
+      width: 55vw !important;
+      font-size: 17px !important;
+      height: 5vh;
+    }
+    .contenedorimagengrande{
+      height: 35vh !important;
+    }
+    .textoabajocuadradoover{
+      font-size: 17px;
+      width: 35vw;
+    }
+    .textoarribacuadradoover{
+      font-size: 18px;
+    }
+    .botoncuadradoover{
+      font-size:13px;
+      height: 5vh;
+      width: 30vw;
+    }
+    .cuadradoover{
+      height: 30vw;
+      width: 45vw;
+      left: 30vw;
+      top: 46vh;
+      text-align: center;
+    }
+    .tituloPromo{
+      padding-top: 100px;
+    }
+  }
+  @media (max-width:376px){
+    #BannerImagenGrande{
+      width: 55vw !important;
+      font-size: 17px !important;
+      height: 5vh;
+    }
+    .contenedorimagengrande{
+      height: 33vh !important;
+    }
+    .textoabajocuadradoover{
+      font-size: 16px;
+      width: 35vw;
+    }
+    .textoarribacuadradoover{
+      font-size: 18px;
+    }
+    .botoncuadradoover{
+      font-size:13px;
+      height: 4vh;
+      width: 34vw;
+    }
+    .cuadradoover{
+      height: 34vw;
+      width: 46vw;
+      left: 30vw;
+      top: 43.5vh;
+      text-align: center;
+    }
+    .tituloPromo{
+      padding-top: 100px;
+    }
   }

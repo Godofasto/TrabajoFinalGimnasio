@@ -93,3 +93,207 @@ ul li:hover a::before {
 .contenedormapa{
     padding-top: 10px;
 }
+@media (max-width: 1441px){
+    .textohorario{
+        font-size: 25px;
+    }
+    .textodireccion{
+        font-size:25px
+    }
+    .cuadrohorario{
+        padding-left: 70px;
+    }
+    #titulodireccion{
+        margin-top: -42px;
+    }
+}
+@media (max-width: 1025px){
+    .piepagina{
+        height: 48vh;
+    }
+    .contenedorsociales{
+        width: 99vw;
+    }
+    ul{
+        justify-content: space-evenly;
+    }
+    .textohorario{
+        font-size: 20px;
+    }
+    .textodireccion{
+        font-size:20px
+    }
+    .cuadrohorario{
+        width: 35vw !important;
+        padding-top: 45px;
+    }
+    .cuadrodireccion{
+        margin-top: -12px !important;
+        width: 30vw !important;
+    }
+    .contenedormapa{
+        padding-top:35px;
+    }
+    #titulohorario{
+        margin-top: -102px;
+    }
+}
+@media (max-width: 769px){
+    .piepagina{
+        height: 48vh;
+    }
+    .contenedorsociales{
+        width: 99vw;
+    }
+    ul{
+        justify-content: space-evenly;
+    }
+    .textohorario{
+        font-size: 20px;
+    }
+    .textodireccion{
+        font-size:20px
+    }
+    .cuadrohorario{
+        width: 35vw !important;
+        padding-top: 45px;
+    }
+    .cuadrodireccion{
+        margin-top: -12px !important;
+        width: 30vw !important;
+    }
+    .contenedormapa{
+        padding-top:35px;
+    }
+    #titulohorario{
+        margin-top: -38px;
+    }
+}
+@media (max-width:426px){
+    ul li a .fa-brands{
+        font-size: 4em;
+        color: white;
+    }
+    ul li a::before{
+        font-size: 0em;
+    }
+    .textohorario{
+        font-size: 16px;
+    }
+    .textodireccion{
+        font-size:16px
+    }
+    .cuadrohorario{
+        width: 90vw !important;
+        padding-top: 45px;
+        flex-direction: row;
+    }
+    .cuadrodireccion{
+        width: 90vw !important;
+        padding-top: 8px;
+        padding-left: 34px !important;
+        flex-direction: row;
+    }
+    .contenedormapa{
+        padding-top:4px;
+        padding-left: 110px;
+        width: 95vw !important;
+        
+    }
+    .piepagina{
+        height: 55vh;
+    }
+    #titulohorario{
+        padding-top: 37px;
+        padding-right: 5px;
+    }
+    #titulodireccion{
+        padding-top: 40px;
+        padding-right: 3px;
+    }
+}
+@media (max-width:375px){
+    #titulohorario{
+        padding-right: 4px;
+    }
+    #titulodireccion{
+        padding-right: 4px;
+    }
+    ul li a .fa-brands{
+        margin-left: -35px;
+        font-size: 4em;
+        color: white;
+    }
+    ul li a::before{
+        font-size: 0em;
+    }
+    .textohorario{
+        font-size: 14px;
+    }
+    .textodireccion{
+        font-size:14px
+    }
+    .cuadrohorario{
+        width: 95vw !important;
+        padding-top: 45px;
+        flex-direction: row;
+    }
+    .cuadrodireccion{
+        width: 95vw !important;
+        padding-top: 8px;
+        padding-left: 34px !important;
+        flex-direction: row;
+    }
+    .contenedormapa{
+        padding-top:4px;
+        padding-left: 85px;
+        width: 95vw !important;
+        
+    }
+    .piepagina{
+        height: 58vh;
+    }
+}
+@media (max-width:321px){
+    #titulohorario{
+        padding-right: 4px;
+        margin-left: -24px;
+    }
+    #titulodireccion{
+        padding-right: 4px;
+    }
+    ul li a .fa-brands{
+        margin-left: -35px;
+        font-size: 4em;
+        color: white;
+    }
+    ul li a::before{
+        font-size: 0em;
+    }
+    .textohorario{
+        font-size: 14px;
+    }
+    .textodireccion{
+        font-size:14px
+    }
+    .cuadrohorario{
+        width: 95vw !important;
+        padding-top: 45px;
+        flex-direction: row;
+    }
+    .cuadrodireccion{
+        width: 95vw !important;
+        padding-top: 8px;
+        padding-left: 34px !important;
+        flex-direction: row;
+    }
+    .contenedormapa{
+        padding-top:4px;
+        padding-left: 65px;
+        width: 95vw !important;
+        
+    }
+    .piepagina{
+        height: 58vh;
+    }
+}

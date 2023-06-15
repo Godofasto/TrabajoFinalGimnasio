@@ -175,3 +175,103 @@
 .enlaces:hover{
   color: #f7d92f;
 }
+.filaGrande{
+  height: 110px;
+}
+@media (max-width: 1160px){
+  .logopequeño{
+    width: 130px;
+  }
+  .enlaces{
+    font-size: 26px;
+  }
+  .botonapuntate{
+    width: 15vw;
+    height: 8vh;
+    font-size: 28px;
+  }
+  .botonsocios{
+    width: 15vw;
+    height: 8vh;
+    font-size: 25px;
+  }
+  .filaGrande{
+    height: 80px;
+  }
+}
+@media (max-width: 864px){
+  .logopequeño{
+    width: 110px;
+  }
+  .enlaces{
+    font-size: 21px;
+  }
+  .botonapuntate{
+    width: 14vw;
+    height: 6vh;
+    font-size: 23px;
+  }
+  .botonsocios{
+    width: 14vw;
+    height: 6vh;
+    font-size: 20px;
+  }
+  .filaGrande{
+    height: 70px;
+  }
+}
+@media (min-width : 2000px){
+  .botonapuntate{
+    height: 7vh;
+  }
+  .botonsocios{
+    height: 7vh;
+  }
+}
+@media (max-width: 427px){
+  .filaGrande{
+    height: 145px;
+  }
+  .enlacesbarra{
+    padding-left: 155px;
+  }
+  .enlaces{
+    padding-left: 75px;
+  }
+  .botonapuntate{
+    position: absolute;
+    top: 70px;
+    width: 30vw;
+    left: 220px;
+  }
+  .botonsocios{
+    position: absolute;
+    top: 70px;
+    left: 40px;
+    width: 30vw;
+  }
+}
+@media (max-width: 321px){
+  .filaGrande{
+    height: 145px;
+  }
+  .enlacesbarra{
+    padding-left: 160px;
+  }
+  .enlaces{
+    padding-left: 50px;
+    font-size:18px
+  }
+  .botonapuntate{
+    position: absolute;
+    top: 70px;
+    width: 35vw;
+    left: 180px;
+  }
+  .botonsocios{
+    position: absolute;
+    top: 70px;
+    left: 10px;
+    width: 35vw;
+  }
+}

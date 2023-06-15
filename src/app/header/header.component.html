@@ -1,5 +1,5 @@
 <div class="container-fluid">
-    <div class="row" style="height: 110px">
+    <div class="row filaGrande" >
       <div class="col-12 bg-dark bg-gradient h-100 text-left"style="border-bottom: 2px solid white;">
         <div class="row align-items-center">
           <div class="col-md-3 col-6">
@@ -11,8 +11,10 @@
                 <a routerLink="/catalogo" class="enlaces">Catalogo</a>
                 <a routerLink="/entrenadores" class="enlaces">Entrenadores</a>
               </div>
+              <div class="botones">
               <button id="botonCuotas"  [ngClass]="{'botoncuotasDisabled': localStoragesService.apunta}" [disabled]="localStoragesService.apunta" routerLink="/cuotas" class="mx-3 botonapuntate" >Apuntate</button>
               <button routerLink="/iniciosesion" class="mx-3 botonsocios">Tu Perfil</button>
+            </div>
             </div>
           </div>
         </div>

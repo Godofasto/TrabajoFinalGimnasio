@@ -1,5 +1,5 @@
 <div class="row" >
-    <div class="col-12 contenedorimagengrande container-fluid" id="cuerpo">
+    <div class="col-12 contenedorimagengrande container-fluid img-fluid" id="cuerpo">
         <!-- <img class="img-fluid imagengrande"  [src]="grandeUrl"> -->
         <div id="BannerImagenGrande" class="bg-dark bg-gradient">
             CRUSH YOUR GOALS
@@ -8,36 +8,49 @@
 </div>
 <div class="row cuadradoover bg-dark bg-gradient">
     <div class="textocuadradoover col-xs-12">
-        <p>DURANTE TODO 2023</p>
+        <p class="textoabajocuadradoover">DURANTE TODO 2023</p>
         <button routerLink="/cuotas" [ngClass]="{'botoncuotasDisabled': localStoragesService.apunta}" [disabled]="localStoragesService.apunta" class="botoncuadradoover">No lo dejes pasar</button>
         <p class="textoabajocuadradoover">MATRÍCULA GRATIS</p>
     </div>
 </div>
 
-<div class="row">
+<!-- <div class="row"> -->
     <div class="col-12 bg-dark bg-gradient cuadradogrande2">
+        <!-- <div class="row bg-dark bg-gradient col-9 col-md-6 col-lg-3" style="
+        
+        margin: 0 auto !important;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    ">
+            <div class="textocuadradoover col-xs-12">
+                <p class="textoarribacuadradoover">DURANTE TODO 2023</p>
+                <button routerLink="/cuotas" [ngClass]="{'botoncuotasDisabled': localStoragesService.apunta}" [disabled]="localStoragesService.apunta" class="botoncuadradoover">No lo dejes pasar</button>
+                <p class="textoabajocuadradoover">MATRÍCULA GRATIS</p>
+            </div>
+        </div> -->
         <div class="row" >
-            <div class="col-12 tituloPromo" >¿Por qué elegir SkullCrushers Gym?</div>
+            <span class="tituloPromo" style="text-align: center;" >¿Por qué elegir SkullCrushers Gym?</span>
             <div class="row contenedorVirtudes" style="padding-top: 6vh;">
                 <div class="col-xl-4 col-sm-12 virtudes card border-0 bg-transparent"> 
                     <div class="card-body" style="height: 20vh">
-                        <div class="card-title"><i class="fa-sharp fa fa-dumbbell fa-2xl " style="color: #ffffff; font-size: 5vw; padding-left: 3.2vw;"></i></div>
+                        <div class="card-title" style="text-align: center;"><i class="fa-sharp fa fa-dumbbell fa-2xl " style="color: #ffffff; font-size: 5vw;  "></i></div>
                         <div class="card-text textoVirtudes" style="width: 13vw; padding-top: 2vw; ">Disponemos de las ultimas novedades en equipamiento deportivo para todo tipo de ejercicio pero con una orientacion tradicional</div>
                     </div>
                 </div>
                 <div class="col-xl-4 col-sm-12 virtudes card border-0 bg-transparent" > 
                     <div class="card-body" style="height: 20vh">
-                        <div class="card-title"><i class="fa-sharp fa fa-calendar fa-2xl " style="color: #ffffff; font-size: 5vw; padding-left: 4.3vw;"></i></div>
+                        <div class="card-title" style="text-align: center;"><i class="fa-sharp fa fa-calendar fa-2xl " style="color: #ffffff; font-size: 5vw;"></i></div>
                         <div class="card-text textoVirtudes" style="width: 13vw; padding-top: 2vw; ">Abrimos los 365 dias del año con un horario muy flexible para que puedas ir cuando desees</div>
                     </div>
                 </div>
                 <div class="col-xl-4 col-sm-12 virtudes card border-0 bg-transparent" > 
                     <div class="card-body" style="height: 20vh">
-                        <div class="card-title"><i class="fa-sharp fa fa-medal fa-2xl " style="color: #ffffff; font-size: 5vw; padding-left: 4.2vw;"></i></div>
+                        <div class="card-title" style="text-align: center;"><i class="fa-sharp fa fa-medal fa-2xl " style="color: #ffffff; font-size: 5vw;"></i></div>
                         <div class="card-text textoVirtudes" style="width: 13vw; padding-top: 2vw; ">Gracias a nuestras instalaciones y nuestro preparado personal podemos hacer que cumplas todos tus objetivos</div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
+    <!-- </div> -->
 </div>
