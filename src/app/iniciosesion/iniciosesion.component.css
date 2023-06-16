@@ -157,4 +157,8 @@ body {
     background-color: #f32929;
   }
 
-  
+  @media (max-width:769px){
+    .right{
+      display: none;
+    }
+  }

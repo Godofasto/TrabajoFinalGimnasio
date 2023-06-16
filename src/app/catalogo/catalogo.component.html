@@ -42,14 +42,14 @@
                     </div>
                 </div>
             </div> -->
-            <div class="flip animate__animated animate__fadeInLeft" *ngFor="let cosa of cosas">
+            <div class="flip animate__animated animate__fadeInLeft grupoProductos" *ngFor="let cosa of cosas">
                 <div class="front" style="background-image:url({{cosa.urlImagen}}); background-repeat: no-repeat;">
                     <!-- <img src="{{cosa.urlImagen}}" class="img-fluid"> -->
                    <h1 class="text-shadow">{{cosa.nombre}}</h1>
                 </div>
                 <div class="back">
                    <h2>≈{{cosa.precio}} €</h2>
-                   <p style="font-size: 20px;">{{cosa.descripcion}}</p>
+                   <p style="font-size: 20px;" class="descripcion">{{cosa.descripcion}}</p>
                 </div>
                 <i *ngIf="permisoAdmin" (click)="borrarProducto(cosa.id)"class="fa fa-trash iconopapelera"></i>
                 <i *ngIf="permisoAdmin" (click)="onEditarClick(cosa)"class="fa-solid fa-pen-to-square iconolapiz"></i>

@@ -289,3 +289,29 @@
   .numeroTelefono::-webkit-inner-spin-button {
     -webkit-appearance: none;
   }
+@media (max-width:1025px){
+  .textobanneriniciosesion{
+    font-size: 80px;
+  }
+}
+@media (max-width:769px){
+  .textobanneriniciosesion{
+    font-size: 60px;
+  }
+}
+@media (max-width:425px){
+  .textobanneriniciosesion{
+    font-size: 35px;
+  }
+}
+@media (max-width:376px){
+  .textobanneriniciosesion{
+    font-size: 30px;
+  }
+  
+}
+@media (max-width:321px){
+  .textobanneriniciosesion{
+    font-size: 25px;
+  }
+}

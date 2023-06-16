@@ -17,10 +17,10 @@
                   <div class="content-splitter">
                     <div class="nav">
                       <ul class="navbar">
-                        <li><i class="fa-regular fa-calendar-check"></i> {{cosa.horarioDias}}</li>
-                        <li><i class="fa-regular fa-clock"></i> {{cosa.horarioHoras}}</li>
-                        <li><i class="fa fa-money-bill-wave" style="font-size: 16px;"></i> {{cosa.precioMensual}}€/Mes</li>
-                        <li><i class="fa fa-phone"></i> {{cosa.numeroTelefono}}</li>
+                        <li class="icono1"><i class="fa-regular fa-calendar-check"></i> {{cosa.horarioDias}}</li>
+                        <li class="icono2"><i class="fa-regular fa-clock"></i> {{cosa.horarioHoras}}</li>
+                        <li class="icono3"><i class="fa fa-money-bill-wave " style="font-size: 16px;"></i> {{cosa.precioMensual}}€/Mes</li>
+                        <li class="icono4"><i class="fa fa-phone "></i> {{cosa.numeroTelefono}}</li>
                       </ul>
                     </div>
                     <div class="left">
@@ -31,7 +31,7 @@
                       <div class="c2a" (click)="contratarEntrenador()">Contáctame!</div>
                     </div>
                   </div>
-                  <div class="right" style="background-image: url({{cosa.urlImagen}}); background-repeat: no-repeat; background-position: center; background-size: cover;">
+                  <div class="right" style="background-image: url({{cosa.urlImagen}}); background-repeat: no-repeat; background-position: center; background-size: cover; ">
                       <!-- <img src="{{cosa.urlImagen}}" alt=""> -->
                     </div>
                     <i *ngIf="permisoAdmin" (click)="borrarProducto(cosa.id)"class="fa fa-trash iconopapelera"></i>

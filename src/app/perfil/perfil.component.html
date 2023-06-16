@@ -3,9 +3,9 @@
         <div class="col-12 contenedorperfil">
             <div class="row">
                 <div class="col-3 selectorperfil">
-                    <div [ngStyle]="{'background-color': primero ? 'red' : 'black'}" class="botonesraros" (click)="activarprimero()"><span></span>Mis Datos</div>
-                    <div [ngStyle]="{'background-color': segundo ? 'red' : 'black'}" class="botonesraros" (click)="activarsegundo()"><span class="tuneoafter"></span>Mis Citas</div>
-                    <div [ngStyle]="{'background-color': tercero ? 'red' : 'black'}" class="botonesraros" (click)="activartercero()"><span class="tuneoafter"></span>Mis Tablas</div>
+                    <div [ngStyle]="{'background-color': primero ? 'red' : 'black'}" class="botonesraros boton1" (click)="activarprimero()"><span></span>Mis Datos</div>
+                    <div [ngStyle]="{'background-color': segundo ? 'red' : 'black'}" class="botonesraros boton2" (click)="activarsegundo()"><span class="tuneoafter"></span>Mis Citas</div>
+                    <div [ngStyle]="{'background-color': tercero ? 'red' : 'black'}" class="botonesraros boton3" (click)="activartercero()"><span class="tuneoafter"></span>Mis Tablas</div>
                     <i class="fa-solid fa-door-closed puerta" (mouseover)="mouseEvHandler(true)" (mouseout)="mouseEvHandler(false)" *ngIf="!puertaAbierta"></i>   
                     <i class="fa-solid fa-door-open puerta" (mouseover)="mouseEvHandler(true)" (mouseout)="mouseEvHandler(false)" *ngIf="puertaAbierta" (click)="logout()" style="cursor: pointer;"></i>                    
                 </div>

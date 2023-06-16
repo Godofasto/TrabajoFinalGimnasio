@@ -260,3 +260,17 @@ li + li {
   display: flex;
   flex-direction: row;
 }
+@media (max-width:769px){
+  .casillaCitas{
+    font-size: 18px;
+  }
+  p{
+    font-size: 15px;
+    line-height: 18px;
+  }
+}
+@media (max-width:426px){
+  .contenedordatos{
+    width: 20vw;
+  }
+}

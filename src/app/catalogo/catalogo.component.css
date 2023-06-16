@@ -447,5 +447,12 @@
     }
     .cuadropruebabbdd{
       padding-top: 630px;
+      /* margin-left: -20px; */
+    }
+    .grupoProductos{
+      
+    }
+    .descripcion{
+      font-size: 17px !important;
     }
   }

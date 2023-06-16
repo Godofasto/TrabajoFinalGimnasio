@@ -250,6 +250,10 @@
     left: 40px;
     width: 30vw;
   }
+  .enlaces::before{
+    margin-left: 75px;
+    width: 90px;
+  }
 }
 @media (max-width: 321px){
   .filaGrande{
@@ -273,5 +277,9 @@
     top: 70px;
     left: 10px;
     width: 35vw;
+  }
+  .enlaces::before{
+    margin-left: 50px;
+    width: 80px;
   }
 }

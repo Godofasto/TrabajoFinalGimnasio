@@ -84,3 +84,109 @@
         font-weight: bold;  
         border: none;
       }
+      @media (max-width:1441px){
+        .cabeceracartas{
+          font-size: 22px;
+        }
+        .titulocarta{
+          font-size: 25px
+        }
+        .textocarta{
+          font-size: 18px;
+        }
+      }
+      @media (max-width:1025px){
+        .cabeceracartas{
+          font-size: 20px;
+        }
+        .titulocarta{
+          font-size: 22px
+        }
+        .textocarta{
+          font-size: 15px;
+          line-height: 18px;
+        }
+        .cabeceracuotas{
+          font-size: 70px;
+        }
+      }
+      @media (max-width:769px){
+        .cabeceracartas{
+          font-size: 17px;
+        }
+        .titulocarta{
+          font-size: 22px
+        }
+        .textocarta{
+          font-size: 15px;
+          line-height: 16px;
+        }
+        .cabeceracuotas{
+          font-size: 60px;
+        }
+        .cartascuotas{
+          width: 25vw;
+        }
+      }
+      @media (max-width:426px){
+        .cabeceracartas{
+          font-size: 15px;
+        }
+        .titulocarta{
+          font-size: 20px
+        }
+        .textocarta{
+          font-size: 15px;
+          line-height: 15px;
+        }
+        .cabeceracuotas{
+          font-size: 35px;
+        }
+        .cartascuotas{
+          width: 28vw;
+        }
+      }
+      @media (max-width:376px){
+        .cabeceracartas{
+          font-size: 14px;
+        }
+        .titulocarta{
+          font-size: 18px
+        }
+        .textocarta{
+          font-size: 14px;
+          line-height: 14px;
+        }
+        .cabeceracuotas{
+          font-size: 30px;
+        }
+        .cartascuotas{
+          width: 30vw;
+        }
+        .botoncuota{
+          width: 25vw;
+          font-size: 25px;
+        }
+      }
+      @media (max-width:321px){
+        .cabeceracartas{
+          font-size: 14px;
+        }
+        .titulocarta{
+          font-size: 18px
+        }
+        .textocarta{
+          font-size: 14px;
+          line-height: 14px;
+        }
+        .cabeceracuotas{
+          font-size: 25px;
+        }
+        .cartascuotas{
+          width: 30vw;
+        }
+        .botoncuota{
+          width: 25vw;
+          font-size: 20px;
+        }
+      }

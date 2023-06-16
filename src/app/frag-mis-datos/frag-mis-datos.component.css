@@ -143,3 +143,14 @@ p {
     bottom: 30px;
     right: 150px;
 }
+@media (max-width:375px){
+    .tabladatos{
+        width: 65vw;
+    }
+}
+@media (max-width:426px){
+    .tabladatos{
+        padding-top: 30px;
+        width: 75vw;
+    }
+}

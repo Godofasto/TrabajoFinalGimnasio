@@ -88,3 +88,100 @@ span:after
     padding-top: -30px;
     color: black;
 }
+@media (max-width: 1441px){
+    .botonesraros{
+        width: 15vw;
+    }
+    .selectorperfil{
+        padding-left: 50px;
+    }
+    .botonesraros:hover:before,
+.botonesraros:hover:after,
+.botonesraros:hover span:before,
+.botonesraros:hover span:after
+{
+    width: calc( 15vw/2 );
+    height: calc( 80px/2 )
+}
+}
+@media (max-width: 426px){
+    .botonesraros{
+        width: 400px !important;
+        font-size: 10px;
+        
+    }
+    .selectorperfil{
+        width: 500px;
+        height: 200px;
+        flex-direction: row;
+        column-gap: 10px;
+        margin-left: -160px;
+    }
+    .botonesraros:hover:before,
+.botonesraros:hover:after,
+.botonesraros:hover span:before,
+.botonesraros:hover span:after
+{
+    width: calc( 20vw/2 );
+    height: calc( 80px/2 )
+}
+.boton1{
+    position: absolute;
+    top: 60px;
+    left: 370px;
+}
+.boton2{
+    position: absolute;
+    top: 150px;
+    left: 370px;
+    
+}
+.boton3{
+    top: 240px;
+    left: 370px;
+    position: absolute;
+    
+}
+.puerta{
+    top: 285px;
+    left: 165px;
+    position: absolute;
+    font-size: 45px;
+}
+}
+@media (max-width: 376px){
+    .botonesraros{
+        width: 300px !important;
+        font-size: 10px;
+        left: 348px;
+    }
+    .selectorperfil{
+        padding-left: 10px !important;
+    }
+    .botonesraros:hover:before,
+.botonesraros:hover:after,
+.botonesraros:hover span:before,
+.botonesraros:hover span:after
+{
+    width: calc( 30vw/2 );
+    height: calc( 80px/2 )
+}
+}
+@media (max-width: 321px){
+    .botonesraros{
+        left: 320px;
+        width: 32vw;
+        font-size: 10px;
+    }
+    .selectorperfil{
+        padding-left: 50px;
+    }
+    .botonesraros:hover:before,
+.botonesraros:hover:after,
+.botonesraros:hover span:before,
+.botonesraros:hover span:after
+{
+    width: calc( 32vw/2 );
+    height: calc( 80px/2 )
+}
+}
